@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Obiekt należy do katalogu" directorySegmentName="seg_0" id="4C3F0087-728E-4FBC-6C46-E3903C470CC5">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:14:38 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>Należy do</nameOnSource>
+<nameOnTarget>Składa się z</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>67DF3517-1C8C-9A9F-5BFC-46B731276258</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7E7063B1-04A5-CEA2-6197-D95B2DCFCFB5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

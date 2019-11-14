@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7E7063B1-04A5-CEA2-6197-D95B2DCFCFB5" name="Katalog">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 17:58:11 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Nazwa" id="4B0962D6-F675-C120-460F-1663B4C4994D">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:12:56 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Rok wydania" id="7B704FC8-5764-02A3-DCFF-4F31F4822785">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:13:01 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D0691913-0C3C-2369-5849-061749D42C77" name="Katalog PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:12:59 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4B0962D6-F675-C120-460F-1663B4C4994D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

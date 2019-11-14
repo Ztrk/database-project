@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Satelita orbituje wokół gwiazdy" directorySegmentName="seg_0" id="B2BB533B-9805-8340-C4E0-1E9257AB1C38">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 19:20:59 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<targetPk>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</targetPk>
+<identifying>false</identifying>
+<nameOnSource>Orbituje</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>76D292AE-3266-9BC7-E570-C4EAD523D8A4</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>87B1CB9F-7859-A445-4516-7872871C0538</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

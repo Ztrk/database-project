@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="86114EA6-47F4-1A4E-81D9-077E1EE529D0" name="Obserwatorium">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 17:57:58 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Kod IAU" id="D68CE174-AF19-55B6-7B15-39AD139723D9">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:10:39 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Szerokość geograficzna" id="551FD8BD-8675-65BB-553F-E3B08CABFF13">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:10:45 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Długość geograficzna" id="3E4F8260-E67B-6A19-660C-BE4BC53A9E96">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:10:54 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kraj" id="C1F6804E-4D12-C0E1-E98B-6BCD4154F5A6">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:11:02 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Pełna nazwa/instytucja" id="DE07BDDB-2FDC-CCF6-D8ED-07E712E2BF2E">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:11:11 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nazwa w MPC" id="E4DBAEAB-365A-8F2F-227F-0A533E2671B1">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:11:23 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="06D49A09-AA43-F9FF-B5D8-F91C5438E779" name="Obserwatorium PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:11:31 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D68CE174-AF19-55B6-7B15-39AD139723D9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

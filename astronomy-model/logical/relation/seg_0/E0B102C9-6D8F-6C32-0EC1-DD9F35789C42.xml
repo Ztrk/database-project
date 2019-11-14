@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Galaktyka jest w grupie galaktyk" directorySegmentName="seg_0" id="E0B102C9-6D8F-6C32-0EC1-DD9F35789C42">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 19:26:55 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<sourcePk>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>Składa się z</nameOnSource>
+<nameOnTarget>Należy do</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3C9C9CE2-0F92-67DB-3F20-BC06882F5960</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>28958542-C1F9-5F8B-CC27-0F1A305BD57D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

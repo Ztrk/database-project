@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Astronom zaobserwował" directorySegmentName="seg_0" id="CAF5BE29-F66E-E27E-2F81-E1486B08B552">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:20:00 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<sourcePk>EEC9DCCE-EED5-284F-A372-A4CBD0EFF255</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>Wykonał</nameOnSource>
+<nameOnTarget>Została wykonana przez</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D0B58318-35E9-0F46-99C7-90B888E0FC51</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DE560925-7B46-4247-B524-205F8D7F404E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

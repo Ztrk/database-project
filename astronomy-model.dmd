@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="astronomy-model" id="2330801B-93E8-ED9F-13F1-4515DFEA8C1D" version="3.5">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 17:44:22 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>2330801B-93E8-ED9F-13F1-4515DFEA8C1D</designId>
+</OSDM_Design>

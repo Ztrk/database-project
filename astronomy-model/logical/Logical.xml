@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="853AB8A9-0404-D7F5-FFC9-068F92C23F4F" mainViewID="4E1B23F7-5E38-3470-66B5-B6D9389AB5BE">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 17:44:22 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

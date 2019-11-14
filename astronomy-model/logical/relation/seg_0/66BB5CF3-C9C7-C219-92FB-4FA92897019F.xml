@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Gwiazda znajduje się w konstelacji" directorySegmentName="seg_0" id="66BB5CF3-C9C7-C219-92FB-4FA92897019F">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 19:31:02 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<sourcePk>AB894E7B-F7E5-2376-2AEF-EF928E1ECF75</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>Znajduje się w niej</nameOnSource>
+<nameOnTarget>Leży w</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E8B4E592-DAF7-DBEB-8CE3-D55C6509026E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>87B1CB9F-7859-A445-4516-7872871C0538</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Odkrycie" directorySegmentName="seg_0" id="CC721202-DDF1-483C-61B1-735EE2A53D97">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 18:34:28 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<sourcePk>F71BE1F5-EE08-BBB1-1DF3-241B9A32F9A6</sourcePk>
+<targetPk>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</targetPk>
+<identifying>false</identifying>
+<nameOnTarget>Został odkryty</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DE560925-7B46-4247-B524-205F8D7F404E</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>67DF3517-1C8C-9A9F-5BFC-46B731276258</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
