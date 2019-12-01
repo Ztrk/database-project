@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D3BD04D-3E24-7A43-6798-04553FE80F0C" name="Katalog">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>7E7063B1-04A5-CEA2-6197-D95B2DCFCFB5</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="CB1BCCB6-50D6-483D-8810-88A441741E32">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>4B0962D6-F675-C120-460F-1663B4C4994D</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Skrót" id="980A4E9E-A2C2-BC56-C9F7-33723EA4BA79">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>EC7957C1-8B7A-FB37-FB96-9F796717E323</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rok_wydania" id="77CB2F37-D5F4-A978-A910-F7A29A15C89D">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>7B704FC8-5764-02A3-DCFF-4F31F4822785</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E859962-9A38-991E-4FDC-0C8FCA29F9BB" name="Katalog_PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>D0691913-0C3C-2369-5849-061749D42C77</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB1BCCB6-50D6-483D-8810-88A441741E32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

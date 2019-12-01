@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7026B234-CB8B-D8F6-00BE-DB878CFF4FCD" name="Obiekt_w_katalogu">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Obiekt_astronomiczny" id="A52E4932-D337-54DB-C56B-5050CDBF1539">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="782DC3A6-6420-23AF-4927-C648618CDE6B" referredColumn="5CF05946-9F5E-D00D-63DC-EE2F2575D418"/>
+</associations>
+</Column>
+<Column name="Katalog" id="67467F43-8E9F-2B51-2635-056C7B28DBFE">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="020F49F3-D571-4019-0876-E2FA52A3E577" referredColumn="CB1BCCB6-50D6-483D-8810-88A441741E32"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0E76C1D0-7610-731C-5F30-5D72B5042908" name="Obiekt_należy_do_katalogu_PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A52E4932-D337-54DB-C56B-5050CDBF1539"/>
+<colUsage columnID="67467F43-8E9F-2B51-2635-056C7B28DBFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50281125-86C4-9AC9-8970-769455D59878" name="Obiekt_należy_do_katalogu_Obiekt_astronomiczny_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>4C3F0087-728E-4FBC-6C46-E3903C470CC5</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A52E4932-D337-54DB-C56B-5050CDBF1539"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAADE77E-3FA2-0E8E-00B6-1D0205E451E0" name="Obiekt_należy_do_katalogu_Katalog_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>4C3F0087-728E-4FBC-6C46-E3903C470CC5</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67467F43-8E9F-2B51-2635-056C7B28DBFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

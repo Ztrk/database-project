@@ -57,19 +57,6 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Nazwa" id="602186B6-1661-299F-4D9F-32AD5153BAFE">
-<createdBy>marcin</createdBy>
-<createdTime>2019-11-14 19:13:00 UTC</createdTime>
-<generatorID>AF12D360-A6D0-B7AE-665A-0D88BB132812</generatorID>
-<ownerDesignName>astronomy-model</ownerDesignName>
-<engineerTo>
-<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="Długość węzłą wstępującego" id="3BAB8044-D3FC-300F-E842-FFB113F018BA">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:13:23 UTC</createdTime>
@@ -127,6 +114,19 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nazwa" id="602186B6-1661-299F-4D9F-32AD5153BAFE">
+<createdBy>marcin</createdBy>
+<createdTime>2019-11-14 19:13:00 UTC</createdTime>
+<generatorID>AF12D360-A6D0-B7AE-665A-0D88BB132812</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

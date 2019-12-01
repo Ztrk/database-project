@@ -1,0 +1,205 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="43EC3ADF-F4E9-517A-6C6A-BF45DAA5BB16" name="Małe_ciała">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>335F843B-BE9C-B2F5-3D2D-15976A38B4EA</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<ordsAlias>male_ciala</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="3D130B1B-2BAE-C81D-9135-FEA6F8DA4498">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>310C9B3D-62FD-4877-8981-7FEDA45A3400</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D691D6B9-4743-7DC6-44C1-37458E8D733F" referredColumn="5CF05946-9F5E-D00D-63DC-EE2F2575D418"/>
+</associations>
+</Column>
+<Column name="Okres" id="CBF2DFEA-5D80-A9EA-11E9-C4BB575DB572">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>3E1759EE-D786-6235-AA04-A9EF2FE8070C</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ekscentryczność" id="34B29A8F-D383-F5D9-AB24-7A3AE5EABD53">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>999EAB0A-960A-C2F5-AF1D-B9EFE9FE1321</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Półoś_wielka" id="F61B64E4-3178-D12D-F172-4352D8C01FCC">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>3D11987E-A3D5-040C-BF88-EF9E20A1CA14</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Inklinacja" id="EF477F03-EC75-AB58-2AFB-7CA2CFB8836C">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>331ED776-97F6-7481-A802-D7F9DDBBC850</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Długość_węzłą_wstępującego" id="000A2478-0CDB-C81D-E7A4-A5A9B7ADCFA2">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>3BAB8044-D3FC-300F-E842-FFB113F018BA</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Argument_perycentrum" id="CBA65152-8057-9261-ED07-572CA611DB63">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>F647C276-5EE5-251F-C99C-3B148BAECFCA</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Anomalia_średnia" id="7354F159-A465-FB10-C34B-59F166CF1176">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>213F1541-2B0D-312D-F4A1-45B0520E72CF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Epoch" id="DE018EDF-9D94-39B8-95DB-D7B1CC35148A">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>7DD02D3D-9AA9-D12D-AFA4-20DEB829347F</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Średnica" id="66E8688E-B7CD-548D-EC19-7DC0C3863FED">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>AF5D7D44-F5FE-E892-EFDD-39E0F01B8688</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Masa" id="6823584A-A78F-93AA-CF7E-3996A2424FF5">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>8087D18A-6477-BB5B-D80C-06BDBB34D72F</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Typ" id="496AE54C-D812-D488-109D-D727CCD1CBB8">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 22:05:05 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Orbitowana_gwiazda" id="CC188039-BE74-2C4A-5A04-E588F84ED4CE">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>602186B6-1661-299F-4D9F-32AD5153BAFE</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B2EC138F-4C06-0DF6-7DA9-1D785CD3A871" referredColumn="E54227C7-05D4-5251-BC84-E86A1B018760"/>
+</associations>
+</Column>
+<Column name="Orbitowane_małe_ciało" id="025DF80D-B7C0-8DD5-1167-4D4C72F1D031">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 22:08:39 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EA47F3EF-0D29-23B9-6DF3-41D8DD76E68C" referredColumn="3D130B1B-2BAE-C81D-9135-FEA6F8DA4498"/>
+</associations>
+</Column>
+<Column name="Średnia_temperatura" id="90C248D6-F853-5A39-8B93-06BE91E94FEC">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 22:09:14 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C447926B-939E-1CFC-12AC-A1064A76910C" name="Małe_ciała_PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D130B1B-2BAE-C81D-9135-FEA6F8DA4498"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DBD33ED-9ADD-2960-E9D0-88059916E0AB" name="Małe_ciała_Obiekt_astronomiczny_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>15B1FC59-9D59-5340-DC5D-98B4C20A6043</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D130B1B-2BAE-C81D-9135-FEA6F8DA4498"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="219EEE1F-F3C9-D0A0-0BEA-623814ABAD00" name="Małe_ciała_Gwiazda_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>AF12D360-A6D0-B7AE-665A-0D88BB132812</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CC188039-BE74-2C4A-5A04-E588F84ED4CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23A339FF-E34C-4F27-E75D-2648707250B0" name="Małe_ciała_Małe_ciała_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 22:08:39 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="025DF80D-B7C0-8DD5-1167-4D4C72F1D031"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

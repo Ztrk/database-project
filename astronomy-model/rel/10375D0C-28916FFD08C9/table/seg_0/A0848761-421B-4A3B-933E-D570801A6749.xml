@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A0848761-421B-4A3B-933E-D570801A6749" name="Konstelacja">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>E8B4E592-DAF7-DBEB-8CE3-D55C6509026E</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Skrót_IAU" id="378DFCE1-914F-A458-DDB5-5CDB22F5B010">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>FB974B9E-046F-1DE8-88A2-B6A915953915</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nazwa" id="FB54228B-94C2-9D93-958E-2627044FB5A2">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>C1FBD7B9-B9D4-4958-5A9C-9ADB3A146CB7</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Najjaśniejsza_gwiazda" id="A815F3C8-4DF9-CACF-7DA7-C49AB7F01997">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>7BDDA034-4E5C-0BD0-27DA-E655AE931149</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7310F0A1-A6E6-BDE4-F3EA-CC937033085A" name="Konstelacja_PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>AB894E7B-F7E5-2376-2AEF-EF928E1ECF75</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="378DFCE1-914F-A458-DDB5-5CDB22F5B010"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

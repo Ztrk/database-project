@@ -1,0 +1,180 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BA9F0B0C-9296-0679-CAD5-47BCEA357B2C" name="Gwiazda">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>87B1CB9F-7859-A445-4516-7872871C0538</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="E54227C7-05D4-5251-BC84-E86A1B018760">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>310C9B3D-62FD-4877-8981-7FEDA45A3400</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="525E3D6E-8528-4EA4-D5E9-7BF245A5689C" referredColumn="5CF05946-9F5E-D00D-63DC-EE2F2575D418"/>
+</associations>
+</Column>
+<Column name="Typ_widmowy" id="E4E6287B-AAC2-21F9-15B1-29A5F7605F96">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>F9EA2F01-ECF7-FF50-6AAF-C2F790B2906C</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rektasencja" id="DD51046D-7181-0673-6F3C-08687287B1F2">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>C73F5B6A-905C-F095-231A-9086DFF9CE10</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Deklinacja" id="7A2F02AC-D510-A788-2C60-44EE1AEA4B89">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>D68B6FB7-8577-0D41-E6C8-28650F83D3FA</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Wielkość_gwiazdowa_obserwowalna" id="C8837690-D8F0-81FB-664B-077E4C878E9B">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>3E59C76F-494F-1FED-DBEC-2512CB4F63C8</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Wielkość_gwiazdowa_absolutna" id="8153FDD6-C00C-068E-42FE-DDEA830B5D64">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>60541DC5-D618-D78B-BE98-BE11DA209DBC</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Paralaksa" id="E56DF3BE-69D0-379C-0A1B-A56FC797EA18">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>E01E7E5A-61A2-082E-97C1-77209EA43E4B</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dystans" id="B61B2A9A-C34F-6D32-58CC-31C0D733F558">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>333C002C-9BE4-DACA-CD83-7662FA62AEFA</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Masa" id="1ED2F366-1648-DD1E-7655-6E220F8CC517">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>9046F498-3BCA-BE8E-E914-53F8CD7AFEC8</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Promień" id="B9CF02D6-9DF8-27DD-933E-4F6016130E5C">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>F856EC8A-184B-4FE4-DFA9-625806787E2D</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Galaktyka" id="3F9AB01C-98A2-0406-6803-CA2AFCC96A8D">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>A5934602-2232-09AB-79E8-07B62B401E14</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86B7D8A9-6A8F-7B8B-5E3A-BFB60401AE41" referredColumn="95B0F28F-6683-1E1D-7D03-40B8DAAEEBA3"/>
+</associations>
+</Column>
+<Column name="Konstelacja" id="15B9D080-1AC1-2839-1514-833D8888CCE2">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>B5E21E2B-457B-596C-D49D-4216F1A04F58</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="765624A9-A1D8-7EA6-3850-CB6729FD3747" referredColumn="378DFCE1-914F-A458-DDB5-5CDB22F5B010"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7DDD348-C27F-966F-1C34-DB8FFA554ABB" name="Gwiazda_PK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E54227C7-05D4-5251-BC84-E86A1B018760"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11D9F742-E8C4-FBC9-E4CC-2419BF16604B" name="Gwiazda_Obiekt_astronomiczny_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>A5222012-5950-23CC-8612-4DB19B2FA2F1</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E54227C7-05D4-5251-BC84-E86A1B018760"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2340DC47-75A1-45C0-80EE-164AD2897D75" name="Gwiazda_Galaktyka_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>1B6CAD2F-79AC-712D-AFC7-0158460ECD22</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F9AB01C-98A2-0406-6803-CA2AFCC96A8D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC3442B2-56B5-3E2E-8AE0-4654B4C92DDC" name="Gwiazda_Konstelacja_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>66BB5CF3-C9C7-C219-92FB-4FA92897019F</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15B9D080-1AC1-2839-1514-833D8888CCE2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

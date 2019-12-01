@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="020F49F3-D571-4019-0876-E2FA52A3E577" containerWithKeyObject="7026B234-CB8B-D8F6-00BE-DB878CFF4FCD" localFKIndex="AAADE77E-3FA2-0E8E-00B6-1D0205E451E0" name="Obiekt_należy_do_katalogu_Katalog_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>4C3F0087-728E-4FBC-6C46-E3903C470CC5</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Katalog</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2D3BD04D-3E24-7A43-6798-04553FE80F0C</referredTableID>
+<keyObject>4E859962-9A38-991E-4FDC-0C8FCA29F9BB</keyObject>
+<referredKeyID>4E859962-9A38-991E-4FDC-0C8FCA29F9BB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Nazwa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

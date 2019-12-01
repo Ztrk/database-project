@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0D34465B-05EB-6306-FB1C-F3D49EAE1E92" containerWithKeyObject="4EEFE0F7-5187-F0CF-3D85-2EA417777A69" localFKIndex="F39DA5AF-A671-6F53-FD0A-0EBC581F9AA0" name="Obserwacja_Obiekt_astronomiczny_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>0A7CD3A1-53C7-B526-B174-CC29854636B4</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Obiekt_astronomiczny</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>32E2961F-F4C7-5A51-A9EB-696CC627591E</referredTableID>
+<keyObject>57CDDBB5-B333-A6E4-96E1-35D1AFAF70A7</keyObject>
+<referredKeyID>57CDDBB5-B333-A6E4-96E1-35D1AFAF70A7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Nazwa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

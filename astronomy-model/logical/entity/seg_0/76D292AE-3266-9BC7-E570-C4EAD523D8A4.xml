@@ -16,13 +16,14 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Inklinacja" id="CED95A6F-8DE5-F79B-7AA6-4095979AB955">
+<Attribute name="Okres orbitalny" id="C3FABA08-441C-AED5-6E42-8509F63F217F">
 <createdBy>marcin</createdBy>
-<createdTime>2019-11-14 18:48:04 UTC</createdTime>
+<createdTime>2019-11-14 18:48:27 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -46,14 +47,13 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Okres orbitalny" id="C3FABA08-441C-AED5-6E42-8509F63F217F">
+<Attribute name="Inklinacja" id="CED95A6F-8DE5-F79B-7AA6-4095979AB955">
 <createdBy>marcin</createdBy>
-<createdTime>2019-11-14 18:48:27 UTC</createdTime>
+<createdTime>2019-11-14 18:48:04 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

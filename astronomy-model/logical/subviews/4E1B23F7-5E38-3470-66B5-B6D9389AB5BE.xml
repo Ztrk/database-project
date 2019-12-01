@@ -156,7 +156,7 @@
 </sourceLabel>
 <targetLabel class="oracle.dbtools.crest.model.design.Label">
 <site>2</site>
-<labelBounds x="609" y="154" width="53" height="20"/>
+<labelBounds x="609" y="154" width="51" height="20"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </targetLabel>
@@ -230,13 +230,13 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="416" y="306" width="53" height="30"/>
+<labelBounds x="393" y="321" width="53" height="15"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
 <points>
-<point x="416" y="342"/>
-<point x="417" y="286"/>
+<point x="393" y="342"/>
+<point x="393" y="286"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVInheritanceRelation" oid="83672302-8403-67A7-429C-2115DFFA7B84" otype="Hierarchy relation" vid_source="06C0DEF0-4580-7DBC-734A-54F6D28E107B" vid_target="866A7B77-0B17-4D09-8EA2-56C29D4D5973">
@@ -256,7 +256,7 @@
 </sourceLabel>
 <targetLabel class="oracle.dbtools.crest.model.design.Label">
 <site>2</site>
-<labelBounds x="785" y="508" width="49" height="30"/>
+<labelBounds x="785" y="508" width="49" height="18"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </targetLabel>
@@ -291,7 +291,7 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="463" y="377" width="53" height="30"/>
+<labelBounds x="463" y="392" width="50" height="15"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
@@ -391,4 +391,10 @@
 </points>
 </Connector>
 </connectors>
+<arcs>
+<Arc class="oracle.dbtools.crest.swingui.logical.TVArc" oid="500059E7-FD23-FD51-3F4B-D4CCFD090F9D" otype="Arc" vid="D62773B0-11A0-06D8-5EB7-A2D84FE28AF7">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="313" y="322" width="160" height="171"/>
+</Arc>
+</arcs>
 </Diagram>

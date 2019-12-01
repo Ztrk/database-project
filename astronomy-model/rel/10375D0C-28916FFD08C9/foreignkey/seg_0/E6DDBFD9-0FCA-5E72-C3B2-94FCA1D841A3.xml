@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E6DDBFD9-0FCA-5E72-C3B2-94FCA1D841A3" containerWithKeyObject="4EEFE0F7-5187-F0CF-3D85-2EA417777A69" localFKIndex="0A149E49-81E2-F9E5-8454-FB3168EA7D7F" name="Obserwacja_Obserwatorium_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 15:05:33 UTC</createdTime>
+<generatorID>E0DC8D83-D342-E727-2103-85DB479BE829</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Obserwatorium</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>875BD7BC-5307-7FC5-9F6C-C11828266A90</referredTableID>
+<keyObject>2052A0BB-4310-33DD-B59E-C6862343B9EA</keyObject>
+<referredKeyID>2052A0BB-4310-33DD-B59E-C6862343B9EA</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Kod_IAU</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
