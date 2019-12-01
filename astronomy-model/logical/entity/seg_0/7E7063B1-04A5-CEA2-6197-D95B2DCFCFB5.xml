@@ -25,6 +25,16 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Skrót" id="EC7957C1-8B7A-FB37-FB96-9F796717E323">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 12:39:02 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Rok wydania" id="7B704FC8-5764-02A3-DCFF-4F31F4822785">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:13:01 UTC</createdTime>

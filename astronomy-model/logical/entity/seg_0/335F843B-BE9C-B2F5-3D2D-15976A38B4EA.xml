@@ -34,7 +34,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -45,7 +44,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -56,7 +54,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -80,7 +77,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -91,7 +87,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -102,7 +97,36 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Epoch" id="7DD02D3D-9AA9-D12D-AFA4-20DEB829347F">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 11:52:42 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Średnica" id="AF5D7D44-F5FE-E892-EFDD-39E0F01B8688">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 13:13:33 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Masa" id="8087D18A-6477-BB5B-D80C-06BDBB34D72F">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-01 13:16:31 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<engineerTo>
+<item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
+</engineerTo>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

@@ -23,7 +23,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -34,7 +33,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -45,7 +43,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -56,7 +53,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -67,7 +63,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -78,7 +73,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -89,7 +83,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -100,7 +93,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

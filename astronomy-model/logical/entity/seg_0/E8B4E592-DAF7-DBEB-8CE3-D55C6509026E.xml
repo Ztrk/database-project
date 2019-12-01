@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Sktór IAU" id="FB974B9E-046F-1DE8-88A2-B6A915953915">
+<Attribute name="Skrót IAU" id="FB974B9E-046F-1DE8-88A2-B6A915953915">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:12:10 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>

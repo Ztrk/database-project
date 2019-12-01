@@ -23,29 +23,26 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Apogeum" id="45AE7F4F-BAF4-BB07-297D-276ABA01991C">
+<Attribute name="Apocentrum" id="45AE7F4F-BAF4-BB07-297D-276ABA01991C">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:48:07 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Perygeum" id="323009BF-ECF2-4724-6EB5-2A3AB7A789C0">
+<Attribute name="Perycentrum" id="323009BF-ECF2-4724-6EB5-2A3AB7A789C0">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:48:12 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -67,7 +64,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -89,7 +85,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -100,7 +95,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

@@ -16,14 +16,15 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Średni promień" id="1D009549-DE93-C782-099E-40F21191E836">
+<Attribute name="Nazwa" id="7F24B8B9-2DA1-83DA-D102-95690D49DADD">
 <createdBy>marcin</createdBy>
-<createdTime>2019-11-14 19:04:02 UTC</createdTime>
+<createdTime>2019-11-18 14:21:14 UTC</createdTime>
+<generatorID>36F0C1A8-07E7-1D64-260A-81F150A06A32</generatorID>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
+<referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

@@ -23,7 +23,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -34,7 +33,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -45,7 +43,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -56,7 +53,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -67,7 +63,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -89,7 +84,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -100,7 +94,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -111,7 +104,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -127,7 +119,7 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Sktór IAU" id="B5E21E2B-457B-596C-D49D-4216F1A04F58">
+<Attribute name="Skrót IAU" id="B5E21E2B-457B-596C-D49D-4216F1A04F58">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:31:02 UTC</createdTime>
 <generatorID>66BB5CF3-C9C7-C219-92FB-4FA92897019F</generatorID>

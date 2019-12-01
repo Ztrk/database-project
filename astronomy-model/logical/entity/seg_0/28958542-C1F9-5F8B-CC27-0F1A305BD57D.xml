@@ -23,7 +23,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -56,7 +55,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -67,7 +65,6 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
@@ -97,7 +94,7 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Sktór IAU" id="4220D68E-E7D4-6890-3BD6-4F8D4DF5EF46">
+<Attribute name="Skrót IAU" id="4220D68E-E7D4-6890-3BD6-4F8D4DF5EF46">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:31:40 UTC</createdTime>
 <generatorID>94B7574E-9B98-AC00-2DCE-5C96F82CD2FC</generatorID>
