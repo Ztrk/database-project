@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="906DA776-8801-8992-5B14-8D035C5D59FE" containerWithKeyObject="96CD114B-4793-99B1-8A83-DF46121D7C60" localFKIndex="0CC07791-CF5B-2B09-4EC1-02642B97C9AA" name="Małe_ciała_Gwiazda_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>AF12D360-A6D0-B7AE-665A-0D88BB132812</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Gwiazda</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3247C382-6FEC-711C-00B0-A1040C521724</referredTableID>
+<keyObject>A7E543F8-A66E-685F-3818-5F36D65B94DC</keyObject>
+<referredKeyID>A7E543F8-A66E-685F-3818-5F36D65B94DC</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>Nazwa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

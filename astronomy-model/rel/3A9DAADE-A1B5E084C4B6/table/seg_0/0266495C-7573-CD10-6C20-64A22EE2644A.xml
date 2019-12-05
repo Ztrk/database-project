@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0266495C-7573-CD10-6C20-64A22EE2644A" name="Grupa_galaktyk">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>3C9C9CE2-0F92-67DB-3F20-BC06882F5960</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="EBCEABA8-BCDA-16F4-A595-D77541258FDB">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>310C9B3D-62FD-4877-8981-7FEDA45A3400</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F0549B9-9EDC-FF12-981B-867B4FE6084D" referredColumn="2B918BD4-FF23-B6CD-903E-1E8B8765B665"/>
+</associations>
+</Column>
+<Column name="Rektasencja_[deg]" id="1279DB78-422A-6280-A0C1-A9641D468016">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>231DDE91-1735-7126-1117-86F46C445283</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Deklinacja_[deg]" id="A0E215E9-79AF-699D-B450-44A3A81FFBD1">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>52F39BE4-C995-878A-6A08-CAA8532D63D8</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dystans_[Mly]" id="1DFA8B19-8963-AB28-7AA9-9BA3A9BFC668">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>AB832703-8FD4-8481-23F9-35E807339D80</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RV_[km/s]" id="5BC4B19D-9C23-A322-97CF-6D76D724228A">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>788B76D0-2CE6-8A10-5944-53CDF80E8C7E</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DD52A4DB-EB48-2BC3-62FD-62A896A31881" name="Grupa_galaktyk_PK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EBCEABA8-BCDA-16F4-A595-D77541258FDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F26C2A78-B80F-2BF5-8D55-BECDB4B8134D" name="Grupa_galaktyk_Obiekt_astronomiczny_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>2065453C-DB85-8BCA-379D-6E138B6AB557</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EBCEABA8-BCDA-16F4-A595-D77541258FDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

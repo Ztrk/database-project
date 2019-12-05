@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92F797C1-6537-A94A-EF90-2E3E098D042A" name="Obserwatorium">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>86114EA6-47F4-1A4E-81D9-077E1EE529D0</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Kod_IAU" id="FC051797-A1B6-DF1D-C29C-00C81B5F256F">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>D68CE174-AF19-55B6-7B15-39AD139723D9</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6 BYTE</dataTypeSize>
+<ownDataTypeParameters>6 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Szerokość_geograficzna" id="EA2BFC76-F5A0-29E8-EC39-F0875E3E62AE">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>551FD8BD-8675-65BB-553F-E3B08CABFF13</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Długość_geograficzna" id="4BA7EC0F-A55A-941A-0951-AA594FD9B5A7">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>3E4F8260-E67B-6A19-660C-BE4BC53A9E96</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kraj" id="C2069552-3FA4-1D55-F05B-F3AA0739E427">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>C1F6804E-4D12-C0E1-E98B-6BCD4154F5A6</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pełna_nazwa/instytucja" id="EB8D2D40-0C9B-4E45-19A4-6DFD8C58A49F">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>DE07BDDB-2FDC-CCF6-D8ED-07E712E2BF2E</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>70 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nazwa_w_MPC" id="06568105-F494-C911-27EA-F8371AE7FC09">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>E4DBAEAB-365A-8F2F-227F-0A533E2671B1</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="06BC41BE-85BF-DF79-60D0-5F672E25FAFC" name="Obserwatorium_PK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>06D49A09-AA43-F9FF-B5D8-F91C5438E779</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC051797-A1B6-DF1D-C29C-00C81B5F256F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

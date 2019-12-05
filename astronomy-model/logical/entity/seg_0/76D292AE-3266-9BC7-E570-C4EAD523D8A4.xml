@@ -16,7 +16,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Okres orbitalny" id="C3FABA08-441C-AED5-6E42-8509F63F217F">
+<Attribute name="Okres orbitalny [min]" id="C3FABA08-441C-AED5-6E42-8509F63F217F">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:48:27 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -24,38 +24,54 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Apocentrum" id="45AE7F4F-BAF4-BB07-297D-276ABA01991C">
+<Attribute name="Apocentrum [km]" id="45AE7F4F-BAF4-BB07-297D-276ABA01991C">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:48:07 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Perycentrum" id="323009BF-ECF2-4724-6EB5-2A3AB7A789C0">
+<Attribute name="Perycentrum [km]" id="323009BF-ECF2-4724-6EB5-2A3AB7A789C0">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:48:12 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Inklinacja" id="CED95A6F-8DE5-F79B-7AA6-4095979AB955">
+<Attribute name="Inklinacja [deg]" id="CED95A6F-8DE5-F79B-7AA6-4095979AB955">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:48:04 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Data startu" id="3E47387C-5C37-5F1E-79C4-46D127FC4417">
 <createdBy>marcin</createdBy>
@@ -64,7 +80,9 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Data zniszczenia" id="209FAD58-7730-64D8-E45A-E33006379B96">
@@ -75,7 +93,9 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Kraj" id="E7C4C17A-AE6A-0C4D-CB26-A7191B04C5C7">
@@ -85,8 +105,11 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Rodzaj" id="4AB1667C-9CA2-8C21-8C1B-3D88B8F9EAA6">
 <createdBy>marcin</createdBy>
@@ -95,8 +118,11 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Nazwa" id="5DB44C44-FDCB-4FB6-CC84-19758D37E3BE">
 <createdBy>marcin</createdBy>
@@ -108,8 +134,11 @@
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>70 BYTE,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Nazwa1" id="53B693D6-54AE-E4E4-BC7F-E72EF03812F5">
 <createdBy>marcin</createdBy>
@@ -121,8 +150,11 @@
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>70 BYTE,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

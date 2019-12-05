@@ -16,7 +16,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Okres" id="3E1759EE-D786-6235-AA04-A9EF2FE8070C">
+<Attribute name="Okres [dni]" id="3E1759EE-D786-6235-AA04-A9EF2FE8070C">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:41:42 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -24,8 +24,12 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Ekscentryczność" id="999EAB0A-960A-C2F5-AF1D-B9EFE9FE1321">
 <createdBy>marcin</createdBy>
@@ -34,58 +38,82 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>6</dataTypeScale>
+<ownDataTypeParameters>,7,6</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Półoś wielka" id="3D11987E-A3D5-040C-BF88-EF9E20A1CA14">
+<Attribute name="Półoś wielka [au]" id="3D11987E-A3D5-040C-BF88-EF9E20A1CA14">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:41:56 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Inklinacja" id="331ED776-97F6-7481-A802-D7F9DDBBC850">
+<Attribute name="Inklinacja [deg]" id="331ED776-97F6-7481-A802-D7F9DDBBC850">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:42:05 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Długość węzłą wstępującego" id="3BAB8044-D3FC-300F-E842-FFB113F018BA">
+<Attribute name="Długość węzłą wstępującego [deg]" id="3BAB8044-D3FC-300F-E842-FFB113F018BA">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:13:23 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Argument perycentrum" id="F647C276-5EE5-251F-C99C-3B148BAECFCA">
+<Attribute name="Argument perycentrum [deg]" id="F647C276-5EE5-251F-C99C-3B148BAECFCA">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:13:32 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Anomalia średnia" id="213F1541-2B0D-312D-F4A1-45B0520E72CF">
+<Attribute name="Anomalia średnia [deg]" id="213F1541-2B0D-312D-F4A1-45B0520E72CF">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:13:39 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Epoch" id="7DD02D3D-9AA9-D12D-AFA4-20DEB829347F">
 <createdBy>marcin</createdBy>
@@ -94,28 +122,41 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Średnica" id="AF5D7D44-F5FE-E892-EFDD-39E0F01B8688">
+<Attribute name="Średnica [km]" id="AF5D7D44-F5FE-E892-EFDD-39E0F01B8688">
 <createdBy>marcin</createdBy>
 <createdTime>2019-12-01 13:13:33 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Masa" id="8087D18A-6477-BB5B-D80C-06BDBB34D72F">
+<Attribute name="Masa [kg]" id="8087D18A-6477-BB5B-D80C-06BDBB34D72F">
 <createdBy>marcin</createdBy>
 <createdTime>2019-12-01 13:16:31 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Nazwa" id="602186B6-1661-299F-4D9F-32AD5153BAFE">
 <createdBy>marcin</createdBy>
@@ -127,7 +168,10 @@
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

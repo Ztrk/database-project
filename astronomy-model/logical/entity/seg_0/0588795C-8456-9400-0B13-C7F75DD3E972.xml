@@ -16,15 +16,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Średnia temperatura" id="98FD26C1-2CFC-ECD1-043A-436452E42BD9">
+<Attribute name="Średnia temperatura [K]" id="98FD26C1-2CFC-ECD1-043A-436452E42BD9">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 19:04:31 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,*,3</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

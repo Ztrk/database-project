@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C9597343-B711-B92E-9539-6B9854534856" name="Konstelacja">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>E8B4E592-DAF7-DBEB-8CE3-D55C6509026E</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Skrót_IAU" id="E5BDB77B-A0BB-4CDF-CAA4-6E417406A932">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>FB974B9E-046F-1DE8-88A2-B6A915953915</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nazwa" id="B7922135-8B75-D061-B2FA-7D8B61F3F86D">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>C1FBD7B9-B9D4-4958-5A9C-9ADB3A146CB7</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Najjaśniejsza_gwiazda" id="4F7A94DB-A237-2CA9-D489-8F7503981238">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>7BDDA034-4E5C-0BD0-27DA-E655AE931149</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="760AE1ED-0007-BA85-C9E2-499638D0747B" name="Konstelacja_PK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>AB894E7B-F7E5-2376-2AEF-EF928E1ECF75</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5BDB77B-A0BB-4CDF-CAA4-6E417406A932"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
