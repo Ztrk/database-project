@@ -1,0 +1,202 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45AE07E0-ED47-9637-A2E0-0EF75F154C5E" name="Galaktyka">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>28958542-C1F9-5F8B-CC27-0F1A305BD57D</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="06588DEE-46E9-B4D8-630A-049D5E132E74">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>310C9B3D-62FD-4877-8981-7FEDA45A3400</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D8FA0A55-B8BF-A531-BCB1-B859BB26623C" referredColumn="2B918BD4-FF23-B6CD-903E-1E8B8765B665"/>
+</associations>
+</Column>
+<Column name="Typ" id="40D55E56-8ACC-C20D-96AD-BF89A697C0B5">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>C880224A-D361-9087-7C9E-393F4A4F739E</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dystans_[Mly]" id="20486946-FA44-FFCD-2DDA-E660BC500D88">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>CEE6FE9E-019A-CE26-2124-252623872398</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Wielkość_gwiazdowa_(obserwowalna)" id="B2B57F28-70C9-049B-DEBF-01E02D37B9DA">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>FFFDFDCE-29F8-C771-0C66-6D8C2894C413</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,6,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Wielkość_gwiazdowa_(absolutna)" id="10CE2002-F0FE-E9E1-9F12-1921B4386670">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>DA51DCD7-7EC9-B09B-A5EF-5CF42DF60EAE</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,6,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Średnica_[ly]" id="BC73F0E4-822F-9E81-B76F-0E92BFD359E7">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>725161A2-209B-CB82-08C2-C1DA741504AE</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Grupa_galaktyk_Nazwa" id="FBBC85EA-5B75-56F8-5274-8697733C7182">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>216C6903-87B9-DF92-FE22-534320D84D78</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E0319AF-915A-09A9-958C-399C78C7BE1C" referredColumn="EBCEABA8-BCDA-16F4-A595-D77541258FDB"/>
+</associations>
+</Column>
+<Column name="Galaktyka_Nazwa" id="2918989D-D55E-77FF-623B-C53F299BC51B">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>7E22D989-6609-7352-33C2-2435EEA76A44</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8E4CF0D-8892-B7CD-C206-E760EAC6E170" referredColumn="06588DEE-46E9-B4D8-630A-049D5E132E74"/>
+</associations>
+</Column>
+<Column name="Konstelacja_Skrót_IAU" id="F3DB3876-EADA-615F-E223-3A5A7F6AAB26">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>52EDDB7E-332A-CBEA-8175-0E3A45A9565A</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9540E05C-16E7-B1B0-03AA-70F175C04C43" referredColumn="E5BDB77B-A0BB-4CDF-CAA4-6E417406A932"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5A96410D-49FE-762D-EAA1-4BEFB5CE386F" name="Galaktyka_PK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06588DEE-46E9-B4D8-630A-049D5E132E74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8F26116-AFD9-CC7F-46AB-243DEEE3EF0F" name="Galaktyka_Obiekt_astronomiczny_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>DEBA0353-9DA3-9B34-83F2-D679BD91B51B</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06588DEE-46E9-B4D8-630A-049D5E132E74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C58E3EE-9CF6-417B-996A-4D1FEA55B598" name="Galaktyka_Galaktyka_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>2CFC19DB-4939-688F-7A59-28ED6A40F406</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2918989D-D55E-77FF-623B-C53F299BC51B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="68199A6B-7DBA-EACD-8AF4-D0FFD29C1843" name="Galaktyka_Grupa_galaktyk_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>E0B102C9-6D8F-6C32-0EC1-DD9F35789C42</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FBBC85EA-5B75-56F8-5274-8697733C7182"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9E64BD9-1932-9DCE-58B4-DECA42D13F58" name="Galaktyka_Konstelacja_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>94B7574E-9B98-AC00-2DCE-5C96F82CD2FC</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3DB3876-EADA-615F-E223-3A5A7F6AAB26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

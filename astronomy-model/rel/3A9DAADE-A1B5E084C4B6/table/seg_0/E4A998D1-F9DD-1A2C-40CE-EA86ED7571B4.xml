@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E4A998D1-F9DD-1A2C-40CE-EA86ED7571B4" name="Kometa">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>F9A8D3F3-DFA2-34E5-F19E-8071ED573D91</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="498B1362-0994-5CD7-3A57-01E6560F8964">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>310C9B3D-62FD-4877-8981-7FEDA45A3400</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB1FB492-4F6B-669C-9ABD-EB6766AF927E" referredColumn="C7C3CE7F-FBC6-5B25-3343-58FB022DDABA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="207B4BA7-65FA-D7BB-3D40-0D8BCC8EAB4D" name="Kometa_PK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="498B1362-0994-5CD7-3A57-01E6560F8964"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B822594-86DC-FDA5-3FCD-879BA048D932" name="Kometa_Małe_ciała_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>4D197967-DF28-C8A9-3A97-C282D1C92005</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="498B1362-0994-5CD7-3A57-01E6560F8964"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

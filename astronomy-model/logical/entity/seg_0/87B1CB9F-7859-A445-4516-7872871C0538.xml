@@ -23,28 +23,39 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Rektasencja" id="C73F5B6A-905C-F095-231A-9086DFF9CE10">
+<Attribute name="Rektasencja [deg]" id="C73F5B6A-905C-F095-231A-9086DFF9CE10">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:46:00 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Deklinacja" id="D68B6FB7-8577-0D41-E6C8-28650F83D3FA">
+<Attribute name="Deklinacja [deg]" id="D68B6FB7-8577-0D41-E6C8-28650F83D3FA">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:46:06 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Wielkość gwiazdowa (obserwowalna)" id="3E59C76F-494F-1FED-DBEC-2512CB4F63C8">
 <createdBy>marcin</createdBy>
@@ -53,8 +64,12 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,6,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Wielkość gwiazdowa (absolutna)" id="60541DC5-D618-D78B-BE98-BE11DA209DBC">
 <createdBy>marcin</createdBy>
@@ -63,10 +78,14 @@
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,6,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Paralaksa" id="E01E7E5A-61A2-082E-97C1-77209EA43E4B">
+<Attribute name="Paralaksa [mas]" id="E01E7E5A-61A2-082E-97C1-77209EA43E4B">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:46:30 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -74,38 +93,54 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Dystans" id="333C002C-9BE4-DACA-CD83-7662FA62AEFA">
+<Attribute name="Dystans [ly]" id="333C002C-9BE4-DACA-CD83-7662FA62AEFA">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:46:36 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Masa" id="9046F498-3BCA-BE8E-E914-53F8CD7AFEC8">
+<Attribute name="Masa [M☉]" id="9046F498-3BCA-BE8E-E914-53F8CD7AFEC8">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:46:39 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Promień" id="F856EC8A-184B-4FE4-DFA9-625806787E2D">
+<Attribute name="Promień [R☉]" id="F856EC8A-184B-4FE4-DFA9-625806787E2D">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:46:43 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Nazwa" id="A5934602-2232-09AB-79E8-07B62B401E14">
 <createdBy>marcin</createdBy>
@@ -116,12 +151,15 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <referedAttribute>310C9B3D-62FD-4877-8981-7FEDA45A3400</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Skrót IAU" id="B5E21E2B-457B-596C-D49D-4216F1A04F58">
-<createdBy>marcin</createdBy>
-<createdTime>2019-11-14 19:31:02 UTC</createdTime>
+<Attribute name="Skrót IAU" id="AB751A51-F00E-891B-D20B-606227573119">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 03:13:48 UTC</createdTime>
 <generatorID>66BB5CF3-C9C7-C219-92FB-4FA92897019F</generatorID>
 <ownerDesignName>astronomy-model</ownerDesignName>
 <engineerTo>
@@ -129,7 +167,10 @@
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>FB974B9E-046F-1DE8-88A2-B6A915953915</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

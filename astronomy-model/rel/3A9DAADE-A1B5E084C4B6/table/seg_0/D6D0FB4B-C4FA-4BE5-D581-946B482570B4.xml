@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D6D0FB4B-C4FA-4BE5-D581-946B482570B4" name="Satelita">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>75580FCC-6308-4F8B-1D25-714819A45656</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nazwa" id="8AF542E0-6CB4-74E4-FE10-2FA654A8BBAF">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>310C9B3D-62FD-4877-8981-7FEDA45A3400</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5E95AF28-1C6E-9FBF-98B9-2723F24F2B9D" referredColumn="C7C3CE7F-FBC6-5B25-3343-58FB022DDABA"/>
+</associations>
+</Column>
+<Column name="Planeta_Nazwa" id="1FAD1B74-6D4B-1E83-A556-33B0BEF33D78">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>7F24B8B9-2DA1-83DA-D102-95690D49DADD</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC9DBD73-19B7-3B8F-38ED-A4C2875792CC" referredColumn="397DE058-D985-1B22-C1B6-B5F0893C8A91"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6FEFC8DF-6634-727F-ADEC-EC0709A16C31" name="Satelita_PK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:21 UTC</createdTime>
+<generatorID>211B6CE1-225E-BB9F-ACEE-7416DF6881FF</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AF542E0-6CB4-74E4-FE10-2FA654A8BBAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CCCB5A7A-D753-F4B3-716B-FD4412812293" name="Satelita_Małe_ciała_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>B4E0A2B6-9E87-3305-6BA9-C738D47FBA69</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AF542E0-6CB4-74E4-FE10-2FA654A8BBAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A9D2748-EF0A-DF61-4138-1B4B987B738E" name="Satelita_Planeta_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>36F0C1A8-07E7-1D64-260A-81F150A06A32</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1FAD1B74-6D4B-1E83-A556-33B0BEF33D78"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

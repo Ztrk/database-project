@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F235C4B0-4F46-BE52-DC00-29AAA6567A4C" containerWithKeyObject="3247C382-6FEC-711C-00B0-A1040C521724" localFKIndex="6B252C91-2E58-C1BF-85C3-DB29747967D2" name="Gwiazda_Galaktyka_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>1B6CAD2F-79AC-712D-AFC7-0158460ECD22</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Galaktyka</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>45AE07E0-ED47-9637-A2E0-0EF75F154C5E</referredTableID>
+<keyObject>5A96410D-49FE-762D-EAA1-4BEFB5CE386F</keyObject>
+<referredKeyID>5A96410D-49FE-762D-EAA1-4BEFB5CE386F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Nazwa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

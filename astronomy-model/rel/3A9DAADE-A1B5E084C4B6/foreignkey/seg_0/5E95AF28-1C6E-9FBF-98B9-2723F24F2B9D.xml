@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5E95AF28-1C6E-9FBF-98B9-2723F24F2B9D" containerWithKeyObject="D6D0FB4B-C4FA-4BE5-D581-946B482570B4" localFKIndex="CCCB5A7A-D753-F4B3-716B-FD4412812293" name="Satelita_Małe_ciała_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>B4E0A2B6-9E87-3305-6BA9-C738D47FBA69</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Małe_ciała</referredTableLongName>
+<arc>91C24C5F-10FF-C969-0DA5-3FA88E03AAA6</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>96CD114B-4793-99B1-8A83-DF46121D7C60</referredTableID>
+<keyObject>B023BF11-394C-0451-74EE-A621311EB88B</keyObject>
+<referredKeyID>B023BF11-394C-0451-74EE-A621311EB88B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Nazwa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

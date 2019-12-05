@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="AB4DD03A-0563-245E-C7A2-5C5ED63EDD5C" name="Arc_1">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<mandatory>false</mandatory>
+<table>639E2040-DAF3-5076-B9FA-362383C523A4</table>
+<fkeys>
+<fkeyID>1DBD0D5C-70C6-EB71-460B-91F69F9EEE76</fkeyID>
+<fkeyID>F13F21FF-B1AF-73FF-0363-07FA7C6E8AB6</fkeyID>
+</fkeys>
+</FKArc>

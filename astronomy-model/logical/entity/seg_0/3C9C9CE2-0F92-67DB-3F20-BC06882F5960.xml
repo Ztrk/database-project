@@ -16,7 +16,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Rektasencja" id="231DDE91-1735-7126-1117-86F46C445283">
+<Attribute name="Rektasencja [deg]" id="231DDE91-1735-7126-1117-86F46C445283">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:52:56 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -24,10 +24,14 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Deklinacja" id="52F39BE4-C995-878A-6A08-CAA8532D63D8">
+<Attribute name="Deklinacja [deg]" id="52F39BE4-C995-878A-6A08-CAA8532D63D8">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:53:02 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -35,10 +39,14 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,7,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Dystans" id="AB832703-8FD4-8481-23F9-35E807339D80">
+<Attribute name="Dystans [Mly]" id="AB832703-8FD4-8481-23F9-35E807339D80">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:53:05 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -46,10 +54,14 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="RV" id="788B76D0-2CE6-8A10-5944-53CDF80E8C7E">
+<Attribute name="RV [km/s]" id="788B76D0-2CE6-8A10-5944-53CDF80E8C7E">
 <createdBy>marcin</createdBy>
 <createdTime>2019-11-14 18:53:09 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -57,8 +69,12 @@
 <item key="10375D0C-6917-BF52-BFFA-28916FFD08C9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,*,4</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

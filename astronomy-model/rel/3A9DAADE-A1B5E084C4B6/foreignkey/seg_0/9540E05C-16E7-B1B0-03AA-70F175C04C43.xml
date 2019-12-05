@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9540E05C-16E7-B1B0-03AA-70F175C04C43" containerWithKeyObject="45AE07E0-ED47-9637-A2E0-0EF75F154C5E" localFKIndex="F9E64BD9-1932-9DCE-58B4-DECA42D13F58" name="Galaktyka_Konstelacja_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>94B7574E-9B98-AC00-2DCE-5C96F82CD2FC</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Konstelacja</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C9597343-B711-B92E-9539-6B9854534856</referredTableID>
+<keyObject>760AE1ED-0007-BA85-C9E2-499638D0747B</keyObject>
+<referredKeyID>760AE1ED-0007-BA85-C9E2-499638D0747B</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>Skrót_IAU</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

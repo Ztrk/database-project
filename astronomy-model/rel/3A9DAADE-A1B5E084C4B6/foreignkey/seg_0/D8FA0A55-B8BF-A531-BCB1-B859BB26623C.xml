@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D8FA0A55-B8BF-A531-BCB1-B859BB26623C" containerWithKeyObject="45AE07E0-ED47-9637-A2E0-0EF75F154C5E" localFKIndex="C8F26116-AFD9-CC7F-46AB-243DEEE3EF0F" name="Galaktyka_Obiekt_astronomiczny_FK">
+<createdBy>Marcin</createdBy>
+<createdTime>2019-12-05 09:25:22 UTC</createdTime>
+<generatorID>DEBA0353-9DA3-9B34-83F2-D679BD91B51B</generatorID>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<referredTableLongName>Obiekt_astronomiczny</referredTableLongName>
+<arc>0DFAA57B-31FC-BA50-DCBB-422AD1D89339</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4719C416-B72A-73EE-118F-E090B0F1608B</referredTableID>
+<keyObject>C39B3EA9-2A3A-F095-CCC6-CE9C7AE3C73D</keyObject>
+<referredKeyID>C39B3EA9-2A3A-F095-CCC6-CE9C7AE3C73D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Nazwa</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
