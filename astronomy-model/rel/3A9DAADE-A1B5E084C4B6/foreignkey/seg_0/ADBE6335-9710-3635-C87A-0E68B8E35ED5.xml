@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="ADBE6335-9710-3635-C87A-0E68B8E35ED5" containerWithKeyObject="5CC0A125-8B65-5070-07C3-4F4B550252BF" localFKIndex="09311A9A-E40A-4559-D6BE-55318F2A3116" name="Obserwacja_Obserwatorium_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="ADBE6335-9710-3635-C87A-0E68B8E35ED5" containerWithKeyObject="5CC0A125-8B65-5070-07C3-4F4B550252BF" localFKIndex="09311A9A-E40A-4559-D6BE-55318F2A3116" name="Obserwacja_Obiekt_astronomiczny_FKv2v1">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:22 UTC</createdTime>
 <generatorID>E0DC8D83-D342-E727-2103-85DB479BE829</generatorID>

@@ -60,7 +60,7 @@
 <ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Pełna_nazwa/instytucja" id="EB8D2D40-0C9B-4E45-19A4-6DFD8C58A49F">
+<Column name="Pełna_nazwa" id="EB8D2D40-0C9B-4E45-19A4-6DFD8C58A49F">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:21 UTC</createdTime>
 <generatorID>DE07BDDB-2FDC-CCF6-D8ED-07E712E2BF2E</generatorID>

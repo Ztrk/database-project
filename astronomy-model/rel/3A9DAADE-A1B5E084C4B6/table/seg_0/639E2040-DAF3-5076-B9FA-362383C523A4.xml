@@ -123,7 +123,7 @@
 <ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Gwiazda_Nazwa" id="A6098F77-AB56-A400-57E2-2B5151286790">
+<Column name="Orbitowana_gwiazda" id="A6098F77-AB56-A400-57E2-2B5151286790">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:21 UTC</createdTime>
 <generatorID>5DB44C44-FDCB-4FB6-CC84-19758D37E3BE</generatorID>
@@ -140,7 +140,7 @@
 <colAssociation fkAssociation="1DBD0D5C-70C6-EB71-460B-91F69F9EEE76" referredColumn="99CD15CB-9C20-AD16-90DC-2F770171D9D0"/>
 </associations>
 </Column>
-<Column name="Małe_ciała_Nazwa" id="9EBA0629-EF51-A569-8284-18D34A4F2899">
+<Column name="Orbitowane_male_cialo" id="9EBA0629-EF51-A569-8284-18D34A4F2899">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:21 UTC</createdTime>
 <generatorID>53B693D6-54AE-E4E4-BC7F-E72EF03812F5</generatorID>

@@ -140,7 +140,7 @@
 <ownDataTypeParameters>,*,4</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Galaktyka_Nazwa" id="5555E1F7-552F-A64F-3BF5-8BDE0A3173D2">
+<Column name="Galaktyka" id="5555E1F7-552F-A64F-3BF5-8BDE0A3173D2">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:22 UTC</createdTime>
 <generatorID>A5934602-2232-09AB-79E8-07B62B401E14</generatorID>
@@ -156,7 +156,7 @@
 <colAssociation fkAssociation="F235C4B0-4F46-BE52-DC00-29AAA6567A4C" referredColumn="06588DEE-46E9-B4D8-630A-049D5E132E74"/>
 </associations>
 </Column>
-<Column name="Konstelacja_Skrót_IAU" id="77461ECA-B1B9-354C-B15A-69B9EFE7B29E">
+<Column name="Konstelacja" id="77461ECA-B1B9-354C-B15A-69B9EFE7B29E">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:22 UTC</createdTime>
 <generatorID>AB751A51-F00E-891B-D20B-606227573119</generatorID>

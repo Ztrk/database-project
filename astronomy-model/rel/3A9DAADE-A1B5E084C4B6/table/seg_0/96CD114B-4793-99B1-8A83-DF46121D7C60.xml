@@ -1,9 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="96CD114B-4793-99B1-8A83-DF46121D7C60" name="Małe_ciała">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="96CD114B-4793-99B1-8A83-DF46121D7C60" name="Małe_ciało">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:21 UTC</createdTime>
 <generatorID>335F843B-BE9C-B2F5-3D2D-15976A38B4EA</generatorID>
 <ownerDesignName>astronomy-model</ownerDesignName>
+<ordsAlias>male_cialo</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -155,7 +156,7 @@
 <ownDataTypeParameters>,*,4</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Gwiazda_Nazwa" id="5101D63F-F3F2-C973-E1F1-18126701E2B4">
+<Column name="Orbitowana_gwiazda" id="5101D63F-F3F2-C973-E1F1-18126701E2B4">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:21 UTC</createdTime>
 <generatorID>602186B6-1661-299F-4D9F-32AD5153BAFE</generatorID>
@@ -171,6 +172,46 @@
 <associations>
 <colAssociation fkAssociation="906DA776-8801-8992-5B14-8D035C5D59FE" referredColumn="99CD15CB-9C20-AD16-90DC-2F770171D9D0"/>
 </associations>
+</Column>
+<Column name="Orbitowane_male_ciało" id="C28D6F27-346E-4210-11A4-A728C4376C07">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-19 23:29:33 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF194770-A567-01F8-4573-CBCB4A44759D" referredColumn="C7C3CE7F-FBC6-5B25-3343-58FB022DDABA"/>
+</associations>
+</Column>
+<Column name="Typ" id="964BDA62-68BB-4065-0B57-F386D4B0F7B0">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-19 23:26:32 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Średnia_temperatura [K]" id="DEDF0E66-61A2-5A83-7706-BAA8B89CD29B">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-19 23:26:32 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>8</dataTypeScale>
+<ownDataTypeParameters>,2,8</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -206,6 +247,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5101D63F-F3F2-C973-E1F1-18126701E2B4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7935F4F6-19A0-87BA-386B-8D037B9FA52F" name="Małe_ciała_Małe_ciała_FK">
+<createdBy>marcin</createdBy>
+<createdTime>2019-12-19 23:34:55 UTC</createdTime>
+<ownerDesignName>astronomy-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C28D6F27-346E-4210-11A4-A728C4376C07"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

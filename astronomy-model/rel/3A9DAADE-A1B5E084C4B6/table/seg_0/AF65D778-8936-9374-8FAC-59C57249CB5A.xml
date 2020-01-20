@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF65D778-8936-9374-8FAC-59C57249CB5A" name="Obiekt_należy_do_katalogu">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF65D778-8936-9374-8FAC-59C57249CB5A" name="Obiekt_w_katalogu">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:22 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Obiekt_astronomiczny_Nazwa" id="8FDC7553-6EAA-2BBB-67B7-14E43EB3B0A6">
+<Column name="Obiekt_Nazwa" id="8FDC7553-6EAA-2BBB-67B7-14E43EB3B0A6">
 <createdBy>Marcin</createdBy>
 <createdTime>2019-12-05 09:25:22 UTC</createdTime>
 <ownerDesignName>astronomy-model</ownerDesignName>
