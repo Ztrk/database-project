@@ -14,773 +14,655 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1131</width>
-      <height>561</height>
-     </rect>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Obiekty</string>
-     </attribute>
-     <widget class="QTabWidget" name="tabWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>-4</x>
-        <y>-1</y>
-        <width>1131</width>
-        <height>531</height>
-       </rect>
-      </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_7">
-       <attribute name="title">
-        <string>Małe ciała</string>
-       </attribute>
-       <widget class="QTableWidget" name="small_bodies_table">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1131</width>
-          <height>501</height>
-         </rect>
-        </property>
-        <property name="rowCount">
-         <number>19</number>
-        </property>
-        <property name="columnCount">
-         <number>14</number>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <column>
-         <property name="text">
-          <string>Nazwa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Typ</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Średnica</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Masa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Średnia temperatura</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Okres orbitalny</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Ekscentryczność</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Półoś wielka</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Inklinacja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Długość węzła wstępującego</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Argument perycentrum</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Anomalia średnia</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Epoka</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Orbituje</string>
-         </property>
-        </column>
-       </widget>
+      <widget class="QWidget" name="page">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="small_bodies_table">
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>14</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Typ</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Średnica</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Masa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Średnia temperatura</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Okres orbitalny</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ekscentryczność</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Półoś wielka</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Inklinacja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Długość węzła wstępującego</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Argument perycentrum</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Anomalia średnia</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Epoka</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Orbituje</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_8">
-       <attribute name="title">
-        <string>Sztuczne satelity</string>
-       </attribute>
-       <widget class="QTableWidget" name="tableWidget_6">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1131</width>
-          <height>501</height>
-         </rect>
-        </property>
-        <property name="rowCount">
-         <number>6</number>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <column>
-         <property name="text">
-          <string>Nazwa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Rodzaj</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Kraj</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Data startu</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Data zniszczenia</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Okres orbitalny</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Apocentrum</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Perycentrum</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Inklinacja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Orbituje</string>
-         </property>
-        </column>
-       </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTableWidget" name="satellites_table">
+          <property name="rowCount">
+           <number>6</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Rodzaj</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kraj</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data startu</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data zniszczenia</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Okres orbitalny</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Apocentrum</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Perycentrum</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Inklinacja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Orbituje</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_9">
-       <attribute name="title">
-        <string>Roje meteorów</string>
-       </attribute>
-       <widget class="QTableWidget" name="tableWidget_7">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1131</width>
-          <height>501</height>
-         </rect>
-        </property>
-        <property name="rowCount">
-         <number>9</number>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <column>
-         <property name="text">
-          <string>Nazwa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Data początku</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Data końca</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Data maksimum</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Rektasencja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Deklinacja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Prędkość</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>ZHR</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Aktywność</string>
-         </property>
-        </column>
-       </widget>
+      <widget class="QWidget" name="page_3">
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QTableWidget" name="meteor_showers_table">
+          <property name="rowCount">
+           <number>9</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data początku</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data końca</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data maksimum</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Rektasencja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Deklinacja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Prędkość</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ZHR</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Aktywność</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_10">
-       <attribute name="title">
-        <string>Gwiazdy</string>
-       </attribute>
-       <widget class="QTableWidget" name="tableWidget_8">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1131</width>
-          <height>501</height>
-         </rect>
-        </property>
-        <property name="rowCount">
-         <number>10</number>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <column>
-         <property name="text">
-          <string>Nazwa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Typ widmowy</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Rektasencja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Deklinacja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Wielkość gwiazdowa (obserwowalna)</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Wielkość gwiazdowa (absolutna)</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Paralaksa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Dystans</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Masa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Promień</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Galaktyka</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Konstelacja</string>
-         </property>
-        </column>
-       </widget>
+      <widget class="QWidget" name="page_4">
+       <layout class="QVBoxLayout" name="verticalLayout_11">
+        <item>
+         <widget class="QTableWidget" name="stars_table">
+          <property name="rowCount">
+           <number>10</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Typ widmowy</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Rektasencja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Deklinacja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Wielkość gwiazdowa (obserwowalna)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Wielkość gwiazdowa (absolutna)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Paralaksa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Dystans</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Masa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Promień</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Galaktyka</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Konstelacja</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_11">
-       <attribute name="title">
-        <string>Galaktyki</string>
-       </attribute>
-       <widget class="QTableWidget" name="tableWidget_9">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1131</width>
-          <height>501</height>
-         </rect>
-        </property>
-        <property name="rowCount">
-         <number>9</number>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <column>
-         <property name="text">
-          <string>Nazwa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Typ</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Dystans</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Wielkość gwiazdowa (obserwowalna)</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Wielkość gwiazdowa (absolutna)</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Średnica</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Konstelacja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Orbituje</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Grupa galaktyk</string>
-         </property>
-        </column>
-       </widget>
+      <widget class="QWidget" name="page_5">
+       <layout class="QVBoxLayout" name="verticalLayout_12">
+        <item>
+         <widget class="QTableWidget" name="galaxies_table">
+          <property name="rowCount">
+           <number>9</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Typ</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Dystans</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Wielkość gwiazdowa (obserwowalna)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Wielkość gwiazdowa (absolutna)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Średnica</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Konstelacja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Orbituje</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Grupa galaktyk</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_12">
-       <attribute name="title">
-        <string>Grupy galaktyk</string>
-       </attribute>
-       <widget class="QTableWidget" name="tableWidget_10">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1131</width>
-          <height>501</height>
-         </rect>
-        </property>
-        <property name="rowCount">
-         <number>10</number>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <row/>
-        <column>
-         <property name="text">
-          <string>Nazwa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Rektasencja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Deklinacja</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Dystans</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Prędkość kątowa</string>
-         </property>
-        </column>
-       </widget>
+      <widget class="QWidget" name="page_6">
+       <layout class="QVBoxLayout" name="verticalLayout_13">
+        <item>
+         <widget class="QTableWidget" name="galaxy_groups_table">
+          <property name="rowCount">
+           <number>10</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Rektasencja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Deklinacja</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Dystans</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Prędkość kątowa</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_7">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QTableWidget" name="constellations_table">
+          <property name="rowCount">
+           <number>6</number>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Skrót IAU</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Najjaśniejsza gwiazda</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_8">
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QTableWidget" name="catalogues_table">
+          <property name="rowCount">
+           <number>5</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Skrót</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Rok wydania</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_9">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QTableWidget" name="observations_table">
+          <property name="rowCount">
+           <number>6</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Obiekt</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Astronom</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Obserwatorium</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Czy odkrycie</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_10">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QTableWidget" name="observatories_table">
+          <property name="rowCount">
+           <number>7</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Pełna nazwa</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nazwa w MPC</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kod IAU</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kraj</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Szerokość geograficzna</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Długość geograficzna</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_11">
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QTableWidget" name="astronomers_table">
+          <property name="rowCount">
+           <number>7</number>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Pełne imię</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kraj</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data urodzenia</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Data zgonu</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Imię w MPC</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Konstelacje</string>
-     </attribute>
-     <widget class="QTableWidget" name="tableWidget">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>781</width>
-        <height>481</height>
-       </rect>
-      </property>
-      <property name="rowCount">
-       <number>6</number>
-      </property>
-      <attribute name="horizontalHeaderStretchLastSection">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <column>
-       <property name="text">
-        <string>Nazwa</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Skrót IAU</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Najjaśniejsza gwiazda</string>
-       </property>
-      </column>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Katalogi</string>
-     </attribute>
-     <widget class="QTableWidget" name="tableWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>781</width>
-        <height>481</height>
-       </rect>
-      </property>
-      <property name="rowCount">
-       <number>5</number>
-      </property>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <column>
-       <property name="text">
-        <string>Nazwa</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Skrót</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Rok wydania</string>
-       </property>
-      </column>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>Obserwacje</string>
-     </attribute>
-     <widget class="QTableWidget" name="tableWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>781</width>
-        <height>481</height>
-       </rect>
-      </property>
-      <property name="rowCount">
-       <number>6</number>
-      </property>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <column>
-       <property name="text">
-        <string>Obiekt</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Astronom</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Obserwatorium</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Data</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Czy odkrycie</string>
-       </property>
-      </column>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_5">
-     <attribute name="title">
-      <string>Obserwatoria</string>
-     </attribute>
-     <widget class="QTableWidget" name="tableWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>781</width>
-        <height>481</height>
-       </rect>
-      </property>
-      <property name="rowCount">
-       <number>7</number>
-      </property>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <column>
-       <property name="text">
-        <string>Pełna nazwa</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Nazwa w MPC</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Kod IAU</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Kraj</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Szerokość geograficzna</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Długość geograficzna</string>
-       </property>
-      </column>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_6">
-     <attribute name="title">
-      <string>Astronomowie</string>
-     </attribute>
-     <widget class="QTableWidget" name="tableWidget_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>781</width>
-        <height>481</height>
-       </rect>
-      </property>
-      <property name="rowCount">
-       <number>7</number>
-      </property>
-      <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
-      </attribute>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <row/>
-      <column>
-       <property name="text">
-        <string>Pełne imię</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Kraj</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Data urodzenia</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Data zgonu</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Imię w MPC</string>
-       </property>
-      </column>
-     </widget>
-    </widget>
-   </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -806,6 +688,96 @@
    <addaction name="actionAdd"/>
    <addaction name="actionRemove"/>
    <addaction name="actionEdit"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="features">
+    <set>QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Tabele</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="headerHidden">
+        <bool>true</bool>
+       </property>
+       <column>
+        <property name="text">
+         <string>Tabele</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>Obiekty astronomiczne</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Małe ciała</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sztuczne satelity</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Roje meteorów</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Gwiazdy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Galaktyki</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Grupy galaktyk</string>
+         </property>
+        </item>
+       </item>
+       <item>
+        <property name="text">
+         <string>Konstelacje</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Katalogi</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Obserwacje</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Obserwatoria</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Astronomowie</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <action name="actionAdd">
    <property name="text">
