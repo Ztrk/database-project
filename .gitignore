@@ -4,3 +4,4 @@
 **/*.DS_Store
 *.ini
 !config-example.ini
+__pycache__/

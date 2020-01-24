@@ -16,11 +16,8 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="page">
+     <widget class="QStackedWidget" name="stacked_widget">
+      <widget class="QWidget" name="small_bodies_page">
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QTableWidget" name="small_bodies_table">
@@ -107,22 +104,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_2">
+      <widget class="QWidget" name="satellites_page">
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QTableWidget" name="satellites_table">
-          <property name="rowCount">
-           <number>6</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -177,25 +165,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_3">
+      <widget class="QWidget" name="meteor_showers_page">
        <layout class="QVBoxLayout" name="verticalLayout_10">
         <item>
          <widget class="QTableWidget" name="meteor_showers_table">
-          <property name="rowCount">
-           <number>9</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -245,26 +221,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_4">
+      <widget class="QWidget" name="stars_page">
        <layout class="QVBoxLayout" name="verticalLayout_11">
         <item>
          <widget class="QTableWidget" name="stars_table">
-          <property name="rowCount">
-           <number>10</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -329,25 +292,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_5">
+      <widget class="QWidget" name="galaxies_page">
        <layout class="QVBoxLayout" name="verticalLayout_12">
         <item>
          <widget class="QTableWidget" name="galaxies_table">
-          <property name="rowCount">
-           <number>9</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -397,26 +348,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_6">
+      <widget class="QWidget" name="galaxy_groups_page">
        <layout class="QVBoxLayout" name="verticalLayout_13">
         <item>
          <widget class="QTableWidget" name="galaxy_groups_table">
-          <property name="rowCount">
-           <number>10</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -446,25 +384,16 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_7">
+      <widget class="QWidget" name="constellations_page">
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
          <widget class="QTableWidget" name="constellations_table">
-          <property name="rowCount">
-           <number>6</number>
-          </property>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
           </attribute>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -484,21 +413,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_8">
+      <widget class="QWidget" name="catalogues_page">
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
          <widget class="QTableWidget" name="catalogues_table">
-          <property name="rowCount">
-           <number>5</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Nazwa</string>
@@ -518,22 +439,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_9">
+      <widget class="QWidget" name="observations_page">
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
          <widget class="QTableWidget" name="observations_table">
-          <property name="rowCount">
-           <number>6</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Obiekt</string>
@@ -563,23 +475,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_10">
+      <widget class="QWidget" name="observatories_page">
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
          <widget class="QTableWidget" name="observatories_table">
-          <property name="rowCount">
-           <number>7</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Pełna nazwa</string>
@@ -614,23 +516,13 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_11">
+      <widget class="QWidget" name="astronomers_page">
        <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
          <widget class="QTableWidget" name="astronomers_table">
-          <property name="rowCount">
-           <number>7</number>
-          </property>
           <attribute name="verticalHeaderVisible">
            <bool>false</bool>
           </attribute>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
-          <row/>
           <column>
            <property name="text">
             <string>Pełne imię</string>
@@ -705,75 +597,10 @@
    <widget class="QWidget" name="dockWidgetContents">
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QTreeWidget" name="treeWidget">
+      <widget class="QTreeWidget" name="table_selector">
        <property name="headerHidden">
         <bool>true</bool>
        </property>
-       <column>
-        <property name="text">
-         <string>Tabele</string>
-        </property>
-       </column>
-       <item>
-        <property name="text">
-         <string>Obiekty astronomiczne</string>
-        </property>
-        <item>
-         <property name="text">
-          <string>Małe ciała</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Sztuczne satelity</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Roje meteorów</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Gwiazdy</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Galaktyki</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Grupy galaktyk</string>
-         </property>
-        </item>
-       </item>
-       <item>
-        <property name="text">
-         <string>Konstelacje</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Katalogi</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Obserwacje</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Obserwatoria</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Astronomowie</string>
-        </property>
-       </item>
       </widget>
      </item>
     </layout>
