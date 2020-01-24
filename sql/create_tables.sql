@@ -24,8 +24,8 @@ ALTER TABLE astronom ADD CONSTRAINT astronom_pk PRIMARY KEY (pelne_imie);
 
 CREATE TABLE obserwatorium (
     kod_iau                  VARCHAR(6) NOT NULL,
-    szerokosc_geograficzna   DECIMAL(7, 4),
-    dlugosc_geograficzna     DECIMAL(7, 4),
+    szerokosc_geograficzna   DECIMAL(10, 6),
+    dlugosc_geograficzna     DECIMAL(10, 6),
     kraj                     VARCHAR(50) NOT NULL,
     pelna_nazwa              VARCHAR(70) NOT NULL,
     nazwa_mpc                VARCHAR(30) NOT NULL
@@ -48,11 +48,11 @@ CREATE TABLE obiekt_astronomiczny (
 ALTER TABLE obiekt_astronomiczny ADD CONSTRAINT obiekt_astronomiczny_pk PRIMARY KEY (nazwa);
 
 CREATE TABLE grupa_galaktyk (
-    nazwa         VARCHAR(70) NOT NULL,
-    rektasencja   DECIMAL(7, 4), 
-    deklinacja    DECIMAL(7, 4), 
-    dystans       DECIMAL(10, 4),
-    rv            DECIMAL(10, 3)
+    nazwa               VARCHAR(70) NOT NULL,
+    rektasencja         DECIMAL(10, 6), 
+    deklinacja          DECIMAL(10, 6), 
+    dystans             DECIMAL(10, 4),
+    predkosc_radialna   DECIMAL(10, 4)
 );
 
 ALTER TABLE grupa_galaktyk ADD CONSTRAINT grupa_galaktyk_pk PRIMARY KEY (nazwa);
