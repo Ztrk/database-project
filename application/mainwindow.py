@@ -36,10 +36,10 @@ class MainWindow(QtWidgets.QMainWindow):
         TableSelectorItem(objects, 'Grupy galaktyk', self.galaxy_groups_page)
 
         TableSelectorItem(self.table_selector, 'Konstelacje', self.constellations_page, astronomy.Constellation)
-        TableSelectorItem(self.table_selector, 'Katalogi', self.catalogues_page)
-        TableSelectorItem(self.table_selector, 'Obserwacje', self.observations_page)
-        TableSelectorItem(self.table_selector, 'Obserwatoria', self.observatories_page)
-        TableSelectorItem(self.table_selector, 'Astronomowie', self.astronomers_page)
+        TableSelectorItem(self.table_selector, 'Katalogi', self.catalogues_page, astronomy.Catalogue)
+        TableSelectorItem(self.table_selector, 'Obserwacje', self.observations_page, astronomy.Observation)
+        TableSelectorItem(self.table_selector, 'Obserwatoria', self.observatories_page, astronomy.Observatory)
+        TableSelectorItem(self.table_selector, 'Astronomowie', self.astronomers_page, astronomy.Astronomer)
         self.item_changed_handler(current, None)
 
     def item_changed_handler(self, current, previous):
@@ -56,7 +56,7 @@ class MainWindow(QtWidgets.QMainWindow):
         for i, entity in enumerate(rows):
             row = entity.to_row()
             for j, value in enumerate(row):
-                item = QtWidgets.QTableWidgetItem(value)
+                item = QtWidgets.QTableWidgetItem(str(value))
                 table.setItem(i, j, item)
 
     def add_to_table(self):
