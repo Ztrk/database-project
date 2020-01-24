@@ -3,7 +3,6 @@ import sys
 import sqlalchemy as db
 from PyQt5 import QtWidgets
 from mainwindow import MainWindow
-from astronomicalobject import AstronomicalObject
 
 if __name__ == '__main__':
     config = configparser.ConfigParser()

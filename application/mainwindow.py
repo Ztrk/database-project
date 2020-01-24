@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, uic
-from astronomicalobject import AstronomicalObject
+import astronomy
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, session, *args, **kwargs):
@@ -13,14 +13,14 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def fill_table_selector(self):
         objects = TableSelectorItem(self.table_selector, 'Obiekty astronomiczne')
-        current = TableSelectorItem(objects, 'Małe ciała', self.small_bodies_page, AstronomicalObject)
-        TableSelectorItem(objects, 'Sztuczne satelity', self.satellites_page, AstronomicalObject)
+        current = TableSelectorItem(objects, 'Małe ciała', self.small_bodies_page, astronomy.AstronomicalObject)
+        TableSelectorItem(objects, 'Sztuczne satelity', self.satellites_page, astronomy.AstronomicalObject)
         TableSelectorItem(objects, 'Roje meteorów', self.meteor_showers_page)
         TableSelectorItem(objects, 'Gwiazdy', self.stars_page)
         TableSelectorItem(objects, 'Galaktyki', self.galaxies_page)
         TableSelectorItem(objects, 'Grupy galaktyk', self.galaxy_groups_page)
 
-        TableSelectorItem(self.table_selector, 'Konstelacje', self.constellations_page)
+        TableSelectorItem(self.table_selector, 'Konstelacje', self.constellations_page, astronomy.Constellation)
         TableSelectorItem(self.table_selector, 'Katalogi', self.catalogues_page)
         TableSelectorItem(self.table_selector, 'Obserwacje', self.observations_page)
         TableSelectorItem(self.table_selector, 'Obserwatoria', self.observatories_page)
