@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class Constellation(Base):
     __tablename__ = 'konstelacja'
 
@@ -12,6 +13,7 @@ class Constellation(Base):
 
     def to_row(self):
         return [self.iau_abbrevation, self.name, self.brightest_star]
+
 
 class AstronomicalObject(Base):
     __tablename__ = 'obiekt_astronomiczny'

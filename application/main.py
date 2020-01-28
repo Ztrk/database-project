@@ -10,7 +10,7 @@ if __name__ == '__main__':
     db_config = config['database']
     url = db_config['user'] + ':' + db_config['password'] + '@' + db_config['host']
 
-    engine = db.create_engine('mysql://' + url + '/astronomy')
+    engine = db.create_engine('mysql+pymysql://' + url + '/astronomy')
 
     Session = db.orm.sessionmaker(bind=engine)
     session = Session()
