@@ -2,14 +2,10 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSlot
 import astronomy
 
-objectType = ""
-
-
 class Second(QtWidgets.QDialog):
-    def __init__(self, parent=None):
+    def __init__(self, object_type, parent=None):
         super(Second, self).__init__(parent)
-        uic.loadUi("gui/add-" + objectType + ".ui", self)
-
+        uic.loadUi("gui/form-" + object_type + ".ui", self)
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, session, *args, **kwargs):
@@ -17,14 +13,15 @@ class MainWindow(QtWidgets.QMainWindow):
         uic.loadUi("gui/mainwindow.ui", self)
         self.session = session
         self.current_page = None
+        self.object_type = ""
 
         # Fill table selector TreeWidget
         self.fill_table_selector()
         self.table_selector.currentItemChanged.connect(self.item_changed_handler)
 
-        self.actionAdd.triggered.connect(self.add_to_table)
-        self.actionRemove.triggered.connect(self.remove_from_table)
-        self.actionEdit.triggered.connect(self.edit_table)
+        self.action_add.triggered.connect(self.add_to_table)
+        self.action_remove.triggered.connect(self.remove_from_table)
+        self.action_edit.triggered.connect(self.edit_table)
 
     def fill_table_selector(self):
         objects = TableSelectorItem(self.table_selector, 'Obiekty astronomiczne')
@@ -45,8 +42,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def item_changed_handler(self, current, previous):
         if current.page is not None:
             self.stacked_widget.setCurrentWidget(current.page)
-            # TODO: when all types implemented remove this if
             self.current_page = current.page
+            # TODO: when all types are implemented remove this if
             if current.type is not None:
                 self.fill_table(current.type, current.table)
 
@@ -61,16 +58,15 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def add_to_table(self):
         # Add others (or come up with more generalized approach)
-        global objectType
         objects = {
             self.constellations_page: "constellation",
             self.observatories_page: "observatory",
             self.astronomers_page: "astronomer"
         }
-        objectType = objects.get(self.current_page, "Wrong")
-        if objectType == "Wrong":
+        self.object_type = objects.get(self.current_page, "Wrong")
+        if self.object_type == "Wrong":
             return
-        dialog = Second(self)
+        dialog = Second(self.object_type, self)
         # self.dialogs.append(dialog)
         dialog.show()
 

@@ -577,9 +577,9 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAdd"/>
-   <addaction name="actionRemove"/>
-   <addaction name="actionEdit"/>
+   <addaction name="action_add"/>
+   <addaction name="action_remove"/>
+   <addaction name="action_edit"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="features">
@@ -601,22 +601,27 @@
        <property name="headerHidden">
         <bool>true</bool>
        </property>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
       </widget>
      </item>
     </layout>
    </widget>
   </widget>
-  <action name="actionAdd">
+  <action name="action_add">
    <property name="text">
     <string>Add</string>
    </property>
   </action>
-  <action name="actionRemove">
+  <action name="action_remove">
    <property name="text">
     <string>Remove</string>
    </property>
   </action>
-  <action name="actionEdit">
+  <action name="action_edit">
    <property name="text">
     <string>Edit</string>
    </property>
