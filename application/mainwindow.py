@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtWidgets, uic
 import astronomy
+import astronomy_model as model
 
 class Second(QtWidgets.QDialog):
     def __init__(self, object_type, parent=None):
@@ -21,7 +22,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.action_add.triggered.connect(self.add_to_table)
         self.action_remove.triggered.connect(self.remove_from_table)
         self.action_edit.triggered.connect(self.edit_table)
-        self.astronomers_table.setModel(AstronomerModel(session))
+        self.astronomers_table.setModel(model.AstronomerModel(session))
+        self.observatories_table.setModel(model.ObservatoryModel(session))
 
     def fill_table_selector(self):
         objects = TableSelectorItem(self.table_selector, 'Obiekty astronomiczne')
@@ -85,26 +87,3 @@ class TableSelectorItem(QtWidgets.QTreeWidgetItem):
         self.type = type
         if page is not None:
             self.table = page.findChild(QtWidgets.QTableWidget)
-
-class AstronomerModel(QtCore.QAbstractTableModel):
-    def __init__(self, session, *args, **kwargs):
-        super(AstronomerModel, self).__init__(*args, **kwargs)
-        self.session = session
-        self.type = astronomy.Astronomer
-        self.query = self.session.query(self.type)
-        self.rows = self.query.all()
-    
-    def rowCount(self, parent):
-        return len(self.rows)
-
-    def columnCount(self, parent):
-        return 5
-
-    def data(self, index, role=QtCore.Qt.DisplayRole):
-        if role == QtCore.Qt.DisplayRole:
-            astronomer = self.rows[index.row()]
-            return str(self.to_row(astronomer)[index.column()])
-
-    def to_row(self, astronomer):
-        return [astronomer.full_name, astronomer.country, astronomer.birth_date,
-            astronomer.death_date, astronomer.name_mpc]

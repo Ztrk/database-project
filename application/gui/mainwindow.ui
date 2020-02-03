@@ -478,41 +478,7 @@
       <widget class="QWidget" name="observatories_page">
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
-         <widget class="QTableWidget" name="observatories_table">
-          <attribute name="verticalHeaderVisible">
-           <bool>false</bool>
-          </attribute>
-          <column>
-           <property name="text">
-            <string>Pełna nazwa</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Nazwa w MPC</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Kod IAU</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Kraj</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Szerokość geograficzna</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Długość geograficzna</string>
-           </property>
-          </column>
-         </widget>
+         <widget class="QTableView" name="observatories_table"/>
         </item>
        </layout>
       </widget>

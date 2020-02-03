@@ -22,10 +22,6 @@ class Observatory(Base):
     full_name = db.Column('pelna_nazwa', db.String)
     name_mpc = db.Column('nazwa_mpc', db.String)
 
-    def to_row(self):
-        return [self.full_name, self.name_mpc, self.iau_code,
-            self.country, self.latitude, self.longitude]
-
 class Constellation(Base):
     __tablename__ = 'konstelacja'
 
