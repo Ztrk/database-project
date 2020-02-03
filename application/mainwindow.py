@@ -1,5 +1,4 @@
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtCore import pyqtSlot
+from PyQt5 import QtCore, QtWidgets, uic
 import astronomy
 
 class Second(QtWidgets.QDialog):
@@ -22,6 +21,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.action_add.triggered.connect(self.add_to_table)
         self.action_remove.triggered.connect(self.remove_from_table)
         self.action_edit.triggered.connect(self.edit_table)
+        self.astronomers_table.setModel(AstronomerModel(session))
 
     def fill_table_selector(self):
         objects = TableSelectorItem(self.table_selector, 'Obiekty astronomiczne')
@@ -49,6 +49,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def fill_table(self, type, table):
         rows = self.session.query(type)
+        if table is None:
+            return
         table.setRowCount(rows.count())
         for i, entity in enumerate(rows):
             row = entity.to_row()
@@ -76,7 +78,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def edit_table(self):
         pass
 
-
 class TableSelectorItem(QtWidgets.QTreeWidgetItem):
     def __init__(self, parent, text, page=None, type=None):
         super(TableSelectorItem, self).__init__(parent, [text])
@@ -84,5 +85,26 @@ class TableSelectorItem(QtWidgets.QTreeWidgetItem):
         self.type = type
         if page is not None:
             self.table = page.findChild(QtWidgets.QTableWidget)
-    #     self.Add.clicked.connect(self.AddAction)
-    #
+
+class AstronomerModel(QtCore.QAbstractTableModel):
+    def __init__(self, session, *args, **kwargs):
+        super(AstronomerModel, self).__init__(*args, **kwargs)
+        self.session = session
+        self.type = astronomy.Astronomer
+        self.query = self.session.query(self.type)
+        self.rows = self.query.all()
+    
+    def rowCount(self, parent):
+        return len(self.rows)
+
+    def columnCount(self, parent):
+        return 5
+
+    def data(self, index, role=QtCore.Qt.DisplayRole):
+        if role == QtCore.Qt.DisplayRole:
+            astronomer = self.rows[index.row()]
+            return str(self.to_row(astronomer)[index.column()])
+
+    def to_row(self, astronomer):
+        return [astronomer.full_name, astronomer.country, astronomer.birth_date,
+            astronomer.death_date, astronomer.name_mpc]

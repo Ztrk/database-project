@@ -519,36 +519,7 @@
       <widget class="QWidget" name="astronomers_page">
        <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
-         <widget class="QTableWidget" name="astronomers_table">
-          <attribute name="verticalHeaderVisible">
-           <bool>false</bool>
-          </attribute>
-          <column>
-           <property name="text">
-            <string>Pełne imię</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Kraj</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Data urodzenia</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Data zgonu</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Imię w MPC</string>
-           </property>
-          </column>
-         </widget>
+         <widget class="QTableView" name="astronomers_table"/>
         </item>
        </layout>
       </widget>

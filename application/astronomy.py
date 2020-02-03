@@ -12,10 +12,6 @@ class Astronomer(Base):
     country = db.Column('kraj', db.String)
     name_mpc = db.Column('imie_mpc', db.String)
 
-    def to_row(self):
-        return [self.full_name, self.country, self.birth_date,
-            self.death_date, self.name_mpc]
-
 class Observatory(Base):
     __tablename__ = 'obserwatorium'
 
