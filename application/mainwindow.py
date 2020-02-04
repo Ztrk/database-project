@@ -25,11 +25,11 @@ class MainWindow(QtWidgets.QMainWindow):
     def fill_table_selector(self):
         objects = TableSelectorItem(self.table_selector, 'Obiekty astronomiczne')
         TableSelectorItem(objects, 'Małe ciała', model.SmallBodyModel(self.session))
-        TableSelectorItem(objects, 'Sztuczne satelity')
-        TableSelectorItem(objects, 'Roje meteorów')
-        TableSelectorItem(objects, 'Gwiazdy')
-        TableSelectorItem(objects, 'Galaktyki')
-        TableSelectorItem(objects, 'Grupy galaktyk')
+        TableSelectorItem(objects, 'Sztuczne satelity', model.SatelliteModel(self.session))
+        TableSelectorItem(objects, 'Roje meteorów', model.MeteorShowerModel(self.session))
+        TableSelectorItem(objects, 'Gwiazdy', model.StarModel(self.session))
+        TableSelectorItem(objects, 'Galaktyki', model.GalaxyModel(self.session))
+        TableSelectorItem(objects, 'Grupy galaktyk', model.GalaxyGroupModel(self.session))
 
         TableSelectorItem(self.table_selector, 'Konstelacje', model.ConstellationModel(self.session))
         TableSelectorItem(self.table_selector, 'Katalogi', model.CatalogueModel(self.session))

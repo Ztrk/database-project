@@ -41,12 +41,10 @@ class AstronomerModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(AstronomerModel, self).__init__(session, astronomy.Astronomer, *args, **kwargs)
 
-    header = ('Pełne imię', 'Kraj', 'Data urodzenia', 'Data śmierci', 'Nazwa w mpc')
+    header = ('Pełne imię', 'Kraj', 'Data urodzenia', 'Data śmierci', 'Nazwa w MPC')
     def to_row(self, astronomer):
         return (astronomer.full_name, astronomer.country, astronomer.birth_date,
             astronomer.death_date, astronomer.name_mpc)
-
-
 
 class ObservatoryModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
@@ -58,7 +56,6 @@ class ObservatoryModel(AstronomyModel):
         return [observatory.full_name, observatory.name_mpc, observatory.iau_code,
             observatory.country, observatory.latitude, observatory.longitude]
 
-
 class ConstellationModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(ConstellationModel, self).__init__(session, astronomy.Constellation, *args, **kwargs)
@@ -67,14 +64,59 @@ class ConstellationModel(AstronomyModel):
     def to_row(self, constellation):
         return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
 
+class GalaxyGroupModel(AstronomyModel):
+    def __init__(self, session, *args, **kwargs):
+        super(GalaxyGroupModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+
+    header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans', 'Prędkość kątowa')
+    def to_row(self, small_body):
+        return [small_body.name, small_body.name]
+
+class GalaxyModel(AstronomyModel):
+    def __init__(self, session, *args, **kwargs):
+        super(GalaxyModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+
+    header = ('Nazwa', 'Typ', 'Dystans', 'Wielkość gwiazdowa (obserwowalna)', 'Wielkość gwiazdowa (absolutna)',
+        'Średnica', 'Konstelacja', 'Orbitowana galaktyka', 'Grupa galaktyk')
+    def to_row(self, small_body):
+        return [small_body.name, small_body.name]
+
+class StarModel(AstronomyModel):
+    def __init__(self, session, *args, **kwargs):
+        super(StarModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+
+    header = ('Nazwa', 'Typ widmowy', 'Rektasencja', 'Deklinacja', 'Wielkość gwiazdowa (obserwowalna)', 
+        'Wielkość gwiazdowa (absolutna)', 'Paralaksa', 'Dystans', 'Masa', 'Promień', 'Galaktyka', 'Konstelacja')
+    def to_row(self, small_body):
+        return [small_body.name, small_body.name]
+
 class SmallBodyModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(SmallBodyModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
 
-    header = ('Nazwa', 'Nazwa')
+    header = ('Nazwa', 'Typ', 'Średnica', 'Masa', 'Średnia temperatura', 'Okres orbitalny', 'Ekscentryczność'
+        'Półoś wielka', 'Inklinacja', 'Długość węzła wstępującego', 'Argument perycentrum',
+        'Anomalia średnia', 'Epoka', 'Orbituje')
     def to_row(self, small_body):
         return [small_body.name, small_body.name]
-    
+
+class SatelliteModel(AstronomyModel):
+    def __init__(self, session, *args, **kwargs):
+        super(SatelliteModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+
+    header = ('Nazwa', 'Rodzaj', 'Kraj', 'Data startu', 'Data zniszczenia', 'Okres orbitalny', 'Apocentrum', 
+        'Perycentrum', 'Inklinacja', 'Orbituje')
+    def to_row(self, small_body):
+        return [small_body.name, small_body.name]
+
+class MeteorShowerModel(AstronomyModel):
+    def __init__(self, session, *args, **kwargs):
+        super(MeteorShowerModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+
+    header = ('Nazwa', 'Data początku', 'Data końca', 'Data maksimum', 'Rektasencja', 'Deklinacja',
+        'Prędkość', 'ZHR', 'Aktywność')
+    def to_row(self, small_body):
+        return [small_body.name, small_body.name]
 
 class CatalogueModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
