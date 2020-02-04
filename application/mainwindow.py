@@ -2,17 +2,13 @@ from PyQt5 import QtCore, QtWidgets, uic
 import astronomy
 import astronomy_model as model
 
-class Second(QtWidgets.QDialog):
-    def __init__(self, object_type, parent=None):
-        super(Second, self).__init__(parent)
-        uic.loadUi("gui/form-" + object_type + ".ui", self)
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, session, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         uic.loadUi("gui/mainwindow.ui", self)
         self.session = session
-        self.object_type = ""
+        self.current_model = None
 
         # Fill table selector TreeWidget
         self.fill_table_selector()
@@ -40,26 +36,20 @@ class MainWindow(QtWidgets.QMainWindow):
     def item_changed_handler(self, current, previous):
         if current.model is not None:
             self.table_view.setModel(current.model)
+            self.current_model = current.model
 
     def add_to_table(self):
-        # Add others (or come up with more generalized approach)
-        objects = {
-            self.constellations_page: "constellation",
-            self.observatories_page: "observatory",
-            self.astronomers_page: "astronomer"
-        }
-        self.object_type = objects.get(self.current_page, "Wrong")
-        if self.object_type == "Wrong":
-            return
-        dialog = Second(self.object_type, self)
-        # self.dialogs.append(dialog)
-        dialog.show()
+        if self.current_model is not None:
+            self.current_model.add_row(self)
 
     def remove_from_table(self):
-        pass
+        if self.current_model is not None:
+            self.current_model.removeRow(0)
 
     def edit_table(self):
-        pass
+        if self.current_model is not None:
+            pass
+
 
 class TableSelectorItem(QtWidgets.QTreeWidgetItem):
     def __init__(self, parent, text, model=None):

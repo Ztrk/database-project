@@ -1,5 +1,6 @@
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtWidgets, uic
 import astronomy
+
 
 class AstronomyModel(QtCore.QAbstractTableModel):
     def __init__(self, session, type, *args, **kwargs):
@@ -37,10 +38,21 @@ class AstronomyModel(QtCore.QAbstractTableModel):
     def to_row(self, entity):
         raise NotImplementedError('Model should define conversion to row')
 
+    def add_row(self, parent_window):
+        dialog = QtWidgets.QDialog(parent_window)
+        uic.loadUi('gui/' + self.form, dialog)
+        dialog.open()
+        print('Inserting data')
+
+    def removeRow(self, position, parent=QtCore.QModelIndex()):
+        print('Removing data')
+
+
 class AstronomerModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(AstronomerModel, self).__init__(session, astronomy.Astronomer, *args, **kwargs)
 
+    form = 'form-astronomer.ui'
     header = ('Pełne imię', 'Kraj', 'Data urodzenia', 'Data śmierci', 'Nazwa w MPC')
     def to_row(self, astronomer):
         return (astronomer.full_name, astronomer.country, astronomer.birth_date,
@@ -50,6 +62,7 @@ class ObservatoryModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(ObservatoryModel, self).__init__(session, astronomy.Observatory, *args, **kwargs)
 
+    form = 'form-observatory.ui'
     header = ('Pełna nazwa', 'Nazwa w MPC', 'Kod IAU', 'Kraj', 
         'Szerokość geograficzna', 'Długość geograficzna')
     def to_row(self, observatory):
@@ -60,6 +73,7 @@ class ConstellationModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(ConstellationModel, self).__init__(session, astronomy.Constellation, *args, **kwargs)
 
+    form = 'form-constellation.ui'
     header = ('Nazwa', 'Skrót IAU', 'Najjaśniejsza gwiazda')
     def to_row(self, constellation):
         return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
@@ -68,6 +82,7 @@ class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(GalaxyGroupModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
 
+    form = 'form-galaxy-group.ui'
     header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans', 'Prędkość kątowa')
     def to_row(self, small_body):
         return [small_body.name, small_body.name]
