@@ -29,17 +29,10 @@ class Constellation(Base):
     name = db.Column('nazwa', db.String)
     brightest_star = db.Column('najjasniejsza_gwiazda', db.String)
 
-    def to_row(self):
-        return [self.name, self.iau_abbreviation, self.brightest_star]
-
-
 class AstronomicalObject(Base):
     __tablename__ = 'obiekt_astronomiczny'
 
     name = db.Column('nazwa', db.String, primary_key=True)
-
-    def to_row(self):
-        return [self.name, self.name]
 
 class Catalogue(Base):
     __tablename__ = 'katalog'
@@ -47,9 +40,6 @@ class Catalogue(Base):
     name = db.Column('nazwa', db.String, primary_key=True)
     abbreviation = db.Column('skrot', db.String)
     publishing_year = db.Column('rok_wydania', db.Date)
-
-    def to_row(self):
-        return [self.name, self.abbreviation, self.publishing_year]
 
 class Observation(Base):
     __tablename__ = 'obserwacja'
@@ -59,7 +49,3 @@ class Observation(Base):
     observatory = db.Column('obserwatorium', db.String, primary_key=True)
     astronomer = db.Column('astronom', db.String, primary_key=True)
     is_discovery = db.Column('czy_odkrycie', db.Boolean)
-
-    def to_row(self):
-        return [self.astronomical_object, self.astronomer, self.observatory,
-            self.date, self.is_discovery]
