@@ -1,4 +1,6 @@
+import sys
 from PyQt5 import QtCore, QtWidgets, uic
+from sqlalchemy.orm.exc import FlushError
 import astronomy
 
 
@@ -7,6 +9,9 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         super(AstronomyModel, self).__init__(*args, **kwargs)
         self.session = session
         self.type = type
+        self.fetch_items()
+
+    def fetch_items(self):
         self.query = self.session.query(self.type)
         self.rows = self.query.all()
 
@@ -39,10 +44,24 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         raise NotImplementedError('Model should define conversion to row')
 
     def add_row(self, parent_window):
-        dialog = QtWidgets.QDialog(parent_window)
-        uic.loadUi('gui/' + self.form, dialog)
-        dialog.open()
-        print('Inserting data')
+        self.dialog = QtWidgets.QDialog(parent_window)
+        uic.loadUi('gui/' + self.form, self.dialog)
+        self.dialog.accepted.connect(self.on_dialog_accepted)
+        self.dialog.open()
+
+    def on_dialog_accepted(self):
+        print('Dialog accepted')
+        entity = self.get_object_from_form()
+        self.session.add(entity)
+        try:
+            self.session.commit()
+            row_count = self.rowCount(QtCore.QModelIndex())
+            self.beginInsertRows(QtCore.QModelIndex(), row_count, row_count)
+            self.fetch_items()
+            self.endInsertRows()
+        except FlushError as error:
+            print(error)
+            self.session.rollback()
 
     def removeRow(self, position, parent=QtCore.QModelIndex()):
         print('Removing data')
@@ -77,6 +96,14 @@ class ConstellationModel(AstronomyModel):
     header = ('Nazwa', 'Skrót IAU', 'Najjaśniejsza gwiazda')
     def to_row(self, constellation):
         return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
+    
+    def get_object_from_form(self):
+        c = astronomy.Constellation(
+            iau_abbreviation = self.dialog.iau_abbreviation_edit.text(),
+            name=self.dialog.name_edit.text(),
+            brightest_star=self.dialog.brightest_star_edit.text())
+        print(c.iau_abbreviation, c.name, c.brightest_star)
+        return c
 
 class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
