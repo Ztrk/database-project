@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtWidgets, uic
 from sqlalchemy.orm.exc import FlushError
+from sqlalchemy.exc import DataError, DatabaseError
 import astronomy
 
 
@@ -9,6 +10,8 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         super(AstronomyModel, self).__init__(*args, **kwargs)
         self.session = session
         self.type = type
+        self.edited_entity = None
+        self.dialog = None
         self.fetch_items()
 
     def fetch_items(self):
@@ -46,10 +49,10 @@ class AstronomyModel(QtCore.QAbstractTableModel):
     def add_row(self, parent_window):
         self.dialog = QtWidgets.QDialog(parent_window)
         uic.loadUi('gui/' + self.form, self.dialog)
-        self.dialog.accepted.connect(self.on_dialog_accepted)
+        self.dialog.accepted.connect(self.on_add_accepted)
         self.dialog.open()
 
-    def on_dialog_accepted(self):
+    def on_add_accepted(self):
         entity = self.get_object_from_form()
         self.session.add(entity)
         try:
@@ -58,7 +61,7 @@ class AstronomyModel(QtCore.QAbstractTableModel):
             self.beginInsertRows(QtCore.QModelIndex(), row_count, row_count)
             self.fetch_items()
             self.endInsertRows()
-        except FlushError as error:
+        except (FlushError, DataError, DatabaseError) as error:
             print(error)
             self.session.rollback()
 
@@ -69,9 +72,32 @@ class AstronomyModel(QtCore.QAbstractTableModel):
             self.beginRemoveRows(QtCore.QModelIndex(), position, position)
             self.fetch_items()
             self.endRemoveRows()
-        except FlushError as error:
+        except (FlushError, DataError, DatabaseError) as error:
             print(error)
             self.session.rollback()
+    
+    def edit_row(self, position, parent_window):
+        self.dialog = QtWidgets.QDialog(parent_window)
+        uic.loadUi('gui/' + self.form, self.dialog)
+        self.edited_entity = self.rows[position]
+        self.fill_form(self.edited_entity)
+        self.dialog.accepted.connect(self.on_edit_accepted)
+        self.dialog.open()
+
+    def on_edit_accepted(self):
+        self.set_object_from_form(self.edited_entity)
+        self.edited_entity = None
+        try:
+            self.session.commit()
+            self.fetch_items()
+        except (FlushError, DataError, DatabaseError) as error:
+            print(error)
+            self.session.rollback()
+
+    def get_object_from_form(self):
+        entity = self.type()
+        self.set_object_from_form(entity)
+        return entity
 
 
 class AstronomerModel(AstronomyModel):
@@ -84,6 +110,7 @@ class AstronomerModel(AstronomyModel):
         return (astronomer.full_name, astronomer.country, astronomer.birth_date,
             astronomer.death_date, astronomer.name_mpc)
 
+
 class ObservatoryModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(ObservatoryModel, self).__init__(session, astronomy.Observatory, *args, **kwargs)
@@ -95,6 +122,7 @@ class ObservatoryModel(AstronomyModel):
         return [observatory.full_name, observatory.name_mpc, observatory.iau_code,
             observatory.country, observatory.latitude, observatory.longitude]
 
+
 class ConstellationModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(ConstellationModel, self).__init__(session, astronomy.Constellation, *args, **kwargs)
@@ -103,12 +131,17 @@ class ConstellationModel(AstronomyModel):
     header = ('Nazwa', 'Skrót IAU', 'Najjaśniejsza gwiazda')
     def to_row(self, constellation):
         return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
+
+    def set_object_from_form(self, entity):
+        entity.iau_abbreviation = self.dialog.iau_abbreviation_edit.text(),
+        entity.name = self.dialog.name_edit.text(),
+        entity.brightest_star = self.dialog.brightest_star_edit.text()
     
-    def get_object_from_form(self):
-        return astronomy.Constellation(
-            iau_abbreviation=self.dialog.iau_abbreviation_edit.text(),
-            name=self.dialog.name_edit.text(),
-            brightest_star=self.dialog.brightest_star_edit.text())
+    def fill_form(self, entity):
+        self.dialog.iau_abbreviation_edit.setText(entity.iau_abbreviation)
+        self.dialog.name_edit.setText(entity.name)
+        self.dialog.brightest_star_edit.setText(entity.brightest_star)
+
 
 class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):

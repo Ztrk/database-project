@@ -50,7 +50,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def edit_table(self):
         if self.current_model is not None:
-            pass
+            selected_row = self.table_view.currentIndex().row()
+            if selected_row >= 0:
+                self.current_model.edit_row(selected_row, self)
 
 
 class TableSelectorItem(QtWidgets.QTreeWidgetItem):
