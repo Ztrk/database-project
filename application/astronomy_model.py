@@ -1,8 +1,26 @@
-import sys
+import datetime
 from PyQt5 import QtCore, QtWidgets, uic
 from sqlalchemy.orm.exc import FlushError
 from sqlalchemy.exc import DataError, DatabaseError
 import astronomy
+
+
+def from_text(text):
+    if text == '':
+        return None
+    return text
+
+def to_text(value):
+    if value is None:
+        return ''
+    if isinstance(value, datetime.date):
+        return value.strftime('%d.%m.%Y')
+    return str(value)
+
+def text_to_date(text):
+    if text == '':
+        return None
+    return datetime.datetime.strptime(text, '%d.%m.%Y').date()
 
 
 class AstronomyModel(QtCore.QAbstractTableModel):
@@ -31,10 +49,7 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         if role == QtCore.Qt.DisplayRole:
             entity = self.rows[index.row()]
             field = self.to_row(entity)[index.column()]
-            if field is not None:
-                return str(field)
-            else:
-                return ''
+            return to_text(field)
 
     def headerData(self, section, orientation, role=QtCore.Qt.DisplayRole):
         if role == QtCore.Qt.DisplayRole:
@@ -53,7 +68,8 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         self.dialog.open()
 
     def on_add_accepted(self):
-        entity = self.get_object_from_form()
+        entity = self.type()
+        self.set_object_from_form(entity)
         self.session.add(entity)
         try:
             self.session.commit()
@@ -94,11 +110,6 @@ class AstronomyModel(QtCore.QAbstractTableModel):
             print(error)
             self.session.rollback()
 
-    def get_object_from_form(self):
-        entity = self.type()
-        self.set_object_from_form(entity)
-        return entity
-
 
 class AstronomerModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
@@ -109,6 +120,20 @@ class AstronomerModel(AstronomyModel):
     def to_row(self, astronomer):
         return (astronomer.full_name, astronomer.country, astronomer.birth_date,
             astronomer.death_date, astronomer.name_mpc)
+
+    def set_object_from_form(self, entity):
+        entity.full_name = from_text(self.dialog.full_name_edit.text())
+        entity.country = from_text(self.dialog.country_edit.text())
+        entity.birth_date = text_to_date(self.dialog.birth_date_edit.text())
+        entity.death_date = text_to_date(self.dialog.death_date_edit.text())
+        entity.name_mpc = from_text(self.dialog.name_mpc_edit.text())
+    
+    def fill_form(self, entity):
+        self.dialog.full_name_edit.setText(entity.full_name)
+        self.dialog.country_edit.setText(entity.country)
+        self.dialog.birth_date_edit.setText(to_text(entity.birth_date))
+        self.dialog.death_date_edit.setText(to_text(entity.death_date))
+        self.dialog.name_mpc_edit.setText(entity.name_mpc)
 
 
 class ObservatoryModel(AstronomyModel):
@@ -133,9 +158,9 @@ class ConstellationModel(AstronomyModel):
         return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
 
     def set_object_from_form(self, entity):
-        entity.iau_abbreviation = self.dialog.iau_abbreviation_edit.text(),
-        entity.name = self.dialog.name_edit.text(),
-        entity.brightest_star = self.dialog.brightest_star_edit.text()
+        entity.iau_abbreviation = from_text(self.dialog.iau_abbreviation_edit.text())
+        entity.name = from_text(self.dialog.name_edit.text())
+        entity.brightest_star = from_text(self.dialog.brightest_star_edit.text())
     
     def fill_form(self, entity):
         self.dialog.iau_abbreviation_edit.setText(entity.iau_abbreviation)
