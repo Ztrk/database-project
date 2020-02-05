@@ -50,7 +50,6 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         self.dialog.open()
 
     def on_dialog_accepted(self):
-        print('Dialog accepted')
         entity = self.get_object_from_form()
         self.session.add(entity)
         try:
@@ -63,8 +62,16 @@ class AstronomyModel(QtCore.QAbstractTableModel):
             print(error)
             self.session.rollback()
 
-    def removeRow(self, position, parent=QtCore.QModelIndex()):
-        print('Removing data')
+    def remove_row(self, position):
+        try:
+            self.session.delete(self.rows[position])
+            self.session.commit()
+            self.beginRemoveRows(QtCore.QModelIndex(), position, position)
+            self.fetch_items()
+            self.endRemoveRows()
+        except FlushError as error:
+            print(error)
+            self.session.rollback()
 
 
 class AstronomerModel(AstronomyModel):
@@ -98,12 +105,10 @@ class ConstellationModel(AstronomyModel):
         return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
     
     def get_object_from_form(self):
-        c = astronomy.Constellation(
-            iau_abbreviation = self.dialog.iau_abbreviation_edit.text(),
+        return astronomy.Constellation(
+            iau_abbreviation=self.dialog.iau_abbreviation_edit.text(),
             name=self.dialog.name_edit.text(),
             brightest_star=self.dialog.brightest_star_edit.text())
-        print(c.iau_abbreviation, c.name, c.brightest_star)
-        return c
 
 class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):

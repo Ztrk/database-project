@@ -44,7 +44,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def remove_from_table(self):
         if self.current_model is not None:
-            self.current_model.removeRow(0)
+            selected_row = self.table_view.currentIndex().row()
+            if selected_row >= 0:
+                self.current_model.remove_row(selected_row)
 
     def edit_table(self):
         if self.current_model is not None:
