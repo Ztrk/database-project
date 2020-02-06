@@ -49,7 +49,7 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.current_form is not None:
             selected_row = self.table_view.currentIndex().row()
             if selected_row >= 0:
-                self.current_form.remove_row(selected_row)
+                self.current_form.remove_row(selected_row, self)
 
     def edit_table(self):
         if self.current_form is not None:

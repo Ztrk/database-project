@@ -35,10 +35,10 @@ class AstronomyForm:
         except ValueError as error:
             self.session.rollback()
             print(error)
-            self.dialog.error_label.setText('Data powinna być w formacie dd.mm.yyyy')
+            self.dialog.error_label.setText('Wprowadź datę w formacie DD.MM.RRRR')
         except FlushError as error:
             print(error)
-            self.dialog.error_label.setText('Obiekt o tej samej nazwie już jest w bazie danych')
+            self.dialog.error_label.setText('Obiekt o tej samej nazwie już istnieje')
         except (DataError, DatabaseError) as error:
             print(error)
             self.dialog.error_label.setText(get_error_message(error.orig.args[0], error.orig.args[1]))
@@ -55,18 +55,33 @@ class AstronomyForm:
         self.dialog.accept()
         self.edited_entity = None
 
-    def remove_row(self, position):
+    def remove_row(self, position, parent_window):
         try:
             self.model.remove_row(position)
-        except (FlushError, DataError, DatabaseError) as error:
+        except FlushError as error:
             print(error)
+            self.create_error_dialog(parent_window)
+        except (DataError, DatabaseError) as error:
+            print(error)
+            self.create_error_dialog(parent_window, 
+                get_error_message(error.orig.args[0], error.orig.args[1]))
+
+    def create_error_dialog(self, parent_window, message=''):
+        error_box = QtWidgets.QMessageBox(parent_window)
+        error_box.setIcon(QtWidgets.QMessageBox.Critical)
+        error_box.setWindowTitle('Błąd')
+        error_box.setText('Nie można usunąć obiektu.                                   ')
+        error_box.setInformativeText(message)
+        #error_box.resize(1200, 1200)
+        error_box.show()
+        return error_box
 
     form = ''
     def set_object_from_form(self, entity):
         raise NotImplementedError('Form should define how to parse a form')
 
     def fill_form(self, entity):
-        raise NotImplementedError('Form should define how to fill form')
+        raise NotImplementedError('Form should define how to fill a form')
 
 class AstronomerForm(AstronomyForm):
     form = 'form-astronomer.ui'
