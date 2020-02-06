@@ -33,6 +33,16 @@ CREATE TABLE obserwatorium (
 
 ALTER TABLE obserwatorium ADD CONSTRAINT obserwatorium_pk PRIMARY KEY (kod_iau);
 
+ALTER TABLE obserwatorium ADD CONSTRAINT latitude_check
+CHECK (szerokosc_geograficzna >= -90 AND szerokosc_geograficzna <= 90);
+
+ALTER TABLE obserwatorium ADD CONSTRAINT longitude_check
+CHECK (dlugosc_geograficzna >= -180 AND dlugosc_geograficzna <= 180);
+
+ALTER TABLE obserwatorium ADD CONSTRAINT coordinates_present
+CHECK ((szerokosc_geograficzna IS NULL AND dlugosc_geograficzna IS NULL)
+    OR (szerokosc_geograficzna IS NOT NULL AND dlugosc_geograficzna IS NOT NULL));
+
 CREATE TABLE konstelacja (
     skrot_iau               VARCHAR(8) NOT NULL,
     nazwa                   VARCHAR(50) NOT NULL,

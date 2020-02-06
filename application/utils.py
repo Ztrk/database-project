@@ -41,5 +41,7 @@ def get_error_message(code, message):
     elif code == 1406: # ER_DATA_TOO_LONG
         column = message.split("'")[1]
         return 'Wartość w polu ' + column + ' jest za długa.'
+    elif code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+        return 'Podane wartości są niepoprawne'
     else:
         return message
