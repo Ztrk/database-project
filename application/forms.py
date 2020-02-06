@@ -1,7 +1,8 @@
+from decimal import InvalidOperation
 from PyQt5 import QtCore, QtWidgets, uic
 from sqlalchemy.orm.exc import FlushError
 from sqlalchemy.exc import DataError, DatabaseError
-from utils import from_text, to_text, text_to_date, get_error_message
+from utils import from_text, to_text, text_to_date, text_to_decimal, get_error_message
 import astronomy
 
 class AstronomyForm:
@@ -37,6 +38,10 @@ class AstronomyForm:
             self.session.rollback()
             print(error)
             self.dialog.error_label.setText('Wprowadź datę w formacie DD.MM.RRRR')
+        except InvalidOperation as error:
+            self.session.rollback()
+            print(error)
+            self.dialog.error_label.setText('Wprowadź liczbę w formacie 12,2442')
         except FlushError as error:
             print(error)
             self.dialog.error_label.setText('Obiekt o tej samej nazwie już istnieje')
@@ -83,6 +88,7 @@ class AstronomyForm:
     def fill_form(self, entity):
         raise NotImplementedError('Form should define how to fill a form')
 
+
 class AstronomerForm(AstronomyForm):
     form = 'form-astronomer.ui'
 
@@ -100,8 +106,26 @@ class AstronomerForm(AstronomyForm):
         self.dialog.death_date_edit.setText(to_text(entity.death_date))
         self.dialog.name_mpc_edit.setText(entity.name_mpc)
 
+
 class ObservatoryForm(AstronomyForm):
     form = 'form-observatory.ui'
+
+    def set_object_from_form(self, entity):
+        entity.iau_code = from_text(self.dialog.iau_code_edit.text())
+        entity.latitude = text_to_decimal(self.dialog.latitude_edit.text())
+        entity.longitude = text_to_decimal(self.dialog.longitude_edit.text())
+        entity.country = from_text(self.dialog.country_edit.text())
+        entity.full_name = from_text(self.dialog.full_name_edit.text())
+        entity.name_mpc = from_text(self.dialog.name_mpc_edit.text())
+    
+    def fill_form(self, entity):
+        self.dialog.iau_code_edit.setText(entity.iau_code)
+        self.dialog.latitude_edit.setText(to_text(entity.latitude))
+        self.dialog.longitude_edit.setText(to_text(entity.longitude))
+        self.dialog.country_edit.setText(entity.country)
+        self.dialog.full_name_edit.setText(entity.full_name)
+        self.dialog.name_mpc_edit.setText(entity.name_mpc)
+
 
 class ConstellationForm(AstronomyForm):
     form = 'form-constellation.ui'
@@ -116,8 +140,10 @@ class ConstellationForm(AstronomyForm):
         self.dialog.name_edit.setText(entity.name)
         self.dialog.brightest_star_edit.setText(entity.brightest_star)
 
+
 class GalaxyGroupForm(AstronomyForm):
     form = 'form-galaxy-group.ui'
+
 
 class CatalogueForm(AstronomyForm):
     form = 'form-catalogue.ui'
