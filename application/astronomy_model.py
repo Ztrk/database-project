@@ -22,6 +22,16 @@ def text_to_date(text):
         return None
     return datetime.datetime.strptime(text, '%d.%m.%Y').date()
 
+def get_error_message(code, message):
+    if code == 1048: # ER_BAD_NULL_ERROR
+        column = message.split("'")[1]
+        return 'Kolumna ' + column + ' nie może być pusta'
+    elif code == 1364: # ER_NO_DEFAULT_FOR_FIELD
+        column = message.split("'")[1]
+        return 'Kolumna ' + column + ' nie może być pusta'
+    else:
+        return message
+
 
 class AstronomyModel(QtCore.QAbstractTableModel):
     def __init__(self, session, type, *args, **kwargs):
@@ -64,22 +74,54 @@ class AstronomyModel(QtCore.QAbstractTableModel):
     def add_row(self, parent_window):
         self.dialog = QtWidgets.QDialog(parent_window)
         uic.loadUi('gui/' + self.form, self.dialog)
-        self.dialog.accepted.connect(self.on_add_accepted)
+        self.dialog.button_box.accepted.connect(self.on_accepted)
         self.dialog.open()
 
+    def edit_row(self, position, parent_window):
+        self.dialog = QtWidgets.QDialog(parent_window)
+        uic.loadUi('gui/' + self.form, self.dialog)
+        self.edited_entity = self.rows[position]
+        self.fill_form(self.edited_entity)
+        self.dialog.button_box.accepted.connect(self.on_accepted)
+        self.dialog.open()
+    
+    def on_accepted(self):
+        try:
+            if self.edited_entity is not None:
+                self.on_edit_accepted()
+            else:
+                self.on_add_accepted()
+        except ValueError as error:
+            self.session.rollback()
+            print(error)
+            self.dialog.error_label.setText('Data powinna być w formacie dd.mm.yyyy')
+        except FlushError as error:
+            self.session.rollback()
+            print(error)
+            self.dialog.error_label.setText('Obiekt o tej samej nazwie już jest w bazie danych')
+        except (DataError, DatabaseError) as error:
+            self.session.rollback()
+            print(error)
+            self.dialog.error_label.setText(get_error_message(error.orig.args[0], error.orig.args[1]))
+    
     def on_add_accepted(self):
         entity = self.type()
         self.set_object_from_form(entity)
         self.session.add(entity)
-        try:
-            self.session.commit()
-            row_count = self.rowCount(QtCore.QModelIndex())
-            self.beginInsertRows(QtCore.QModelIndex(), row_count, row_count)
-            self.fetch_items()
-            self.endInsertRows()
-        except (FlushError, DataError, DatabaseError) as error:
-            print(error)
-            self.session.rollback()
+        self.session.commit()
+
+        row_count = self.rowCount(QtCore.QModelIndex())
+        self.beginInsertRows(QtCore.QModelIndex(), row_count, row_count)
+        self.fetch_items()
+        self.endInsertRows()
+        self.dialog.accept()
+
+    def on_edit_accepted(self):
+        self.set_object_from_form(self.edited_entity)
+        self.session.commit()
+        self.fetch_items()
+        self.dialog.accept()
+        self.edited_entity = None
 
     def remove_row(self, position):
         try:
@@ -89,26 +131,8 @@ class AstronomyModel(QtCore.QAbstractTableModel):
             self.fetch_items()
             self.endRemoveRows()
         except (FlushError, DataError, DatabaseError) as error:
-            print(error)
             self.session.rollback()
-    
-    def edit_row(self, position, parent_window):
-        self.dialog = QtWidgets.QDialog(parent_window)
-        uic.loadUi('gui/' + self.form, self.dialog)
-        self.edited_entity = self.rows[position]
-        self.fill_form(self.edited_entity)
-        self.dialog.accepted.connect(self.on_edit_accepted)
-        self.dialog.open()
-
-    def on_edit_accepted(self):
-        self.set_object_from_form(self.edited_entity)
-        self.edited_entity = None
-        try:
-            self.session.commit()
-            self.fetch_items()
-        except (FlushError, DataError, DatabaseError) as error:
             print(error)
-            self.session.rollback()
 
 
 class AstronomerModel(AstronomyModel):
