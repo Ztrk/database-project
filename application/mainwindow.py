@@ -30,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
         TableSelectorItem(objects, 'Grupy galaktyk', self.session, model.GalaxyGroupModel, forms.GalaxyGroupForm)
 
         TableSelectorItem(self.table_selector, 'Konstelacje', self.session, model.ConstellationModel, forms.ConstellationForm)
-        TableSelectorItem(self.table_selector, 'Katalogi', self.session, model.CatalogueModel, forms.AstronomyForm)
+        TableSelectorItem(self.table_selector, 'Katalogi', self.session, model.CatalogueModel, forms.CatalogueForm)
         TableSelectorItem(self.table_selector, 'Obserwacje', self.session, model.ObservationModel, forms.AstronomyForm)
         TableSelectorItem(self.table_selector, 'Obserwatoria', self.session, model.ObservatoryModel, forms.ObservatoryForm)
         TableSelectorItem(self.table_selector, 'Astronomowie', self.session, model.AstronomerModel, forms.AstronomerForm)

@@ -25,6 +25,7 @@ class AstronomyForm:
         self.fill_form(self.edited_entity)
         self.dialog.button_box.accepted.connect(self.on_accepted)
         self.dialog.open()
+        self.changed_row = position
     
     def on_accepted(self):
         try:
@@ -51,7 +52,7 @@ class AstronomyForm:
 
     def on_edit_accepted(self):
         self.set_object_from_form(self.edited_entity)
-        self.model.edit_row(0)
+        self.model.edit_row(self.changed_row)
         self.dialog.accept()
         self.edited_entity = None
 
@@ -72,7 +73,6 @@ class AstronomyForm:
         error_box.setWindowTitle('Błąd')
         error_box.setText('Nie można usunąć obiektu.                                   ')
         error_box.setInformativeText(message)
-        #error_box.resize(1200, 1200)
         error_box.show()
         return error_box
 
@@ -118,3 +118,16 @@ class ConstellationForm(AstronomyForm):
 
 class GalaxyGroupForm(AstronomyForm):
     form = 'form-galaxy-group.ui'
+
+class CatalogueForm(AstronomyForm):
+    form = 'form-catalogue.ui'
+
+    def set_object_from_form(self, entity):
+        entity.name = from_text(self.dialog.name_edit.text())
+        entity.abbreviation = from_text(self.dialog.abbreviation_edit.text())
+        entity.publishing_year = self.dialog.publishing_year_edit.value()
+    
+    def fill_form(self, entity):
+        self.dialog.name_edit.setText(entity.name)
+        self.dialog.abbreviation_edit.setText(entity.abbreviation)
+        self.dialog.publishing_year_edit.setValue(entity.publishing_year)
