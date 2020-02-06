@@ -26,7 +26,7 @@ INSERT INTO galaktyka(nazwa, typ, wielkosc_gwiazdowa_absolutna, srednica, grupa_
 ('Milky Way', 'Sb', -20.9, 175, 'Local Group');
 
 INSERT INTO katalog(nazwa, skrot, rok_wydania) VALUES
-('Henry Draper Catalogue', 'HD', '1918-01-01');
+('Henry Draper Catalogue', 'HD', '1918');
 
 INSERT INTO obserwacja(data, obiekt_astronomiczny, obserwatorium, astronom, czy_odkrycie) VALUES
 ('2019-02-13', '192686 Aljuroma', 'G84', 'Abc Def', 0);

@@ -39,7 +39,7 @@ class Catalogue(Base):
 
     name = db.Column('nazwa', db.String, primary_key=True)
     abbreviation = db.Column('skrot', db.String)
-    publishing_year = db.Column('rok_wydania', db.Date)
+    publishing_year = db.Column('rok_wydania', db.SmallInteger)
 
 class Observation(Base):
     __tablename__ = 'obserwacja'

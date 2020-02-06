@@ -196,7 +196,7 @@ FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
 CREATE TABLE katalog (
     nazwa         VARCHAR(50) NOT NULL,
     skrot         VARCHAR(10) NOT NULL,
-    rok_wydania   DATE NOT NULL
+    rok_wydania   SMALLINT NOT NULL
 );
 
 ALTER TABLE katalog ADD CONSTRAINT katalog_pk PRIMARY KEY (nazwa);
