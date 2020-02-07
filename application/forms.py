@@ -214,17 +214,44 @@ class GalaxyForm(AstronomyForm):
 class StarForm(AstronomyForm):
     form = 'form-star.ui'
 
+    def set_up(self):
+        for galaxy in self.session.query(astronomy.Galaxy):
+            self.dialog.galaxy_edit.addItem(galaxy.name, galaxy.name)
+        self.dialog.constellation_edit.addItem('', None)
+        for constellation in self.session.query(astronomy.Constellation):
+            self.dialog.constellation_edit.addItem(constellation.name, constellation.iau_abbreviation)
+
+
     def set_object_from_form(self, entity):
         entity.name = from_text(self.dialog.name_edit.text())
+        entity.spectral_type = from_text(self.dialog.spectral_type_edit.text())
         entity.right_ascension = text_to_decimal(self.dialog.right_ascension_edit.text())
         entity.declination = text_to_decimal(self.dialog.declination_edit.text())
+        entity.apparent_magnitude = text_to_decimal(self.dialog.apparent_magnitude_edit.text())
+        entity.absolute_magnitude = text_to_decimal(self.dialog.absolute_magnitude_edit.text())
         entity.distance = text_to_decimal(self.dialog.distance_edit.text())
+        entity.parallax = text_to_decimal(self.dialog.parallax_edit.text())
+        entity.mass = text_to_decimal(self.dialog.mass_edit.text())
+        entity.radius = text_to_decimal(self.dialog.radius_edit.text())
+        entity.galaxy = self.dialog.galaxy_edit.currentData()
+        entity.constellation = self.dialog.constellation_edit.currentData()
     
     def fill_form(self, entity):
         self.dialog.name_edit.setText(entity.name)
+        self.dialog.spectral_type_edit.setText(entity.spectral_type)
         self.dialog.right_ascension_edit.setText(to_text(entity.right_ascension))
         self.dialog.declination_edit.setText(to_text(entity.declination))
+        self.dialog.apparent_magnitude_edit.setText(to_text(entity.apparent_magnitude))
+        self.dialog.absolute_magnitude_edit.setText(to_text(entity.absolute_magnitude))
         self.dialog.distance_edit.setText(to_text(entity.distance))
+        self.dialog.parallax_edit.setText(to_text(entity.parallax))
+        self.dialog.mass_edit.setText(to_text(entity.mass))
+        self.dialog.radius_edit.setText(to_text(entity.radius))
+        self.dialog.galaxy_edit.setCurrentText(entity.galaxy)
+        if entity.constellation is not None:
+            constellation = self.session.query(astronomy.Constellation).\
+                filter_by(iau_abbreviation=entity.constellation).first()
+            self.dialog.constellation_edit.setCurrentText(constellation.name)
 
 
 class CatalogueForm(AstronomyForm):
