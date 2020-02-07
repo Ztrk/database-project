@@ -138,23 +138,32 @@ class StarModel(AstronomyModel):
 
 class SmallBodyModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
-        super(SmallBodyModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+        super(SmallBodyModel, self).__init__(session, astronomy.SmallBody, *args, **kwargs)
 
-    header = ('Nazwa', 'Typ', 'Średnica', 'Masa', 'Średnia temperatura', 'Okres orbitalny', 'Ekscentryczność'
-        'Półoś wielka', 'Inklinacja', 'Długość węzła wstępującego', 'Argument perycentrum',
-        'Anomalia średnia', 'Epoka', 'Orbituje')
+    header = ('Nazwa', 'Typ', 'Średnica', 'Masa', 'Temperatura', 'Okres orbitalny',
+        'Ekscentryczność', 'Półoś wielka', 'Inklinacja', 'Orbitowane ciało')
     def to_row(self, object):
-        return (object.name, object.name)
+        if object.orbited_star is not None:
+            orbited_body = object.orbited_star 
+        else:
+            orbited_body = object.orbited_small_body
+        return (object.name, object.type, object.diameter, object.mass, object.temperature, 
+            object.period, object.eccentricity, object.semi_major_axis, object.inclination, orbited_body)
 
 
 class SatelliteModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
-        super(SatelliteModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+        super(SatelliteModel, self).__init__(session, astronomy.Satellite, *args, **kwargs)
 
-    header = ('Nazwa', 'Rodzaj', 'Kraj', 'Data startu', 'Data zniszczenia', 'Okres orbitalny', 'Apocentrum', 
-        'Perycentrum', 'Inklinacja', 'Orbituje')
+    header = ('Nazwa', 'Rodzaj', 'Kraj', 'Data startu', 'Data zniszczenia', 'Okres orbitalny', 
+        'Apocentrum', 'Perycentrum', 'Inklinacja', 'Orbitowane ciało')
     def to_row(self, object):
-        return (object.name, object.name)
+        if object.orbited_star is not None:
+            orbited_body = object.orbited_star 
+        else:
+            orbited_body = object.orbited_small_body
+        return (object.name, object.type, object.country, object.start_date, object.end_date,
+            object.period, object.apoapsis, object.periapsis, object.inclination, orbited_body)
 
 
 class MeteorShowerModel(AstronomyModel):

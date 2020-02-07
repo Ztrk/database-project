@@ -82,12 +82,36 @@ class Star(AstronomicalObject):
     constellation = db.Column('konstelacja', db.String)
 
 
-class SmallBody:
-    pass
+class SmallBody(AstronomicalObject):
+    __tablename__ = 'male_cialo'
+
+    name = db.Column('nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True)
+    type = db.Column('typ', db.String)
+    period = db.Column('okres', db.Numeric)
+    eccentricity = db.Column('ekscentrycznosc', db.Numeric)
+    semi_major_axis = db.Column('polos_wielka', db.Numeric)
+    inclination = db.Column('inklinacja', db.Numeric)
+    diameter = db.Column('srednica', db.Numeric)
+    mass = db.Column('masa', db.Numeric)
+    temperature = db.Column('temperatura', db.Numeric)
+    orbited_star = db.Column('orbitowana_gwiazda', db.String)
+    orbited_small_body = db.Column('orbitowane_male_cialo', db.String)
 
 
-class Satellite:
-    pass
+class Satellite(AstronomicalObject):
+    __tablename__ = 'sztuczny_satelita'
+
+    name = db.Column('nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True)
+    period = db.Column('okres', db.Numeric)
+    apoapsis = db.Column('apocentrum', db.Numeric)
+    periapsis = db.Column('perycentrum', db.Numeric)
+    inclination = db.Column('inklinacja', db.Numeric)
+    start_date = db.Column('data_startu', db.Date)
+    end_date = db.Column('data_zniszczenia', db.Date)
+    country = db.Column('kraj', db.String)
+    type = db.Column('rodzaj', db.String)
+    orbited_star = db.Column('orbitowana_gwiazda', db.String)
+    orbited_small_body = db.Column('orbitowane_male_cialo', db.String)
 
 
 class MeteorShower(AstronomicalObject):
