@@ -7,181 +7,166 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>441</height>
+    <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>400</y>
-     <width>361</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="formLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>361</width>
-     <height>371</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="nazwaLabel">
-      <property name="text">
-       <string>Nazwa</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="nazwaLineEdit"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="typWidmowyLabel">
-      <property name="text">
-       <string>Typ widmowy</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="typWidmowyLineEdit"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="rektasencjaLabel">
-      <property name="text">
-       <string>Rektasencja</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="rektasencjaLineEdit"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="deklinacjaLabel">
-      <property name="text">
-       <string>Deklinacja</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="deklinacjaLineEdit"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="wielkoGwiazdowaObserwowalnaLabel">
-      <property name="text">
-       <string>Wielkość gwiazdowa (obserwowalna)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QLineEdit" name="wielkoGwiazdowaObserwowalnaLineEdit"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="wielkoGwiazdowaAbsolutnaLabel">
-      <property name="text">
-       <string>Wielkość gwiazdowa (absolutna)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QLineEdit" name="wielkoGwiazdowaAbsolutnaLineEdit"/>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="paralaksaLabel">
-      <property name="text">
-       <string>Paralaksa</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLineEdit" name="paralaksaLineEdit"/>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="dystansLabel">
-      <property name="text">
-       <string>Dystans</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLineEdit" name="dystansLineEdit"/>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="masaLabel">
-      <property name="text">
-       <string>Masa</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLineEdit" name="masaLineEdit"/>
-    </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="promieLabel">
-      <property name="text">
-       <string>Promień</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QLineEdit" name="promieLineEdit"/>
-    </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="galaktykaLabel">
-      <property name="text">
-       <string>Galaktyka</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1">
-     <widget class="QComboBox" name="galaktykaComboBox"/>
-    </item>
-    <item row="11" column="0">
-     <widget class="QLabel" name="konstelacjaLabel">
-      <property name="text">
-       <string>Konstelacja</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1">
-     <widget class="QComboBox" name="konstelacjaComboBox"/>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="nazwaLabel">
+       <property name="text">
+        <string>Nazwa</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="name_edit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="typWidmowyLabel">
+       <property name="text">
+        <string>Typ widmowy</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="spectral_type_edit"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="rektasencjaLabel">
+       <property name="text">
+        <string>Rektasencja</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="right_ascension_edit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="deklinacjaLabel">
+       <property name="text">
+        <string>Deklinacja</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="declination_edit"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="apparent_magnitude_label">
+       <property name="text">
+        <string>Wielkość obserwowana</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="apparent_magnitude_edit"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="absolute_magnitude_label">
+       <property name="text">
+        <string>Wielkość absolutna</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="absolute_magnitude_edit"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="dystansLabel">
+       <property name="text">
+        <string>Dystans</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="distance_edit"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="paralaksaLabel">
+       <property name="text">
+        <string>Paralaksa</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="parallax_edit"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="masaLabel">
+       <property name="text">
+        <string>Masa</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="mass_edit"/>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="promieLabel">
+       <property name="text">
+        <string>Promień</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="radius_edit"/>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="konstelacjaLabel">
+       <property name="text">
+        <string>Konstelacja</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QComboBox" name="constellation_edit"/>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="galaktykaLabel">
+       <property name="text">
+        <string>Galaktyka</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QComboBox" name="galaxy_edit"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="error_label">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(239, 41, 41);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
+   <sender>button_box</sender>
    <signal>rejected()</signal>
    <receiver>Dialog</receiver>
    <slot>reject()</slot>

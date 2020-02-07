@@ -25,8 +25,8 @@ class MainWindow(QtWidgets.QMainWindow):
         TableSelectorItem(objects, 'Małe ciała', self.session, model.SmallBodyModel, forms.AstronomyForm)
         TableSelectorItem(objects, 'Sztuczne satelity', self.session, model.SatelliteModel, forms.AstronomyForm)
         TableSelectorItem(objects, 'Roje meteorów', self.session, model.MeteorShowerModel, forms.AstronomyForm)
-        TableSelectorItem(objects, 'Gwiazdy', self.session, model.StarModel, forms.AstronomyForm)
-        TableSelectorItem(objects, 'Galaktyki', self.session, model.GalaxyModel, forms.AstronomyForm)
+        TableSelectorItem(objects, 'Gwiazdy', self.session, model.StarModel, forms.StarForm)
+        TableSelectorItem(objects, 'Galaktyki', self.session, model.GalaxyModel, forms.GalaxyForm)
         TableSelectorItem(objects, 'Grupy galaktyk', self.session, model.GalaxyGroupModel, forms.GalaxyGroupForm)
 
         TableSelectorItem(self.table_selector, 'Konstelacje', self.session, model.ConstellationModel, forms.ConstellationForm)
