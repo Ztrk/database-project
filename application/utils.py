@@ -35,11 +35,14 @@ def get_error_message(code, message):
     if code == 1048: # ER_BAD_NULL_ERROR
         column = message.split("'")[1]
         return 'Pole ' + column + ' nie może być puste.'
+    elif code == 1062: # ER_DUP_ENTRY
+        name = message.split("'")[1]
+        return 'Obiekt o nazwie ' + name + ' już istnieje.'
     elif code == 1217: # ER_ROW_IS_REFERENCED
         return 'Obiekt jest używany przez inne obiekty. Spróbuj usunąć je najpierw.'
     elif code == 1264: # ER_WARN_DATA_OUT_OF_RANGE
         column = message.split("'")[1]
-        return 'Dana w kolumnie ' + column + ' jest poza zakresem'
+        return 'Dana w kolumnie ' + column + ' jest poza zakresem.'
     elif code == 1364: # ER_NO_DEFAULT_FOR_FIELD
         column = message.split("'")[1]
         return 'Pole ' + column + ' nie może być puste.'
@@ -47,6 +50,6 @@ def get_error_message(code, message):
         column = message.split("'")[1]
         return 'Wartość w polu ' + column + ' jest za długa.'
     elif code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
-        return 'Podane wartości są niepoprawne'
+        return 'Podane wartości są niepoprawne.'
     else:
         return message

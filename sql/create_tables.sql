@@ -84,7 +84,7 @@ CREATE TABLE galaktyka (
     wielkosc_gwiazdowa_obserwowalna   DECIMAL(6, 4), 
     wielkosc_gwiazdowa_absolutna      DECIMAL(6, 4) NOT NULL, 
     dystans                           DECIMAL(10, 4), 
-    srednica                          DECIMAL(8, 2) NOT NULL,
+    srednica                          DECIMAL(10, 4) NOT NULL,
     grupa_galaktyk                    VARCHAR(70),
     orbitowana_galaktyka              VARCHAR(70),
     konstelacja                       VARCHAR(8)
@@ -119,7 +119,7 @@ CREATE TABLE gwiazda (
     wielkosc_gwiazdowa_absolutna      DECIMAL(6, 4) NOT NULL, 
     dystans                           DECIMAL(10, 4) NOT NULL, 
     paralaksa                         DECIMAL(10, 4), 
-    masa                              DECIMAL(7, 4) NOT NULL, 
+    masa                              DECIMAL(10, 4) NOT NULL, 
     promien                           DECIMAL(10, 4) NOT NULL,
     galaktyka                         VARCHAR(70) NOT NULL,
     konstelacja                       VARCHAR(8)

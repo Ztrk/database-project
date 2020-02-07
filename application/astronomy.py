@@ -49,6 +49,39 @@ class GalaxyGroup(AstronomicalObject):
     radial_velocity = db.Column('predkosc_radialna', db.Numeric)
 
 
+class Galaxy(AstronomicalObject):
+    __tablename__ = 'galaktyka'
+
+    name = db.Column('nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True)
+    galaxy_type = db.Column('typ', db.String)
+    right_ascension = db.Column('rektasencja', db.Numeric)
+    declination = db.Column('deklinacja', db.Numeric)
+    apparent_magnitude = db.Column('wielkosc_gwiazdowa_obserwowalna', db.Numeric)
+    absolute_magnitude = db.Column('wielkosc_gwiazdowa_absolutna', db.Numeric)
+    distance = db.Column('dystans', db.Numeric)
+    diameter = db.Column('srednica', db.Numeric)
+    galaxy_group = db.Column('grupa_galaktyk', db.String)
+    orbited_galaxy = db.Column('orbitowana_galaktyka', db.String)
+    constellation = db.Column('konstelacja', db.String)
+
+
+class Star(AstronomicalObject):
+    __tablename__ = 'gwiazda'
+
+    name = db.Column('nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True)
+    spectral_type = db.Column('typ_widmowy', db.String)
+    right_ascension = db.Column('rektasencja', db.Numeric)
+    declination = db.Column('deklinacja', db.Numeric)
+    apparent_magnitude = db.Column('wielkosc_gwiazdowa_obserwowalna', db.Numeric)
+    absolute_magnitude = db.Column('wielkosc_gwiazdowa_absolutna', db.Numeric)
+    distance = db.Column('dystans', db.Numeric)
+    parallax = db.Column('paralaksa', db.Numeric)
+    mass = db.Column('masa', db.Numeric)
+    radius = db.Column('promien', db.Numeric)
+    galaxy = db.Column('galaktyka', db.String)
+    constellation = db.Column('konstelacja', db.String)
+
+
 class Catalogue(Base):
     __tablename__ = 'katalog'
 

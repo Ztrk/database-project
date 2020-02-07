@@ -21,7 +21,7 @@ class AstronomyModel(QtCore.QAbstractTableModel):
         if len(self.rows) > 0:
             return len(self.to_row(self.rows[0]))
         else:
-            return 0
+            return len(self.header)
 
     def data(self, index, role=QtCore.Qt.DisplayRole):
         if role == QtCore.Qt.DisplayRole:
@@ -114,22 +114,26 @@ class GalaxyGroupModel(AstronomyModel):
 
 class GalaxyModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
-        super(GalaxyModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+        super(GalaxyModel, self).__init__(session, astronomy.Galaxy, *args, **kwargs)
 
-    header = ('Nazwa', 'Typ', 'Dystans', 'Wielkość gwiazdowa (obserwowalna)', 'Wielkość gwiazdowa (absolutna)',
-        'Średnica', 'Konstelacja', 'Orbitowana galaktyka', 'Grupa galaktyk')
-    def to_row(self, small_body):
-        return [small_body.name, small_body.name]
+    header = ('Nazwa', 'Typ', 'Rektasencja', 'Deklinacja', 'Wielkość gwiazdowa (obserwowalna)', 'Wielkość gwiazdowa (absolutna)',
+        'Dystans', 'Średnica', 'Konstelacja', 'Orbitowana galaktyka', 'Grupa galaktyk')
+    def to_row(self, object):
+        return (object.name, object.galaxy_type, object.right_ascension, object.declination, 
+            object.apparent_magnitude, object.absolute_magnitude, object.distance, 
+            object.diameter, object.constellation, object.orbited_galaxy, object.galaxy_group)
 
 
 class StarModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
-        super(StarModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+        super(StarModel, self).__init__(session, astronomy.Star, *args, **kwargs)
 
     header = ('Nazwa', 'Typ widmowy', 'Rektasencja', 'Deklinacja', 'Wielkość gwiazdowa (obserwowalna)', 
-        'Wielkość gwiazdowa (absolutna)', 'Paralaksa', 'Dystans', 'Masa', 'Promień', 'Galaktyka', 'Konstelacja')
-    def to_row(self, small_body):
-        return [small_body.name, small_body.name]
+        'Wielkość gwiazdowa (absolutna)', 'Dystans', 'Paralaksa', 'Masa', 'Promień', 'Konstelacja', 'Galaktyka')
+    def to_row(self, object):
+        return (object.name, object.spectral_type, object.right_ascension, object.declination,
+            object.apparent_magnitude, object.absolute_magnitude, object.distance, object.parallax,
+            object.mass, object.radius, object.constellation, object.galaxy)
 
 
 class SmallBodyModel(AstronomyModel):
