@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class Astronomer(Base):
     __tablename__ = 'astronom'
 
@@ -11,6 +12,7 @@ class Astronomer(Base):
     death_date = db.Column('data_zgonu', db.Date)
     country = db.Column('kraj', db.String)
     name_mpc = db.Column('imie_mpc', db.String)
+
 
 class Observatory(Base):
     __tablename__ = 'obserwatorium'
@@ -22,6 +24,7 @@ class Observatory(Base):
     full_name = db.Column('pelna_nazwa', db.String)
     name_mpc = db.Column('nazwa_mpc', db.String)
 
+
 class Constellation(Base):
     __tablename__ = 'konstelacja'
 
@@ -29,10 +32,22 @@ class Constellation(Base):
     name = db.Column('nazwa', db.String)
     brightest_star = db.Column('najjasniejsza_gwiazda', db.String)
 
+
 class AstronomicalObject(Base):
     __tablename__ = 'obiekt_astronomiczny'
 
     name = db.Column('nazwa', db.String, primary_key=True)
+
+
+class GalaxyGroup(AstronomicalObject):
+    __tablename__ = 'grupa_galaktyk'
+
+    name = db.Column('nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True)
+    right_ascension = db.Column('rektasencja', db.Numeric)
+    declination = db.Column('deklinacja', db.Numeric)
+    distance = db.Column('dystans', db.Numeric)
+    radial_velocity = db.Column('predkosc_radialna', db.Numeric)
+
 
 class Catalogue(Base):
     __tablename__ = 'katalog'
@@ -40,6 +55,7 @@ class Catalogue(Base):
     name = db.Column('nazwa', db.String, primary_key=True)
     abbreviation = db.Column('skrot', db.String)
     publishing_year = db.Column('rok_wydania', db.SmallInteger)
+
 
 class Observation(Base):
     __tablename__ = 'obserwacja'

@@ -152,6 +152,20 @@ class ConstellationForm(AstronomyForm):
 class GalaxyGroupForm(AstronomyForm):
     form = 'form-galaxy-group.ui'
 
+    def set_object_from_form(self, entity):
+        entity.name = from_text(self.dialog.name_edit.text())
+        entity.right_ascension = text_to_decimal(self.dialog.right_ascension_edit.text())
+        entity.declination = text_to_decimal(self.dialog.declination_edit.text())
+        entity.distance = text_to_decimal(self.dialog.distance_edit.text())
+        entity.radial_velocity = text_to_decimal(self.dialog.radial_velocity_edit.text())
+    
+    def fill_form(self, entity):
+        self.dialog.name_edit.setText(entity.name)
+        self.dialog.right_ascension_edit.setText(to_text(entity.right_ascension))
+        self.dialog.declination_edit.setText(to_text(entity.declination))
+        self.dialog.distance_edit.setText(to_text(entity.distance))
+        self.dialog.radial_velocity_edit.setText(to_text(entity.radial_velocity))
+
 
 class CatalogueForm(AstronomyForm):
     form = 'form-catalogue.ui'
@@ -195,6 +209,7 @@ class ObservationForm(AstronomyForm):
         self.dialog.astronomical_object_edit.setCurrentText(entity.astronomical_object)
         self.dialog.astronomer_edit.setCurrentText(entity.astronomer)
 
+        # TODO: Better handling of duplicate observatory names
         observatory = self.session.query(astronomy.Observatory).filter_by(iau_code=entity.observatory).first()
         self.dialog.observatory_edit.setCurrentText(observatory.full_name)
 

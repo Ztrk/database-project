@@ -89,8 +89,8 @@ class ObservatoryModel(AstronomyModel):
     header = ('Pełna nazwa', 'Nazwa w MPC', 'Kod IAU', 'Kraj', 
         'Szerokość geograficzna', 'Długość geograficzna')
     def to_row(self, observatory):
-        return [observatory.full_name, observatory.name_mpc, observatory.iau_code,
-            observatory.country, observatory.latitude, observatory.longitude]
+        return (observatory.full_name, observatory.name_mpc, observatory.iau_code,
+            observatory.country, observatory.latitude, observatory.longitude)
 
 
 class ConstellationModel(AstronomyModel):
@@ -99,16 +99,17 @@ class ConstellationModel(AstronomyModel):
 
     header = ('Nazwa', 'Skrót IAU', 'Najjaśniejsza gwiazda')
     def to_row(self, constellation):
-        return [constellation.name, constellation.iau_abbreviation, constellation.brightest_star]
+        return (constellation.name, constellation.iau_abbreviation, constellation.brightest_star)
 
 
 class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
-        super(GalaxyGroupModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+        super(GalaxyGroupModel, self).__init__(session, astronomy.GalaxyGroup, *args, **kwargs)
 
     header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans', 'Prędkość kątowa')
-    def to_row(self, small_body):
-        return [small_body.name, small_body.name]
+    def to_row(self, object):
+        return (object.name, object.right_ascension, object.declination,
+            object.distance, object.radial_velocity)
 
 
 class GalaxyModel(AstronomyModel):
@@ -168,7 +169,7 @@ class CatalogueModel(AstronomyModel):
 
     header = ('Nazwa', 'Skrót', 'Rok wydania')
     def to_row(self, catalogue):
-        return [catalogue.name, catalogue.abbreviation, catalogue.publishing_year]
+        return (catalogue.name, catalogue.abbreviation, catalogue.publishing_year)
 
 
 class ObservationModel(AstronomyModel):
@@ -177,5 +178,5 @@ class ObservationModel(AstronomyModel):
 
     header = ('Obiekt', 'Astronom', 'Obserwatorium', 'Data', 'Czy odkrycie')
     def to_row(self, observation):
-        return [observation.astronomical_object, observation.astronomer, observation.observatory,
-            observation.date, observation.is_discovery]
+        return (observation.astronomical_object, observation.astronomer, observation.observatory,
+            observation.date, observation.is_discovery)
