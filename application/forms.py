@@ -1,9 +1,11 @@
+import datetime
 from decimal import InvalidOperation
 from PyQt5 import QtCore, QtWidgets, uic
 from sqlalchemy.orm.exc import FlushError
 from sqlalchemy.exc import DataError, DatabaseError
 from utils import from_text, to_text, text_to_date, text_to_decimal, get_error_message
 import astronomy
+
 
 class AstronomyForm:
     def __init__(self, model, session):
@@ -16,12 +18,14 @@ class AstronomyForm:
     def add_row(self, parent_window):
         self.dialog = QtWidgets.QDialog(parent_window)
         uic.loadUi('gui/' + self.form, self.dialog)
+        self.set_up()
         self.dialog.button_box.accepted.connect(self.on_accepted)
         self.dialog.open()
 
     def edit_row(self, position, parent_window):
         self.dialog = QtWidgets.QDialog(parent_window)
         uic.loadUi('gui/' + self.form, self.dialog)
+        self.set_up()
         self.edited_entity = self.model.rows[position]
         self.fill_form(self.edited_entity)
         self.dialog.button_box.accepted.connect(self.on_accepted)
@@ -82,6 +86,10 @@ class AstronomyForm:
         return error_box
 
     form = ''
+
+    def set_up(self):
+        pass
+
     def set_object_from_form(self, entity):
         raise NotImplementedError('Form should define how to parse a form')
 
@@ -157,3 +165,39 @@ class CatalogueForm(AstronomyForm):
         self.dialog.name_edit.setText(entity.name)
         self.dialog.abbreviation_edit.setText(entity.abbreviation)
         self.dialog.publishing_year_edit.setValue(entity.publishing_year)
+
+
+class ObservationForm(AstronomyForm):
+    form = 'form-observation.ui'
+
+    def set_up(self):
+        for name, in self.session.query(astronomy.AstronomicalObject.name):
+            self.dialog.astronomical_object_edit.addItem(name)
+
+        for full_name, in self.session.query(astronomy.Astronomer.full_name):
+            self.dialog.astronomer_edit.addItem(full_name)
+
+        for full_name, iau_code in self.session.query(astronomy.Observatory.full_name, 
+                astronomy.Observatory.iau_code):
+            self.dialog.observatory_edit.addItem(full_name, iau_code)
+        
+        self.dialog.date_edit.setMinimumDate(QtCore.QDate(1000, 1, 1))
+
+    def set_object_from_form(self, entity):
+        entity.astronomical_object = self.dialog.astronomical_object_edit.currentText()
+        entity.astronomer = self.dialog.astronomer_edit.currentText()
+        entity.observatory = self.dialog.observatory_edit.currentData()
+        date = self.dialog.date_edit.date()
+        entity.date = datetime.date(date.year(), date.month(), date.day())
+        entity.is_discovery = self.dialog.is_discovery_edit.isChecked()
+    
+    def fill_form(self, entity):
+        self.dialog.astronomical_object_edit.setCurrentText(entity.astronomical_object)
+        self.dialog.astronomer_edit.setCurrentText(entity.astronomer)
+
+        observatory = self.session.query(astronomy.Observatory).filter_by(iau_code=entity.observatory).first()
+        self.dialog.observatory_edit.setCurrentText(observatory.full_name)
+
+        date = QtCore.QDate(entity.date.year, entity.date.month, entity.date.day)
+        self.dialog.date_edit.setDate(date)
+        self.dialog.is_discovery_edit.setChecked(entity.is_discovery)

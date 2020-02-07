@@ -9,6 +9,11 @@ def from_text(text):
 def to_text(value):
     if value is None:
         return ''
+    if isinstance(value, bool):
+        if value:
+            return 'Tak'
+        else:
+            return 'Nie'
     if isinstance(value, datetime.date):
         return value.strftime('%d.%m.%Y')
     if isinstance(value, decimal.Decimal):
