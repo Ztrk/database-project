@@ -90,8 +90,18 @@ class Satellite:
     pass
 
 
-class MeteorShower:
-    pass
+class MeteorShower(AstronomicalObject):
+    __tablename__ = 'roj_meteorow'
+
+    name = db.Column('nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True)
+    begin_date = db.Column('data_poczatku', db.Date)
+    end_date = db.Column('data_konca', db.Date)
+    peak_date = db.Column('data_maksimum', db.Date)
+    right_ascension = db.Column('rektasencja', db.Numeric)
+    declination = db.Column('deklinacja', db.Numeric)
+    velocity = db.Column('predkosc', db.Numeric)
+    zhr = db.Column('zhr', db.Numeric)
+    activity = db.Column('aktywnosc', db.String)
 
 
 class Catalogue(Base):

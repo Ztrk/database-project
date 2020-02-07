@@ -143,8 +143,8 @@ class SmallBodyModel(AstronomyModel):
     header = ('Nazwa', 'Typ', 'Średnica', 'Masa', 'Średnia temperatura', 'Okres orbitalny', 'Ekscentryczność'
         'Półoś wielka', 'Inklinacja', 'Długość węzła wstępującego', 'Argument perycentrum',
         'Anomalia średnia', 'Epoka', 'Orbituje')
-    def to_row(self, small_body):
-        return [small_body.name, small_body.name]
+    def to_row(self, object):
+        return (object.name, object.name)
 
 
 class SatelliteModel(AstronomyModel):
@@ -153,18 +153,20 @@ class SatelliteModel(AstronomyModel):
 
     header = ('Nazwa', 'Rodzaj', 'Kraj', 'Data startu', 'Data zniszczenia', 'Okres orbitalny', 'Apocentrum', 
         'Perycentrum', 'Inklinacja', 'Orbituje')
-    def to_row(self, small_body):
-        return [small_body.name, small_body.name]
+    def to_row(self, object):
+        return (object.name, object.name)
 
 
 class MeteorShowerModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
-        super(MeteorShowerModel, self).__init__(session, astronomy.AstronomicalObject, *args, **kwargs)
+        super(MeteorShowerModel, self).__init__(session, astronomy.MeteorShower, *args, **kwargs)
 
     header = ('Nazwa', 'Data początku', 'Data końca', 'Data maksimum', 'Rektasencja', 'Deklinacja',
         'Prędkość', 'ZHR', 'Aktywność')
-    def to_row(self, small_body):
-        return [small_body.name, small_body.name]
+    def to_row(self, object):
+        return (object.name, object.begin_date.strftime('%d.%m'), object.end_date.strftime('%d.%m'), 
+            object.peak_date.strftime('%d.%m'), object.right_ascension, object.declination, 
+            object.velocity, object.zhr, object.activity)
 
 
 class CatalogueModel(AstronomyModel):

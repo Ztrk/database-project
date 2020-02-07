@@ -263,7 +263,35 @@ class SatelliteForm(AstronomyForm):
 
 
 class MeteorShowerForm(AstronomyForm):
-    pass
+    form = 'form-meteor-shower.ui'
+
+    def set_object_from_form(self, entity):
+        entity.name = from_text(self.dialog.name_edit.text())
+        begin_date = self.dialog.begin_date_edit.date()
+        entity.begin_date = datetime.date(2004, begin_date.month(), begin_date.day())
+        end_date = self.dialog.end_date_edit.date()
+        entity.end_date = datetime.date(2004, end_date.month(), end_date.day())
+        peak_date = self.dialog.peak_date_edit.date()
+        entity.peak_date = datetime.date(2004, peak_date.month(), peak_date.day())
+        entity.right_ascension = text_to_decimal(self.dialog.right_ascension_edit.text())
+        entity.declination = text_to_decimal(self.dialog.declination_edit.text())
+        entity.velocity = text_to_decimal(self.dialog.velocity_edit.text())
+        entity.zhr = text_to_decimal(self.dialog.zhr_edit.text())
+        entity.activity = from_text(self.dialog.activity_edit.text())
+    
+    def fill_form(self, entity):
+        self.dialog.name_edit.setText(entity.name)
+        begin_date = QtCore.QDate(2004, entity.begin_date.month, entity.end_date.day)
+        self.dialog.begin_date_edit.setDate(begin_date)
+        end_date = QtCore.QDate(2004, entity.end_date.month, entity.end_date.day)
+        self.dialog.end_date_edit.setDate(end_date)
+        peak_date = QtCore.QDate(2004, entity.peak_date.month, entity.peak_date.day)
+        self.dialog.peak_date_edit.setDate(peak_date)
+        self.dialog.right_ascension_edit.setText(to_text(entity.right_ascension))
+        self.dialog.declination_edit.setText(to_text(entity.declination))
+        self.dialog.velocity_edit.setText(to_text(entity.velocity))
+        self.dialog.zhr_edit.setText(to_text(entity.zhr))
+        self.dialog.activity_edit.setText(to_text(entity.activity))
 
 
 class CatalogueForm(AstronomyForm):
