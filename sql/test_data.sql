@@ -22,10 +22,10 @@ INSERT INTO grupa_galaktyk(nazwa, rektasencja, deklinacja, dystans, predkosc_rad
 ("Stephan's Quintet", 22.5993, 33.96, 300, 6600),
 ('Local Group', null, null, null, null);
 
-INSERT INTO galaktyka(nazwa, typ, wielkosc_gwiazdowa_absolutna, srednica, grupa_galaktyk) VALUES
+INSERT INTO galaktyka(nazwa, typ, wielkosc_absolutna, srednica, grupa_galaktyk) VALUES
 ('Milky Way', 'Sb', -20.9, 175, 'Local Group');
 
-INSERT INTO gwiazda(nazwa, typ_widmowy, wielkosc_gwiazdowa_obserwowalna, wielkosc_gwiazdowa_absolutna, dystans, masa, promien, galaktyka) VALUES
+INSERT INTO gwiazda(nazwa, typ_widmowy, wielkosc_obserwowana, wielkosc_absolutna, dystans, masa, promien, galaktyka) VALUES
 ('Sun', 'G2V', -26.74, 4.83, 0, 1, 1, 'Milky Way');
 
 INSERT INTO katalog(nazwa, skrot, rok_wydania) VALUES

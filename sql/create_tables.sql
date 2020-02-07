@@ -77,17 +77,17 @@ ALTER TABLE grupa_galaktyk ADD CONSTRAINT galaxy_group_declination_check
 CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
 CREATE TABLE galaktyka (
-    nazwa                             VARCHAR(70) NOT NULL,
-    typ                               VARCHAR(20) NOT NULL,
-    rektasencja                       DECIMAL(10, 6), 
-    deklinacja                        DECIMAL(10, 6), 
-    wielkosc_gwiazdowa_obserwowalna   DECIMAL(6, 4), 
-    wielkosc_gwiazdowa_absolutna      DECIMAL(6, 4) NOT NULL, 
-    dystans                           DECIMAL(10, 4), 
-    srednica                          DECIMAL(10, 4) NOT NULL,
-    grupa_galaktyk                    VARCHAR(70),
-    orbitowana_galaktyka              VARCHAR(70),
-    konstelacja                       VARCHAR(8)
+    nazwa                  VARCHAR(70) NOT NULL,
+    typ                    VARCHAR(20) NOT NULL,
+    rektasencja            DECIMAL(10, 6), 
+    deklinacja             DECIMAL(10, 6), 
+    wielkosc_obserwowana   DECIMAL(6, 4), 
+    wielkosc_absolutna     DECIMAL(6, 4) NOT NULL, 
+    dystans                DECIMAL(10, 4), 
+    srednica               DECIMAL(10, 4) NOT NULL,
+    grupa_galaktyk         VARCHAR(70),
+    orbitowana_galaktyka   VARCHAR(70),
+    konstelacja            VARCHAR(8)
 );
 
 ALTER TABLE galaktyka ADD CONSTRAINT galaktyka_pk PRIMARY KEY (nazwa);
@@ -111,18 +111,18 @@ ALTER TABLE galaktyka ADD CONSTRAINT galaxy_declination_check
 CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
 CREATE TABLE gwiazda (
-    nazwa                             VARCHAR(70) NOT NULL,
-    typ_widmowy                       VARCHAR(20) NOT NULL,
-    rektasencja                       DECIMAL(10, 6),
-    deklinacja                        DECIMAL(10, 6),
-    wielkosc_gwiazdowa_obserwowalna   DECIMAL(6, 4) NOT NULL, 
-    wielkosc_gwiazdowa_absolutna      DECIMAL(6, 4) NOT NULL, 
-    dystans                           DECIMAL(10, 4) NOT NULL, 
-    paralaksa                         DECIMAL(10, 4), 
-    masa                              DECIMAL(10, 4) NOT NULL, 
-    promien                           DECIMAL(10, 4) NOT NULL,
-    galaktyka                         VARCHAR(70) NOT NULL,
-    konstelacja                       VARCHAR(8)
+    nazwa                  VARCHAR(70) NOT NULL,
+    typ_widmowy            VARCHAR(20) NOT NULL,
+    rektasencja            DECIMAL(10, 6),
+    deklinacja             DECIMAL(10, 6),
+    wielkosc_obserwowana   DECIMAL(6, 4) NOT NULL, 
+    wielkosc_absolutna     DECIMAL(6, 4) NOT NULL, 
+    dystans                DECIMAL(10, 4) NOT NULL, 
+    paralaksa              DECIMAL(10, 4), 
+    masa                   DECIMAL(10, 4) NOT NULL, 
+    promien                DECIMAL(10, 4) NOT NULL,
+    galaktyka              VARCHAR(70) NOT NULL,
+    konstelacja            VARCHAR(8)
 );
 
 ALTER TABLE gwiazda ADD CONSTRAINT gwiazda_pk PRIMARY KEY (nazwa);

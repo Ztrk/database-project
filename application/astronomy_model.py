@@ -116,7 +116,7 @@ class GalaxyModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(GalaxyModel, self).__init__(session, astronomy.Galaxy, *args, **kwargs)
 
-    header = ('Nazwa', 'Typ', 'Rektasencja', 'Deklinacja', 'Wielkość gwiazdowa (obserwowalna)', 'Wielkość gwiazdowa (absolutna)',
+    header = ('Nazwa', 'Typ', 'Rektasencja', 'Deklinacja', 'Wielkość obserwowana', 'Wielkość absolutna',
         'Dystans', 'Średnica', 'Konstelacja', 'Orbitowana galaktyka', 'Grupa galaktyk')
     def to_row(self, object):
         return (object.name, object.galaxy_type, object.right_ascension, object.declination, 
@@ -128,8 +128,8 @@ class StarModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(StarModel, self).__init__(session, astronomy.Star, *args, **kwargs)
 
-    header = ('Nazwa', 'Typ widmowy', 'Rektasencja', 'Deklinacja', 'Wielkość gwiazdowa (obserwowalna)', 
-        'Wielkość gwiazdowa (absolutna)', 'Dystans', 'Paralaksa', 'Masa', 'Promień', 'Konstelacja', 'Galaktyka')
+    header = ('Nazwa', 'Typ widmowy', 'Rektasencja', 'Deklinacja', 'Wielkość obserwowana', 
+        'Wielkość absolutna', 'Dystans', 'Paralaksa', 'Masa', 'Promień', 'Konstelacja', 'Galaktyka')
     def to_row(self, object):
         return (object.name, object.spectral_type, object.right_ascension, object.declination,
             object.apparent_magnitude, object.absolute_magnitude, object.distance, object.parallax,
