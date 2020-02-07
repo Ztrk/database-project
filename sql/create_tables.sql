@@ -70,12 +70,20 @@ ALTER TABLE grupa_galaktyk ADD CONSTRAINT grupa_galaktyk_pk PRIMARY KEY (nazwa);
 ALTER TABLE grupa_galaktyk ADD CONSTRAINT grupa_galaktyk_obiekt_astronomiczny_fk
 FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
 
+ALTER TABLE grupa_galaktyk ADD CONSTRAINT galaxy_group_right_ascension_check
+CHECK (rektasencja >= 0 AND rektasencja <= 24);
+
+ALTER TABLE grupa_galaktyk ADD CONSTRAINT galaxy_group_declination_check
+CHECK (deklinacja >= -90 AND deklinacja <= 90);
+
 CREATE TABLE galaktyka (
     nazwa                             VARCHAR(70) NOT NULL,
     typ                               VARCHAR(20) NOT NULL,
-    dystans                           DECIMAL(10, 4), 
+    rektasencja                       DECIMAL(10, 6), 
+    deklinacja                        DECIMAL(10, 6), 
     wielkosc_gwiazdowa_obserwowalna   DECIMAL(6, 4), 
     wielkosc_gwiazdowa_absolutna      DECIMAL(6, 4) NOT NULL, 
+    dystans                           DECIMAL(10, 4), 
     srednica                          DECIMAL(8, 2) NOT NULL,
     grupa_galaktyk                    VARCHAR(70),
     orbitowana_galaktyka              VARCHAR(70),
@@ -96,15 +104,21 @@ FOREIGN KEY (orbitowana_galaktyka) REFERENCES galaktyka (nazwa);
 ALTER TABLE galaktyka ADD CONSTRAINT galaktyka_konstelacja_fk
 FOREIGN KEY (konstelacja) REFERENCES konstelacja (skrot_iau);
 
+ALTER TABLE galaktyka ADD CONSTRAINT galaxy_right_ascension_check
+CHECK (rektasencja >= 0 AND rektasencja <= 24);
+
+ALTER TABLE galaktyka ADD CONSTRAINT galaxy_declination_check
+CHECK (deklinacja >= -90 AND deklinacja <= 90);
+
 CREATE TABLE gwiazda (
     nazwa                             VARCHAR(70) NOT NULL,
     typ_widmowy                       VARCHAR(20) NOT NULL,
-    rektasencja                       DECIMAL(7, 4) NOT NULL, 
-    deklinacja                        DECIMAL(7, 4) NOT NULL, 
+    rektasencja                       DECIMAL(10, 6),
+    deklinacja                        DECIMAL(10, 6),
     wielkosc_gwiazdowa_obserwowalna   DECIMAL(6, 4) NOT NULL, 
     wielkosc_gwiazdowa_absolutna      DECIMAL(6, 4) NOT NULL, 
-    paralaksa                         DECIMAL(10, 4), 
     dystans                           DECIMAL(10, 4) NOT NULL, 
+    paralaksa                         DECIMAL(10, 4), 
     masa                              DECIMAL(7, 4) NOT NULL, 
     promien                           DECIMAL(10, 4) NOT NULL,
     galaktyka                         VARCHAR(70) NOT NULL,
@@ -121,6 +135,12 @@ FOREIGN KEY (galaktyka) REFERENCES galaktyka (nazwa);
 
 ALTER TABLE gwiazda ADD CONSTRAINT gwiazda_konstelacja_fk
 FOREIGN KEY (konstelacja) REFERENCES konstelacja (skrot_iau);
+
+ALTER TABLE gwiazda ADD CONSTRAINT star_right_ascension_check
+CHECK (rektasencja >= 0 AND rektasencja <= 24);
+
+ALTER TABLE gwiazda ADD CONSTRAINT star_declination_check
+CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
 CREATE TABLE male_cialo (
     nazwa                        VARCHAR(70) NOT NULL,
@@ -191,8 +211,8 @@ CREATE TABLE roj_meteorow (
     data_poczatku   DATE NOT NULL,
     data_końca      DATE NOT NULL,
     data_maksimum   DATE NOT NULL,
-    rektasencja     DECIMAL(7, 4) NOT NULL, 
-    deklinacja      DECIMAL(7, 4) NOT NULL,
+    rektasencja     DECIMAL(10, 6) NOT NULL, 
+    deklinacja      DECIMAL(10, 6) NOT NULL,
     predkosc        DECIMAL(5, 2) NOT NULL,
     zhr             DECIMAL(6, 3) NOT NULL,
     aktywność       VARCHAR(20) NOT NULL
@@ -202,6 +222,12 @@ ALTER TABLE roj_meteorow ADD CONSTRAINT roj_meteorow_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE roj_meteorow ADD CONSTRAINT roj_meteorow_obiekt_astronomiczny_fk
 FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+
+ALTER TABLE roj_meteorow ADD CONSTRAINT meteor_shower_right_ascension_check
+CHECK (rektasencja >= 0 AND rektasencja <= 24);
+
+ALTER TABLE roj_meteorow ADD CONSTRAINT meteor_shower_declination_check
+CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
 CREATE TABLE katalog (
     nazwa         VARCHAR(50) NOT NULL,
