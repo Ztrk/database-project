@@ -82,6 +82,18 @@ class Star(AstronomicalObject):
     constellation = db.Column('konstelacja', db.String)
 
 
+class SmallBody:
+    pass
+
+
+class Satellite:
+    pass
+
+
+class MeteorShower:
+    pass
+
+
 class Catalogue(Base):
     __tablename__ = 'katalog'
 

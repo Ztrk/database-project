@@ -254,6 +254,18 @@ class StarForm(AstronomyForm):
             self.dialog.constellation_edit.setCurrentText(constellation.name)
 
 
+class SmallBodyForm(AstronomyForm):
+    pass
+
+
+class SatelliteForm(AstronomyForm):
+    pass
+
+
+class MeteorShowerForm(AstronomyForm):
+    pass
+
+
 class CatalogueForm(AstronomyForm):
     form = 'form-catalogue.ui'
 

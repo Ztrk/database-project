@@ -145,19 +145,15 @@ CHECK (deklinacja >= -90 AND deklinacja <= 90);
 CREATE TABLE male_cialo (
     nazwa                        VARCHAR(70) NOT NULL,
     typ                          VARCHAR(30),
-    okres                        DECIMAL(10, 4), 
-    ekscentrycznosc              DECIMAL(8, 6) NOT NULL, 
-    polos_wielka                 DECIMAL(10, 4) NOT NULL, 
-    inklinacja                   DECIMAL(7, 4) NOT NULL, 
-    dlugosc_wezla_wstepujacego   DECIMAL(7, 4) NOT NULL, 
-    argument_perycentrum         DECIMAL(7, 4) NOT NULL, 
-    anomalia_srednia             DECIMAL(7, 4) NOT NULL, 
-    epoch                        DECIMAL(10, 4) NOT NULL, 
+    okres                        DECIMAL(10, 6), 
+    ekscentrycznosc              DECIMAL(10, 6) NOT NULL, 
+    polos_wielka                 DECIMAL(10, 6) NOT NULL, 
+    inklinacja                   DECIMAL(10, 6) NOT NULL, 
     srednica                     DECIMAL(10, 4) NOT NULL, 
-    masa                         DECIMAL(10, 4),
+    masa                         DECIMAL(12, 6),
     orbitowana_gwiazda           VARCHAR(70),
     orbitowane_male_cialo        VARCHAR(70),
-    srednia_temperatura          DECIMAL(8, 2)
+    temperatura                  DECIMAL(8, 2)
 );
 
 ALTER TABLE male_cialo ADD CONSTRAINT male_cialo_pk PRIMARY KEY (nazwa);
@@ -178,10 +174,10 @@ CHECK ((orbitowane_male_cialo IS NOT NULL AND orbitowana_gwiazda IS NULL)
 
 CREATE TABLE sztuczny_satelita (
     nazwa                   VARCHAR(70) NOT NULL,
-    okres_orbitalny         DECIMAL(10, 4), 
-    apocentrum              DECIMAL(10, 4) NOT NULL, 
-    perycentrum             DECIMAL(10, 4) NOT NULL, 
-    inklinacja              DECIMAL(7, 4) NOT NULL,
+    okres                   DECIMAL(10, 6), 
+    apocentrum              DECIMAL(10, 6) NOT NULL, 
+    perycentrum             DECIMAL(10, 6) NOT NULL, 
+    inklinacja              DECIMAL(10, 6) NOT NULL,
     data_startu             DATE NOT NULL,
     data_zniszczenia        DATE,
     kraj                    VARCHAR(50) NOT NULL,
@@ -209,13 +205,13 @@ CHECK ((orbitowana_gwiazda IS NOT NULL AND orbitowane_male_cialo IS NULL)
 CREATE TABLE roj_meteorow (
     nazwa           VARCHAR(70) NOT NULL,
     data_poczatku   DATE NOT NULL,
-    data_końca      DATE NOT NULL,
+    data_konca      DATE NOT NULL,
     data_maksimum   DATE NOT NULL,
     rektasencja     DECIMAL(10, 6) NOT NULL, 
     deklinacja      DECIMAL(10, 6) NOT NULL,
     predkosc        DECIMAL(5, 2) NOT NULL,
     zhr             DECIMAL(6, 3) NOT NULL,
-    aktywność       VARCHAR(20) NOT NULL
+    aktywnosc       VARCHAR(20) NOT NULL
 );
 
 ALTER TABLE roj_meteorow ADD CONSTRAINT roj_meteorow_pk PRIMARY KEY (nazwa);
