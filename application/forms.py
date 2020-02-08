@@ -25,8 +25,8 @@ class AstronomyForm:
     def edit_row(self, position, parent_window):
         self.dialog = QtWidgets.QDialog(parent_window)
         uic.loadUi('gui/' + self.form, self.dialog)
-        self.set_up()
         self.edited_entity = self.model.rows[position]
+        self.set_up()
         self.fill_form(self.edited_entity)
         self.dialog.button_box.accepted.connect(self.on_accepted)
         self.dialog.open()
@@ -383,6 +383,13 @@ class MeteorShowerForm(AstronomyForm):
 class CatalogueForm(AstronomyForm):
     form = 'form-catalogue.ui'
 
+    def set_up(self):
+        if self.edited_entity is not None:
+            self.dialog.catalogue_objects_button.clicked.\
+                connect(lambda : CatalogueObjectForm(self.session, self.dialog, self.edited_entity))
+        else:
+            self.dialog.catalogue_objects_button.setVisible(False)
+
     def set_object_from_form(self, entity):
         entity.name = from_text(self.dialog.name_edit.text())
         entity.abbreviation = from_text(self.dialog.abbreviation_edit.text())
@@ -429,3 +436,13 @@ class ObservationForm(AstronomyForm):
         date = QtCore.QDate(entity.date.year, entity.date.month, entity.date.day)
         self.dialog.date_edit.setDate(date)
         self.dialog.is_discovery_edit.setChecked(entity.is_discovery)
+
+
+class CatalogueObjectForm:
+    def __init__(self, session, parent_window, catalogue):
+        self.session = session
+        self.catalogue = catalogue
+        self.dialog = QtWidgets.QDialog(parent_window)
+        uic.loadUi('gui/form-catalogue-object.ui', self.dialog)
+        self.dialog.open()
+        

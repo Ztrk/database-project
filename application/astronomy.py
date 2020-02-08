@@ -128,12 +128,19 @@ class MeteorShower(AstronomicalObject):
     activity = db.Column('aktywnosc', db.String)
 
 
+catalogue_objects = db.Table('obiekt_w_katalogu', Base.metadata,
+    db.Column('obiekt_nazwa', db.String, db.ForeignKey('obiekt_astronomiczny.nazwa'), primary_key=True),
+    db.Column('katalog_nazwa', db.String, db.ForeignKey('katalog.nazwa'), primary_key=True)
+)
+
+
 class Catalogue(Base):
     __tablename__ = 'katalog'
 
     name = db.Column('nazwa', db.String, primary_key=True)
     abbreviation = db.Column('skrot', db.String)
     publishing_year = db.Column('rok_wydania', db.SmallInteger)
+    objects = db.orm.relationship('AstronomicalObject', secondary=catalogue_objects)
 
 
 class Observation(Base):
