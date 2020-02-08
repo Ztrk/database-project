@@ -7,161 +7,146 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>391</height>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>340</y>
-     <width>361</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="formLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>19</x>
-     <y>19</y>
-     <width>361</width>
-     <height>311</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="nazwaLabel">
-      <property name="text">
-       <string>Nazwa</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="nazwaLineEdit"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="rodzajLabel">
-      <property name="text">
-       <string>Rodzaj</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="rodzajLineEdit"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="krajLabel">
-      <property name="text">
-       <string>Kraj</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="krajLineEdit"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="dataStartuLabel">
-      <property name="text">
-       <string>Data startu</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QDateEdit" name="dataStartuDateEdit"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="dataZniszczeniaLabel">
-      <property name="text">
-       <string>Data zniszczenia</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QDateEdit" name="dataZniszczeniaDateEdit"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="orbitujeLabel">
-      <property name="text">
-       <string>Orbituje</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QComboBox" name="orbitujeComboBox"/>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="okresOrbitalnyLabel">
-      <property name="text">
-       <string>Okres orbitalny</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLineEdit" name="okresOrbitalnyLineEdit"/>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="apocentrumLabel">
-      <property name="text">
-       <string>Apocentrum</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLineEdit" name="apocentrumLineEdit"/>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="perycentrumLabel">
-      <property name="text">
-       <string>Perycentrum</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLineEdit" name="perycentrumLineEdit"/>
-    </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="inklinacjaLabel">
-      <property name="text">
-       <string>Inklinacja</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QLineEdit" name="inklinacjaLineEdit"/>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="nazwaLabel">
+       <property name="text">
+        <string>Nazwa</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="name_edit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="rodzajLabel">
+       <property name="text">
+        <string>Rodzaj</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="type_edit"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="krajLabel">
+       <property name="text">
+        <string>Kraj</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="country_edit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="dataStartuLabel">
+       <property name="text">
+        <string>Data startu</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="dataZniszczeniaLabel">
+       <property name="text">
+        <string>Data zniszczenia</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="okresOrbitalnyLabel">
+       <property name="text">
+        <string>Okres orbitalny</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="period_edit"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="apocentrumLabel">
+       <property name="text">
+        <string>Apocentrum</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="apoapsis_edit"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="perycentrumLabel">
+       <property name="text">
+        <string>Perycentrum</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="periapsis_edit"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="inklinacjaLabel">
+       <property name="text">
+        <string>Inklinacja</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="inclination_edit"/>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="orbitujeLabel">
+       <property name="text">
+        <string>Orbitowane ciało</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QComboBox" name="orbited_body_edit"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="start_date_edit"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="end_date_edit"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="error_label">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(239, 41, 41);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
+   <sender>button_box</sender>
    <signal>rejected()</signal>
    <receiver>Dialog</receiver>
    <slot>reject()</slot>

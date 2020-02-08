@@ -255,11 +255,97 @@ class StarForm(AstronomyForm):
 
 
 class SmallBodyForm(AstronomyForm):
-    pass
+    form = 'form-small-body.ui'
+
+    def set_up(self):
+        self.dialog.type_edit.addItem('Asteroida')
+        self.dialog.type_edit.addItem('Kometa')
+        self.dialog.type_edit.addItem('Planeta')
+        self.dialog.type_edit.addItem('Satelita')
+        self.dialog.orbited_body_edit.addItem('', None)
+        for small_body in self.session.query(astronomy.SmallBody):
+            self.dialog.orbited_body_edit.addItem(small_body.name, small_body)
+        for star in self.session.query(astronomy.Star):
+            self.dialog.orbited_body_edit.addItem(star.name, star)
+
+    def set_object_from_form(self, entity):
+        entity.name = from_text(self.dialog.name_edit.text())
+        entity.type = self.dialog.type_edit.currentText()
+        entity.diameter = text_to_decimal(self.dialog.diameter_edit.text())
+        entity.mass = text_to_decimal(self.dialog.mass_edit.text())
+        entity.temperature = text_to_decimal(self.dialog.temperature_edit.text())
+        entity.period = text_to_decimal(self.dialog.period_edit.text())
+        entity.eccentricity = text_to_decimal(self.dialog.eccentricity_edit.text())
+        entity.semi_major_axis = text_to_decimal(self.dialog.semi_major_axis_edit.text())
+        entity.inclination = text_to_decimal(self.dialog.inclination_edit.text())
+        orbited_body = self.dialog.orbited_body_edit.currentData()
+        if isinstance(orbited_body, astronomy.Star):
+            entity.orbited_star = orbited_body.name
+        else:
+            entity.orbited_star = None
+        if isinstance(orbited_body, astronomy.SmallBody):
+            entity.orbited_small_body = orbited_body.name
+        else:
+            entity.orbited_small_body = None
+    
+    def fill_form(self, entity):
+        self.dialog.name_edit.setText(entity.name)
+        self.dialog.type_edit.setCurrentText(entity.type)
+        self.dialog.diameter_edit.setText(to_text(entity.diameter))
+        self.dialog.mass_edit.setText(to_text(entity.mass))
+        self.dialog.temperature_edit.setText(to_text(entity.temperature))
+        self.dialog.period_edit.setText(to_text(entity.period))
+        self.dialog.eccentricity_edit.setText(to_text(entity.eccentricity))
+        self.dialog.semi_major_axis_edit.setText(to_text(entity.semi_major_axis))
+        self.dialog.inclination_edit.setText(to_text(entity.inclination))
+        self.dialog.orbited_body_edit.setCurrentText(entity.orbited_star)
+        if entity.orbited_small_body is not None:
+            self.dialog.orbited_body_edit.setCurrentText(entity.orbited_small_body)
 
 
 class SatelliteForm(AstronomyForm):
-    pass
+    form = 'form-satellite.ui'
+
+    def set_up(self):
+        self.dialog.orbited_body_edit.addItem('', None)
+        for small_body in self.session.query(astronomy.SmallBody):
+            self.dialog.orbited_body_edit.addItem(small_body.name, small_body)
+        for star in self.session.query(astronomy.Star):
+            self.dialog.orbited_body_edit.addItem(star.name, star)
+
+    def set_object_from_form(self, entity):
+        entity.name = from_text(self.dialog.name_edit.text())
+        entity.type = from_text(self.dialog.type_edit.text())
+        entity.country = from_text(self.dialog.country_edit.text())
+        entity.start_date = text_to_date(self.dialog.start_date_edit.text())
+        entity.end_date = text_to_date(self.dialog.end_date_edit.text())
+        entity.period = text_to_decimal(self.dialog.period_edit.text())
+        entity.apoapsis = text_to_decimal(self.dialog.apoapsis_edit.text())
+        entity.periapsis = text_to_decimal(self.dialog.periapsis_edit.text())
+        entity.inclination = text_to_decimal(self.dialog.inclination_edit.text())
+        orbited_body = self.dialog.orbited_body_edit.currentData()
+        if isinstance(orbited_body, astronomy.Star):
+            entity.orbited_star = orbited_body.name
+        else:
+            entity.orbited_star = None
+        if isinstance(orbited_body, astronomy.SmallBody):
+            entity.orbited_small_body = orbited_body.name
+        else:
+            entity.orbited_small_body = None
+    
+    def fill_form(self, entity):
+        self.dialog.name_edit.setText(entity.name)
+        self.dialog.type_edit.setText(to_text(entity.type))
+        self.dialog.country_edit.setText(to_text(entity.country))
+        self.dialog.start_date_edit.setText(to_text(entity.start_date))
+        self.dialog.end_date_edit.setText(to_text(entity.end_date))
+        self.dialog.period_edit.setText(to_text(entity.period))
+        self.dialog.apoapsis_edit.setText(to_text(entity.apoapsis))
+        self.dialog.periapsis_edit.setText(to_text(entity.periapsis))
+        self.dialog.inclination_edit.setText(to_text(entity.inclination))
+        self.dialog.orbited_body_edit.setCurrentText(entity.orbited_star)
+        if entity.orbited_small_body is not None:
+            self.dialog.orbited_body_edit.setCurrentText(entity.orbited_small_body)
 
 
 class MeteorShowerForm(AstronomyForm):

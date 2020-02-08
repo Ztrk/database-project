@@ -7,201 +7,146 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>502</height>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>460</y>
-     <width>361</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="formLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>361</width>
-     <height>431</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="nazwaLabel">
-      <property name="text">
-       <string>Nazwa</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="nazwaLineEdit"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="typLabel">
-      <property name="text">
-       <string>Typ</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QComboBox" name="typComboBox"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="rednicaLabel">
-      <property name="text">
-       <string>Średnica</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="rednicaLineEdit"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="masaLabel">
-      <property name="text">
-       <string>Masa</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="masaLineEdit"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="redniaTemperaturaLabel">
-      <property name="text">
-       <string>Średnia temperatura</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QLineEdit" name="redniaTemperaturaLineEdit"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="orbitujeLabel">
-      <property name="text">
-       <string>Orbituje</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="okresOrbitalnyLabel">
-      <property name="text">
-       <string>Okres orbitalny</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLineEdit" name="okresOrbitalnyLineEdit"/>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="ekscentrycznoLabel">
-      <property name="text">
-       <string>Ekscentryczność</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLineEdit" name="ekscentrycznoLineEdit"/>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="pOWielkaLabel">
-      <property name="text">
-       <string>Półoś wielka</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLineEdit" name="pOWielkaLineEdit"/>
-    </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="inklinacjaLabel">
-      <property name="text">
-       <string>Inklinacja</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QLineEdit" name="inklinacjaLineEdit"/>
-    </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="dUgoWZAWstPujCegoLabel">
-      <property name="text">
-       <string>Długość węzła wstępującego</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1">
-     <widget class="QLineEdit" name="dUgoWZAWstPujCegoLineEdit"/>
-    </item>
-    <item row="11" column="0">
-     <widget class="QLabel" name="argumentPerycentrumLabel">
-      <property name="text">
-       <string>Argument Perycentrum</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1">
-     <widget class="QLineEdit" name="argumentPerycentrumLineEdit"/>
-    </item>
-    <item row="12" column="0">
-     <widget class="QLabel" name="anomaliaRedniaLabel">
-      <property name="text">
-       <string>Anomalia średnia</string>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="1">
-     <widget class="QLineEdit" name="anomaliaRedniaLineEdit"/>
-    </item>
-    <item row="13" column="0">
-     <widget class="QLabel" name="epokaLabel">
-      <property name="text">
-       <string>Epoka</string>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="1">
-     <widget class="QLineEdit" name="epokaLineEdit"/>
-    </item>
-    <item row="5" column="1">
-     <widget class="QComboBox" name="orbitedBodyComboBox"/>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="nazwaLabel">
+       <property name="text">
+        <string>Nazwa</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="name_edit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="typLabel">
+       <property name="text">
+        <string>Typ</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="type_edit"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="diameter_label">
+       <property name="text">
+        <string>Średnica</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="diameter_edit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="masaLabel">
+       <property name="text">
+        <string>Masa</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="mass_edit"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="temperature_label">
+       <property name="text">
+        <string>Temperatura</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="temperature_edit"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="okresOrbitalnyLabel">
+       <property name="text">
+        <string>Okres orbitalny</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="period_edit"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="eccentricity_label">
+       <property name="text">
+        <string>Ekscentryczność</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="eccentricity_edit"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="semi_major_axis_label">
+       <property name="text">
+        <string>Półoś wielka</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="semi_major_axis_edit"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="inklinacjaLabel">
+       <property name="text">
+        <string>Inklinacja</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="inclination_edit"/>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="orbitujeLabel">
+       <property name="text">
+        <string>Orbitowane ciało</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QComboBox" name="orbited_body_edit"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="error_label">
+     <property name="styleSheet">
+      <string notr="true">color: rgb(239, 41, 41);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
+   <sender>button_box</sender>
    <signal>rejected()</signal>
    <receiver>Dialog</receiver>
    <slot>reject()</slot>

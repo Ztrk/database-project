@@ -106,7 +106,7 @@ class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(GalaxyGroupModel, self).__init__(session, astronomy.GalaxyGroup, *args, **kwargs)
 
-    header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans', 'Prędkość kątowa')
+    header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans', 'Prędkość radialna')
     def to_row(self, object):
         return (object.name, object.right_ascension, object.declination,
             object.distance, object.radial_velocity)
