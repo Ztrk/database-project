@@ -385,10 +385,12 @@ class CatalogueForm(AstronomyForm):
 
     def set_up(self):
         if self.edited_entity is not None:
-            self.dialog.catalogue_objects_button.clicked.\
-                connect(lambda : CatalogueObjectForm(self.session, self.dialog, self.edited_entity))
+            self.dialog.catalogue_objects_button.clicked.connect(self.edit_objects_handle)
         else:
             self.dialog.catalogue_objects_button.setVisible(False)
+    
+    def edit_objects_handle(self):
+        self.catalogue_object_form = CatalogueObjectForm(self.session, self.dialog, self.edited_entity)
 
     def set_object_from_form(self, entity):
         entity.name = from_text(self.dialog.name_edit.text())
@@ -444,5 +446,37 @@ class CatalogueObjectForm:
         self.catalogue = catalogue
         self.dialog = QtWidgets.QDialog(parent_window)
         uic.loadUi('gui/form-catalogue-object.ui', self.dialog)
+        self.fill_lists()
+        self.dialog.to_catalogue_button.clicked.connect(self.to_catalogue_handle)
+        self.dialog.from_catalogue_button.clicked.connect(self.from_catalogue_handle)
+        self.dialog.button_box.accepted.connect(self.accepted_handle)
         self.dialog.open()
-        
+    
+    def fill_lists(self):
+        objects = self.session.query(astronomy.AstronomicalObject)
+        for object in objects:
+            item = QtWidgets.QListWidgetItem(object.name)
+            item.setData(QtCore.Qt.UserRole, object)
+            if object not in self.catalogue.objects:
+                self.dialog.objects_list.addItem(item)
+            else:
+                self.dialog.catalogue_objects_list.addItem(item)
+
+    def to_catalogue_handle(self):
+        row = self.dialog.objects_list.currentRow()
+        item = self.dialog.objects_list.takeItem(row)
+        self.dialog.catalogue_objects_list.addItem(item)
+
+    def from_catalogue_handle(self):
+        row = self.dialog.catalogue_objects_list.currentRow()
+        item = self.dialog.catalogue_objects_list.takeItem(row)
+        self.dialog.objects_list.addItem(item)
+
+    def accepted_handle(self):
+        print('Accepted')
+        self.catalogue.objects = []
+        for i in range(0, self.dialog.catalogue_objects_list.count()):
+            item = self.dialog.catalogue_objects_list.item(i)
+            self.catalogue.objects.append(item.data(QtCore.Qt.UserRole))
+        self.session.commit()
+        self.dialog.accept()

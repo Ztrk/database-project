@@ -59,5 +59,8 @@ INSERT INTO roj_meteorow(nazwa, data_poczatku, data_konca, data_maksimum,
 INSERT INTO katalog(nazwa, skrot, rok_wydania) VALUES
 ('Henry Draper Catalogue', 'HD', '1918');
 
+INSERT INTO obiekt_w_katalogu(obiekt_nazwa, katalog_nazwa) VALUES
+('Aldebaran', 'Henry Draper Catalogue');
+
 INSERT INTO obserwacja(data, obiekt_astronomiczny, obserwatorium, astronom, czy_odkrycie) VALUES
 ('2019-02-13', '192686 Aljuroma', 'G84', 'Abc Def', 0);
