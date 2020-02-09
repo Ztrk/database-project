@@ -66,6 +66,7 @@
    <addaction name="action_add"/>
    <addaction name="action_remove"/>
    <addaction name="action_edit"/>
+   <addaction name="action_execute"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="features">
@@ -116,6 +117,11 @@
   <action name="action_edit">
    <property name="text">
     <string>Edytuj</string>
+   </property>
+  </action>
+  <action name="action_execute">
+   <property name="text">
+    <string>Wykonaj</string>
    </property>
   </action>
  </widget>

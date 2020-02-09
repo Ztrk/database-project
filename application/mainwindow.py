@@ -1,3 +1,4 @@
+from sqlalchemy import func, text
 from PyQt5 import QtCore, QtWidgets, uic
 import astronomy
 import astronomy_model as model
@@ -19,6 +20,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.action_add.triggered.connect(self.add_to_table)
         self.action_remove.triggered.connect(self.remove_from_table)
         self.action_edit.triggered.connect(self.edit_table)
+        self.action_execute.triggered.connect(self.execute_handle)
 
     def fill_table_selector(self):
         objects = TableSelectorItem(self.table_selector, 'Obiekty astronomiczne')
@@ -56,6 +58,16 @@ class MainWindow(QtWidgets.QMainWindow):
             selected_row = self.table_view.currentIndex().row()
             if selected_row >= 0:
                 self.current_form.edit_row(selected_row, self)
+    
+    def execute_handle(self):
+        print(self.session.execute(func.angle_to_decimal(-11, 37, 58)).scalar())
+        call = text('CALL decimal_to_angle(:angle, @degrees, @minutes, @seconds)').bindparams(angle=12.7230)
+        self.session.execute(call)
+        result = self.session.execute('SELECT @degrees, @minutes, @seconds').fetchone()
+        print(result)
+        call = text('CALL period_from_orbit(:name)').bindparams(name='asdf')
+        self.session.execute(call)
+        print('Executing')
 
 
 class TableSelectorItem(QtWidgets.QTreeWidgetItem):
