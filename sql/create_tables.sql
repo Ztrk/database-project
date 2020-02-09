@@ -68,7 +68,7 @@ CREATE TABLE grupa_galaktyk (
 ALTER TABLE grupa_galaktyk ADD CONSTRAINT grupa_galaktyk_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE grupa_galaktyk ADD CONSTRAINT grupa_galaktyk_obiekt_astronomiczny_fk
-FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE grupa_galaktyk ADD CONSTRAINT galaxy_group_right_ascension_check
 CHECK (rektasencja >= 0 AND rektasencja <= 24);
@@ -93,13 +93,13 @@ CREATE TABLE galaktyka (
 ALTER TABLE galaktyka ADD CONSTRAINT galaktyka_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE galaktyka ADD CONSTRAINT galaktyka_obiekt_astronomiczny_fk 
-FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE galaktyka ADD CONSTRAINT galaktyka_grupa_galaktyk_fk
-FOREIGN KEY (grupa_galaktyk) REFERENCES grupa_galaktyk (nazwa);
+FOREIGN KEY (grupa_galaktyk) REFERENCES grupa_galaktyk (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE galaktyka ADD CONSTRAINT orbitowana_galaktyka_fk
-FOREIGN KEY (orbitowana_galaktyka) REFERENCES galaktyka (nazwa);
+FOREIGN KEY (orbitowana_galaktyka) REFERENCES galaktyka (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE galaktyka ADD CONSTRAINT galaktyka_konstelacja_fk
 FOREIGN KEY (konstelacja) REFERENCES konstelacja (skrot_iau);
@@ -128,10 +128,10 @@ CREATE TABLE gwiazda (
 ALTER TABLE gwiazda ADD CONSTRAINT gwiazda_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE gwiazda ADD CONSTRAINT gwiazda_obiekt_astronomiczny_fk
-FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE gwiazda ADD CONSTRAINT gwiazda_galaktyka_fk
-FOREIGN KEY (galaktyka) REFERENCES galaktyka (nazwa);
+FOREIGN KEY (galaktyka) REFERENCES galaktyka (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE gwiazda ADD CONSTRAINT gwiazda_konstelacja_fk
 FOREIGN KEY (konstelacja) REFERENCES konstelacja (skrot_iau);
@@ -159,18 +159,13 @@ CREATE TABLE male_cialo (
 ALTER TABLE male_cialo ADD CONSTRAINT male_cialo_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE male_cialo ADD CONSTRAINT male_cialo_obiekt_astronomiczny_fk
-FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE male_cialo ADD CONSTRAINT orbitowana_gwiazda_fk
-FOREIGN KEY (orbitowana_gwiazda) REFERENCES gwiazda (nazwa);
+FOREIGN KEY (orbitowana_gwiazda) REFERENCES gwiazda (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE male_cialo ADD CONSTRAINT orbitowane_cialo_fk
-FOREIGN KEY (orbitowane_male_cialo) REFERENCES male_cialo (nazwa);
-
-ALTER TABLE male_cialo ADD CONSTRAINT male_cialo_orbitowane_cialo
-CHECK ((orbitowane_male_cialo IS NOT NULL AND orbitowana_gwiazda IS NULL)
-      OR (orbitowane_male_cialo IS NULL AND orbitowana_gwiazda IS NOT NULL)
-      OR (orbitowane_male_cialo IS NULL AND orbitowana_gwiazda IS NULL));
+FOREIGN KEY (orbitowane_male_cialo) REFERENCES male_cialo (nazwa) ON UPDATE CASCADE;
 
 CREATE TABLE sztuczny_satelita (
     nazwa                   VARCHAR(70) NOT NULL,
@@ -189,18 +184,13 @@ CREATE TABLE sztuczny_satelita (
 ALTER TABLE sztuczny_satelita ADD CONSTRAINT sztuczny_satelita_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE sztuczny_satelita ADD CONSTRAINT sztuczny_satelita_obiekt_astronomiczny_fk
-FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE sztuczny_satelita ADD CONSTRAINT sztuczny_satelita_gwiazda_fk
-FOREIGN KEY (orbitowana_gwiazda) REFERENCES gwiazda (nazwa);
+FOREIGN KEY (orbitowana_gwiazda) REFERENCES gwiazda (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE sztuczny_satelita ADD CONSTRAINT sztuczny_satelita_male_ciala_fk
-FOREIGN KEY (orbitowane_male_cialo) REFERENCES male_cialo (nazwa);
-
-ALTER TABLE sztuczny_satelita ADD CONSTRAINT satelita_orbitowane_cialo
-CHECK ((orbitowana_gwiazda IS NOT NULL AND orbitowane_male_cialo IS NULL)
-      OR (orbitowana_gwiazda IS NULL AND orbitowane_male_cialo IS NOT NULL)
-      OR (orbitowana_gwiazda IS NULL AND orbitowane_male_cialo IS NULL));
+FOREIGN KEY (orbitowane_male_cialo) REFERENCES male_cialo (nazwa) ON UPDATE CASCADE;
 
 CREATE TABLE roj_meteorow (
     nazwa           VARCHAR(70) NOT NULL,
@@ -217,7 +207,7 @@ CREATE TABLE roj_meteorow (
 ALTER TABLE roj_meteorow ADD CONSTRAINT roj_meteorow_pk PRIMARY KEY (nazwa);
 
 ALTER TABLE roj_meteorow ADD CONSTRAINT roj_meteorow_obiekt_astronomiczny_fk
-FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE roj_meteorow ADD CONSTRAINT meteor_shower_right_ascension_check
 CHECK (rektasencja >= 0 AND rektasencja <= 24);
@@ -242,10 +232,10 @@ ALTER TABLE obiekt_w_katalogu ADD CONSTRAINT obiekt_w_katalogu_pk
 PRIMARY KEY (obiekt_nazwa, katalog_nazwa);
 
 ALTER TABLE obiekt_w_katalogu ADD CONSTRAINT obiekt_w_katalogu_katalog_fk
-FOREIGN KEY (katalog_nazwa) REFERENCES katalog (nazwa);
+FOREIGN KEY (katalog_nazwa) REFERENCES katalog (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE obiekt_w_katalogu ADD CONSTRAINT obiekt_w_katalogu_obiekt_astronomiczny_fk
-FOREIGN KEY (obiekt_nazwa) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (obiekt_nazwa) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 CREATE TABLE obserwacja (
     data                   DATETIME NOT NULL,
@@ -259,11 +249,10 @@ ALTER TABLE obserwacja ADD CONSTRAINT obserwacja_pk
 PRIMARY KEY (data, obiekt_astronomiczny, obserwatorium, astronom);
 
 ALTER TABLE obserwacja ADD CONSTRAINT obserwacja_obiekt_astronomiczny_fk
-FOREIGN KEY (obiekt_astronomiczny) REFERENCES obiekt_astronomiczny (nazwa);
+FOREIGN KEY (obiekt_astronomiczny) REFERENCES obiekt_astronomiczny (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE obserwacja ADD CONSTRAINT obserwacja_obserwatorium_fk
 FOREIGN KEY (obserwatorium) REFERENCES obserwatorium (kod_iau);
 
 ALTER TABLE obserwacja ADD CONSTRAINT obserwacja_astronom_fk
-FOREIGN KEY (astronom) REFERENCES astronom (pelne_imie);
-
+FOREIGN KEY (astronom) REFERENCES astronom (pelne_imie) ON UPDATE CASCADE;
