@@ -121,7 +121,7 @@
   </action>
   <action name="action_execute">
    <property name="text">
-    <string>Wykonaj</string>
+    <string>Procedury</string>
    </property>
   </action>
  </widget>

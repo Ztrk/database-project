@@ -1,4 +1,3 @@
-from sqlalchemy import func, text
 from PyQt5 import QtCore, QtWidgets, uic
 import astronomy
 import astronomy_model as model
@@ -60,14 +59,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.current_form.edit_row(selected_row, self)
     
     def execute_handle(self):
-        print(self.session.execute(func.angle_to_decimal(-11, 37, 58)).scalar())
-        call = text('CALL decimal_to_angle(:angle, @degrees, @minutes, @seconds)').bindparams(angle=12.7230)
-        self.session.execute(call)
-        result = self.session.execute('SELECT @degrees, @minutes, @seconds').fetchone()
-        print(result)
-        call = text('CALL period_from_orbit(:name)').bindparams(name='asdf')
-        self.session.execute(call)
-        print('Executing')
+        self.procedures_form = forms.ProceduresForm(self.session, self)
 
 
 class TableSelectorItem(QtWidgets.QTreeWidgetItem):

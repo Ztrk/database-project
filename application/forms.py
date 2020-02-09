@@ -1,6 +1,7 @@
 import datetime
 from decimal import InvalidOperation
 from PyQt5 import QtCore, QtWidgets, uic
+from sqlalchemy import func, text
 from sqlalchemy.orm.exc import FlushError
 from sqlalchemy.exc import DataError, DatabaseError
 from utils import from_text, to_text, text_to_date, text_to_decimal, get_error_message
@@ -480,3 +481,51 @@ class CatalogueObjectForm:
             self.catalogue.objects.append(item.data(QtCore.Qt.UserRole))
         self.session.commit()
         self.dialog.accept()
+
+
+class ProceduresForm:
+    def __init__(self, session, parent_window):
+        self.session = session
+        self.dialog = QtWidgets.QDialog(parent_window)
+        uic.loadUi('gui/form-procedures.ui', self.dialog)
+        self.fill_combobox()
+        self.dialog.angle_to_number_button.clicked.connect(self.angle_to_number_handle)
+        self.dialog.number_to_angle_button.clicked.connect(self.number_to_angle_handle)
+        self.dialog.compute_period_button.clicked.connect(self.period_from_orbit_handle)
+        self.dialog.show()
+
+    def fill_combobox(self):
+        for small_body in self.session.query(astronomy.SmallBody):
+            if small_body.orbited_star == 'Sun' or small_body.orbited_small_body == 'Earth':
+                self.dialog.objects_combobox.addItem(small_body.name)
+        for satellite in self.session.query(astronomy.Satellite):
+            if satellite.orbited_star == 'Sun' or satellite.orbited_small_body == 'Earth':
+                self.dialog.objects_combobox.addItem(satellite.name)
+    
+    def angle_to_number_handle(self):
+        degrees = self.dialog.degrees_edit.value()
+        minutes = self.dialog.minutes_edit.value()
+        seconds = self.dialog.seconds_edit.value()
+        result = self.session.execute(func.angle_to_decimal(degrees, minutes, seconds)).scalar()
+        if result == 0:
+            text = '0'
+        else:
+            text = to_text(result)
+        self.dialog.result_number_edit.setText(text + '°')
+
+    def number_to_angle_handle(self):
+        angle = self.dialog.number_edit.value()
+        call = text('CALL decimal_to_angle(:angle, @degrees, @minutes, @seconds)').bindparams(angle=angle)
+        self.session.execute(call)
+        degrees, minutes, seconds = self.session.execute('SELECT @degrees, @minutes, @seconds').fetchone()
+        if seconds == 0:
+            seconds = 0
+        self.dialog.result_angle_edit.setText(str(degrees) + '° ' + str(minutes) + "' " + to_text(seconds) + '"')
+
+    def period_from_orbit_handle(self):
+        print(self.dialog.objects_combobox.currentText())
+        name = self.dialog.objects_combobox.currentText()
+        call = text('CALL period_from_orbit(:name)').bindparams(name=name)
+        self.session.execute(call)
+        self.session.commit()
+        self.dialog.result_label.setText('Procedura wykonana pomyślnie')
