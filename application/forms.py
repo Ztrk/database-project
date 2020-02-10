@@ -46,13 +46,13 @@ class AstronomyForm:
         except InvalidOperation as error:
             self.session.rollback()
             print(error)
-            self.dialog.error_label.setText('Wprowadź liczbę w formacie 12,2442')
+            self.dialog.error_label.setText('Wprowadź liczbę w formacie 22,222')
         except FlushError as error:
             print(error)
             self.dialog.error_label.setText('Obiekt o tej samej nazwie już istnieje')
         except (DataError, DatabaseError) as error:
             print(error)
-            self.dialog.error_label.setText(get_error_message(error.orig.args[0], error.orig.args[1]))
+            self.dialog.error_label.setText(self.get_error_message(error.orig.args[0], error.orig.args[1]))
     
     def on_add_accepted(self):
         entity = self.model.type()
@@ -85,6 +85,9 @@ class AstronomyForm:
         error_box.setInformativeText(message)
         error_box.show()
         return error_box
+    
+    def get_error_message(self, code, message):
+        return get_error_message(code, message)
 
     form = ''
 
@@ -100,6 +103,13 @@ class AstronomyForm:
 
 class AstronomerForm(AstronomyForm):
     form = 'form-astronomer.ui'
+
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'astronomer_date_check':
+                return 'Data zgonu powinna późniejsza niż data urodzenia.'
+        return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
         entity.full_name = from_text(self.dialog.full_name_edit.text())
@@ -118,6 +128,18 @@ class AstronomerForm(AstronomyForm):
 
 class ObservatoryForm(AstronomyForm):
     form = 'form-observatory.ui'
+
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'latitude_check':
+                return 'Szerokość geograficzna powinna być pomiędzy -90 a 90 stopni.'
+            elif constraint == 'longitude_check':
+                return 'Długość geograficzna powinna być pomiędzy -180 a 180 stopni.'
+            elif constraint == 'coordinates_present':
+                return 'Podaj obie współrzędne.'
+        return get_error_message(code, message)
+
 
     def set_object_from_form(self, entity):
         entity.iau_code = from_text(self.dialog.iau_code_edit.text())
@@ -153,6 +175,17 @@ class ConstellationForm(AstronomyForm):
 class GalaxyGroupForm(AstronomyForm):
     form = 'form-galaxy-group.ui'
 
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'galaxy_group_right_ascension_check':
+                return 'Rektasencja powinna być pomiędzy 0 a 24.'
+            elif constraint == 'galaxy_group_declination_check':
+                return 'Deklinacja powinna być pomiędzy -90 a 90.'
+            elif constraint == 'galaxy_group_distance_check':
+                return 'Dystans powinien być większy lub równy 0.'
+        return get_error_message(code, message)
+
     def set_object_from_form(self, entity):
         entity.name = from_text(self.dialog.name_edit.text())
         entity.right_ascension = text_to_decimal(self.dialog.right_ascension_edit.text())
@@ -170,6 +203,19 @@ class GalaxyGroupForm(AstronomyForm):
 
 class GalaxyForm(AstronomyForm):
     form = 'form-galaxy.ui'
+
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'galaxy_right_ascension_check':
+                return 'Rektasencja powinna być pomiędzy 0 a 24.'
+            elif constraint == 'galaxy_declination_check':
+                return 'Deklinacja powinna być pomiędzy -90 a 90.'
+            elif constraint == 'galaxy_distance_check':
+                return 'Dystans powinien być większy lub równy 0.'
+            elif constraint == 'galaxy_diameter_check':
+                return 'Średnica powinna być większa lub równy 0.'
+        return get_error_message(code, message)
 
     def set_up(self):
         self.dialog.galaxy_group_edit.addItem('', None)
@@ -215,6 +261,23 @@ class GalaxyForm(AstronomyForm):
 class StarForm(AstronomyForm):
     form = 'form-star.ui'
 
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'star_right_ascension_check':
+                return 'Rektasencja powinna być pomiędzy 0 a 24.'
+            elif constraint == 'star_declination_check':
+                return 'Deklinacja powinna być pomiędzy -90 a 90.'
+            elif constraint == 'star_distance_check':
+                return 'Dystans powinien być większy lub równy 0.'
+            elif constraint == 'star_parallax_check':
+                return 'Paralaksa powinna być większa lub równa 0.'
+            elif constraint == 'star_mass_check':
+                return 'Masa powinna być większa lub równa 0.'
+            elif constraint == 'star_radius_check':
+                return 'Promień powinien być większy lub równy 0.'
+        return get_error_message(code, message)
+
     def set_up(self):
         for galaxy in self.session.query(astronomy.Galaxy):
             self.dialog.galaxy_edit.addItem(galaxy.name, galaxy.name)
@@ -257,6 +320,23 @@ class StarForm(AstronomyForm):
 
 class SmallBodyForm(AstronomyForm):
     form = 'form-small-body.ui'
+
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'small_body_period_check':
+                return 'Okres musi być większy lub równy 0.'
+            elif constraint == 'small_body_eccentricity_check':
+                return 'Ekscentryczność powinna być większa lub równa 0.'
+            elif constraint == 'small_body_semi_major_axis_check':
+                return 'Półoś wielka powinna być większa lub równa 0.'
+            elif constraint == 'small_body_inclination_check':
+                return 'Inklinacja powinna być pomiędzy 0 a 180 stopni.'
+            elif constraint == 'small_body_mass_check':
+                return 'Masa powinna być większa lub równa 0.'
+            elif constraint == 'small_body_diameter_check':
+                return 'Średnica powinna być większa lub równa 0.'
+        return get_error_message(code, message)
 
     def set_up(self):
         self.dialog.type_edit.addItem('Asteroida')
@@ -307,6 +387,17 @@ class SmallBodyForm(AstronomyForm):
 class SatelliteForm(AstronomyForm):
     form = 'form-satellite.ui'
 
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'satellite_period_check':
+                return 'Okres musi być większy lub równy 0.'
+            elif constraint == 'satellite_inclination_check':
+                return 'Inklinacja powinna być pomiędzy 0 a 180 stopni.'
+            elif constraint == 'satellite_date_check':
+                return 'Data zniszczenia musi być później niż data startu.'
+        return get_error_message(code, message)
+
     def set_up(self):
         self.dialog.orbited_body_edit.addItem('', None)
         for small_body in self.session.query(astronomy.SmallBody):
@@ -351,6 +442,19 @@ class SatelliteForm(AstronomyForm):
 
 class MeteorShowerForm(AstronomyForm):
     form = 'form-meteor-shower.ui'
+
+    def get_error_message(self, code, message):
+        if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
+            constraint = message.split("'")[1]
+            if constraint == 'meteor_shower_right_ascension_check':
+                return 'Rektasencja powinna być pomiędzy 0 a 24.'
+            elif constraint == 'meteor_shower_declination_check':
+                return 'Deklinacja powinna być pomiędzy -90 a 90.'
+            elif constraint == 'meteor_shower_velocity_check':
+                return 'Prędkość powinna być większa lub równa 0.'
+            elif constraint == 'meteor_shower_zhr_check':
+                return 'ZHR powinno być większe lub równe 0.'
+        return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
         entity.name = from_text(self.dialog.name_edit.text())

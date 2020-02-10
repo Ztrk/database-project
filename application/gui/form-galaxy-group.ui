@@ -59,7 +59,7 @@
      <item row="4" column="0">
       <widget class="QLabel" name="radial_velocity_label">
        <property name="text">
-        <string>Prędkość kątowa</string>
+        <string>Prędkość radialna</string>
        </property>
       </widget>
      </item>

@@ -52,4 +52,4 @@ def get_error_message(code, message):
     elif code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
         return 'Podane wartości są niepoprawne.'
     else:
-        return message
+        return 'Nie udało się wykonać akcji.'

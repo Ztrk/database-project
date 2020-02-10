@@ -22,6 +22,9 @@ CREATE TABLE astronom (
 
 ALTER TABLE astronom ADD CONSTRAINT astronom_pk PRIMARY KEY (pelne_imie);
 
+ALTER TABLE astronom ADD CONSTRAINT astronomer_date_check
+CHECK (data_zgonu >= data_urodzenia);
+
 CREATE TABLE obserwatorium (
     kod_iau                  VARCHAR(6) NOT NULL,
     szerokosc_geograficzna   DECIMAL(10, 6),
@@ -76,6 +79,9 @@ CHECK (rektasencja >= 0 AND rektasencja <= 24);
 ALTER TABLE grupa_galaktyk ADD CONSTRAINT galaxy_group_declination_check
 CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
+ALTER TABLE grupa_galaktyk ADD CONSTRAINT galaxy_group_distance_check
+CHECK (dystans >= 0);
+
 CREATE TABLE galaktyka (
     nazwa                  VARCHAR(70) NOT NULL,
     typ                    VARCHAR(20) NOT NULL,
@@ -110,6 +116,12 @@ CHECK (rektasencja >= 0 AND rektasencja <= 24);
 ALTER TABLE galaktyka ADD CONSTRAINT galaxy_declination_check
 CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
+ALTER TABLE galaktyka ADD CONSTRAINT galaxy_distance_check
+CHECK (dystans >= 0);
+
+ALTER TABLE galaktyka ADD CONSTRAINT galaxy_diameter_check
+CHECK (srednica >= 0);
+
 CREATE TABLE gwiazda (
     nazwa                  VARCHAR(70) NOT NULL,
     typ_widmowy            VARCHAR(20) NOT NULL,
@@ -142,6 +154,18 @@ CHECK (rektasencja >= 0 AND rektasencja <= 24);
 ALTER TABLE gwiazda ADD CONSTRAINT star_declination_check
 CHECK (deklinacja >= -90 AND deklinacja <= 90);
 
+ALTER TABLE gwiazda ADD CONSTRAINT star_distance_check
+CHECK (dystans >= 0);
+
+ALTER TABLE gwiazda ADD CONSTRAINT star_parallax_check
+CHECK (paralaksa >= 0);
+
+ALTER TABLE gwiazda ADD CONSTRAINT star_mass_check
+CHECK (masa >= 0);
+
+ALTER TABLE gwiazda ADD CONSTRAINT star_radius_check
+CHECK (promien >= 0);
+
 CREATE TABLE male_cialo (
     nazwa                        VARCHAR(70) NOT NULL,
     typ                          VARCHAR(30),
@@ -166,6 +190,24 @@ FOREIGN KEY (orbitowana_gwiazda) REFERENCES gwiazda (nazwa) ON UPDATE CASCADE;
 
 ALTER TABLE male_cialo ADD CONSTRAINT orbitowane_cialo_fk
 FOREIGN KEY (orbitowane_male_cialo) REFERENCES male_cialo (nazwa) ON UPDATE CASCADE;
+
+ALTER TABLE male_cialo ADD CONSTRAINT small_body_period_check
+CHECK (okres >= 0);
+
+ALTER TABLE male_cialo ADD CONSTRAINT small_body_eccentricity_check
+CHECK (ekscentrycznosc >= 0);
+
+ALTER TABLE male_cialo ADD CONSTRAINT small_body_semi_major_axis_check
+CHECK (polos_wielka >= 0);
+
+ALTER TABLE male_cialo ADD CONSTRAINT small_body_inclination_check
+CHECK (inklinacja >= 0 AND inklinacja <= 180);
+
+ALTER TABLE male_cialo ADD CONSTRAINT small_body_mass_check
+CHECK (masa >= 0);
+
+ALTER TABLE male_cialo ADD CONSTRAINT small_body_diameter_check
+CHECK (srednica >= 0);
 
 CREATE TABLE sztuczny_satelita (
     nazwa                   VARCHAR(70) NOT NULL,
@@ -192,6 +234,15 @@ FOREIGN KEY (orbitowana_gwiazda) REFERENCES gwiazda (nazwa) ON UPDATE CASCADE;
 ALTER TABLE sztuczny_satelita ADD CONSTRAINT sztuczny_satelita_male_ciala_fk
 FOREIGN KEY (orbitowane_male_cialo) REFERENCES male_cialo (nazwa) ON UPDATE CASCADE;
 
+ALTER TABLE sztuczny_satelita ADD CONSTRAINT satellite_period_chck
+CHECK (okres >= 0);
+
+ALTER TABLE sztuczny_satelita ADD CONSTRAINT satellite_inclination_check
+CHECK (inklinacja >= 0 AND inklinacja <= 180);
+
+ALTER TABLE sztuczny_satelita ADD CONSTRAINT satellite_date_check
+CHECK (data_zniszczenia >= data_startu);
+
 CREATE TABLE roj_meteorow (
     nazwa           VARCHAR(70) NOT NULL,
     data_poczatku   DATE NOT NULL,
@@ -214,6 +265,12 @@ CHECK (rektasencja >= 0 AND rektasencja <= 24);
 
 ALTER TABLE roj_meteorow ADD CONSTRAINT meteor_shower_declination_check
 CHECK (deklinacja >= -90 AND deklinacja <= 90);
+
+ALTER TABLE roj_meteorow ADD CONSTRAINT meteor_shower_velocity_check
+CHECK (predkosc >= 0);
+
+ALTER TABLE roj_meteorow ADD CONSTRAINT meteor_shower_zhr_check
+CHECK (zhr >= 0);
 
 CREATE TABLE katalog (
     nazwa         VARCHAR(50) NOT NULL,
