@@ -106,7 +106,7 @@ class GalaxyGroupModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(GalaxyGroupModel, self).__init__(session, astronomy.GalaxyGroup, *args, **kwargs)
 
-    header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans', 'Prędkość radialna')
+    header = ('Nazwa', 'Rektasencja', 'Deklinacja', 'Dystans (Mly)', 'Prędkość radialna (km/s)')
     def to_row(self, object):
         return (object.name, object.right_ascension, object.declination,
             object.distance, object.radial_velocity)
@@ -117,7 +117,7 @@ class GalaxyModel(AstronomyModel):
         super(GalaxyModel, self).__init__(session, astronomy.Galaxy, *args, **kwargs)
 
     header = ('Nazwa', 'Typ', 'Rektasencja', 'Deklinacja', 'Wielkość obserwowana', 'Wielkość absolutna',
-        'Dystans', 'Średnica', 'Konstelacja', 'Orbitowana galaktyka', 'Grupa galaktyk')
+        'Dystans (Mly)', 'Średnica (kly)', 'Konstelacja', 'Orbitowana galaktyka', 'Grupa galaktyk')
     def to_row(self, object):
         return (object.name, object.galaxy_type, object.right_ascension, object.declination, 
             object.apparent_magnitude, object.absolute_magnitude, object.distance, 
@@ -129,7 +129,7 @@ class StarModel(AstronomyModel):
         super(StarModel, self).__init__(session, astronomy.Star, *args, **kwargs)
 
     header = ('Nazwa', 'Typ widmowy', 'Rektasencja', 'Deklinacja', 'Wielkość obserwowana', 
-        'Wielkość absolutna', 'Dystans', 'Paralaksa', 'Masa', 'Promień', 'Konstelacja', 'Galaktyka')
+        'Wielkość absolutna', 'Dystans (ly)', 'Paralaksa (mas)', 'Masa (M☉)', 'Promień (R☉)', 'Konstelacja', 'Galaktyka')
     def to_row(self, object):
         return (object.name, object.spectral_type, object.right_ascension, object.declination,
             object.apparent_magnitude, object.absolute_magnitude, object.distance, object.parallax,
@@ -140,8 +140,8 @@ class SmallBodyModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(SmallBodyModel, self).__init__(session, astronomy.SmallBody, *args, **kwargs)
 
-    header = ('Nazwa', 'Typ', 'Średnica', 'Masa', 'Temperatura', 'Okres orbitalny',
-        'Ekscentryczność', 'Półoś wielka', 'Inklinacja', 'Orbitowane ciało')
+    header = ('Nazwa', 'Typ', 'Średnica (km)', 'Masa (M⊕)', 'Temperatura (K)', 'Okres orbitalny (lat)',
+        'Ekscentryczność', 'Półoś wielka (au)', 'Inklinacja', 'Orbitowane ciało')
     def to_row(self, object):
         if object.orbited_star is not None:
             orbited_body = object.orbited_star 
@@ -155,8 +155,8 @@ class SatelliteModel(AstronomyModel):
     def __init__(self, session, *args, **kwargs):
         super(SatelliteModel, self).__init__(session, astronomy.Satellite, *args, **kwargs)
 
-    header = ('Nazwa', 'Rodzaj', 'Kraj', 'Data startu', 'Data zniszczenia', 'Okres orbitalny', 
-        'Apocentrum', 'Perycentrum', 'Inklinacja', 'Orbitowane ciało')
+    header = ('Nazwa', 'Rodzaj', 'Kraj', 'Data startu', 'Data zniszczenia', 'Okres orbitalny (h)', 
+        'Apocentrum (km)', 'Perycentrum (km)', 'Inklinacja', 'Orbitowane ciało')
     def to_row(self, object):
         if object.orbited_star is not None:
             orbited_body = object.orbited_star 
@@ -171,7 +171,7 @@ class MeteorShowerModel(AstronomyModel):
         super(MeteorShowerModel, self).__init__(session, astronomy.MeteorShower, *args, **kwargs)
 
     header = ('Nazwa', 'Data początku', 'Data końca', 'Data maksimum', 'Rektasencja', 'Deklinacja',
-        'Prędkość', 'ZHR', 'Aktywność')
+        'Prędkość (km/s)', 'ZHR', 'Aktywność')
     def to_row(self, object):
         return (object.name, object.begin_date.strftime('%d.%m'), object.end_date.strftime('%d.%m'), 
             object.peak_date.strftime('%d.%m'), object.right_ascension, object.declination, 

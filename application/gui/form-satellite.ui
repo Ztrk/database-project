@@ -73,7 +73,7 @@
      <item row="6" column="0">
       <widget class="QLabel" name="apocentrumLabel">
        <property name="text">
-        <string>Apocentrum</string>
+        <string>Apocentrum (km)</string>
        </property>
       </widget>
      </item>
@@ -83,7 +83,7 @@
      <item row="7" column="0">
       <widget class="QLabel" name="perycentrumLabel">
        <property name="text">
-        <string>Perycentrum</string>
+        <string>Perycentrum (km)</string>
        </property>
       </widget>
      </item>

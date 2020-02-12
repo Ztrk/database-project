@@ -79,7 +79,7 @@
      <item row="6" column="0">
       <widget class="QLabel" name="dystansLabel">
        <property name="text">
-        <string>Dystans</string>
+        <string>Dystans (Mly)</string>
        </property>
       </widget>
      </item>
@@ -89,7 +89,7 @@
      <item row="7" column="0">
       <widget class="QLabel" name="diameter_label">
        <property name="text">
-        <string>Średnica</string>
+        <string>Średnica (kly)</string>
        </property>
       </widget>
      </item>
