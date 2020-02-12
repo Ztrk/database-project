@@ -87,7 +87,7 @@ class AstronomyForm:
         except (DataError, DatabaseError) as error:
             print(error)
             self.create_error_dialog(self.dialog.parent(), 
-                get_error_message(error.orig.args[0], error.orig.args[1]))
+                self.get_error_message(error.orig.args[0], error.orig.args[1]))
 
     def create_error_dialog(self, parent_window, message=''):
         error_box = QtWidgets.QMessageBox(parent_window)
@@ -121,6 +121,8 @@ class AstronomerForm(AstronomyForm):
             constraint = message.split("'")[1]
             if constraint == 'astronomer_date_check':
                 return 'Data zgonu powinna późniejsza niż data urodzenia.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'Istnieją obserwacje wykonane przez tego astronoma. Spróbuj zmienić te obserwacje lub je usunąć.'
         return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
@@ -150,6 +152,8 @@ class ObservatoryForm(AstronomyForm):
                 return 'Długość geograficzna powinna być pomiędzy -180 a 180 stopni.'
             elif constraint == 'coordinates_present':
                 return 'Podaj obie współrzędne.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'Istnieją obserwacje wykonane w tym obserwatorium. Spróbuj zmienić ich obserwatorium lub je usunąć.'
         return get_error_message(code, message)
 
 
@@ -172,6 +176,10 @@ class ObservatoryForm(AstronomyForm):
 
 class ConstellationForm(AstronomyForm):
     form = 'form-constellation.ui'
+
+    def get_error_message(self, code, message):
+        if code == 1217: # ER_ROW_IS_REFERENCED
+            return 'W tej konstelacji znajdują się gwiazdy lub galaktyki. Spróbuj zmienić ich konstelację lub je usunąć.'
 
     def set_object_from_form(self, entity):
         entity.iau_abbreviation = from_text(self.dialog.iau_abbreviation_edit.text())
@@ -196,6 +204,8 @@ class GalaxyGroupForm(AstronomyForm):
                 return 'Deklinacja powinna być pomiędzy -90 a 90.'
             elif constraint == 'galaxy_group_distance_check':
                 return 'Dystans powinien być większy lub równy 0.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'W tej grupie istnieją galaktyki lub istnieją obserwacje tej grupy. Spróbuj usunąć lub zmienić je najpierw.'
         return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
@@ -227,6 +237,8 @@ class GalaxyForm(AstronomyForm):
                 return 'Dystans powinien być większy lub równy 0.'
             elif constraint == 'galaxy_diameter_check':
                 return 'Średnica powinna być większa lub równy 0.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'W tej galaktyce są gwiazdy, jest ona orbitowana lub istnieją obserwacje tej galaktyki. Spróbuj usunąć lub zmienić je najpierw.'
         return get_error_message(code, message)
 
     def set_up(self):
@@ -288,6 +300,8 @@ class StarForm(AstronomyForm):
                 return 'Masa powinna być większa lub równa 0.'
             elif constraint == 'star_radius_check':
                 return 'Promień powinien być większy lub równy 0.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'Ta gwiazda jest orbitowana przez inne ciało lub istnieją obserwacje tej gwiazdy. Spróbuj usunąć lub zmienić je najpierw.'
         return get_error_message(code, message)
 
     def set_up(self):
@@ -348,6 +362,8 @@ class SmallBodyForm(AstronomyForm):
                 return 'Masa powinna być większa lub równa 0.'
             elif constraint == 'small_body_diameter_check':
                 return 'Średnica powinna być większa lub równa 0.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'To małe ciało jest orbitowane lub istnieją obserwacje tego obiektu. Spróbuj usunąć lub zmienić je najpierw.'
         return get_error_message(code, message)
 
     def set_up(self):
@@ -408,6 +424,8 @@ class SatelliteForm(AstronomyForm):
                 return 'Inklinacja powinna być pomiędzy 0 a 180 stopni.'
             elif constraint == 'satellite_date_check':
                 return 'Data zniszczenia musi być później niż data startu.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'Istnieją obserwacje tego satelity lub jest on w katalogu. Spróbuj usunąć lub zmienić obserwacje i usunąć obiekt z katalogów.'
         return get_error_message(code, message)
 
     def set_up(self):
@@ -466,6 +484,8 @@ class MeteorShowerForm(AstronomyForm):
                 return 'Prędkość powinna być większa lub równa 0.'
             elif constraint == 'meteor_shower_zhr_check':
                 return 'ZHR powinno być większe lub równe 0.'
+        elif code == 1217: # ER_ROW_IS_REFERENCED
+            return 'Istnieją obserwacje tego roju meteorów lub jest on w katalogu. Spróbuj usunąć lub zmienić obserwacje i usunąć obiekt z katalogów.'
         return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
