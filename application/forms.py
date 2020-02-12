@@ -71,7 +71,7 @@ class AstronomyForm:
         self.dialog.setIcon(QtWidgets.QMessageBox.Question)
         self.dialog.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
         self.dialog.setWindowTitle('Usuwanie')
-        self.dialog.setText('Czy napewno chcesz usunąć obiekt?')
+        self.dialog.setText('Czy napewno chcesz usunąć ten obiekt?')
         self.dialog.setInformativeText('Ta opercja jest nieodwracalna.')
         self.dialog.accepted.connect(self.on_remove_accepted)
         self.changed_row = position
@@ -542,6 +542,11 @@ class CatalogueForm(AstronomyForm):
 
 class ObservationForm(AstronomyForm):
     form = 'form-observation.ui'
+
+    def get_error_message(self, code, message):
+        if code == 1644:
+            return 'Tylko jedna obserwacja obiektu może być odkryciem.'
+        return get_error_message(code, message)
 
     def set_up(self):
         for name, in self.session.query(astronomy.AstronomicalObject.name):

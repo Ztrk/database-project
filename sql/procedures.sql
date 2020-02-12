@@ -1,6 +1,9 @@
 DROP FUNCTION IF EXISTS angle_to_decimal;
 DROP PROCEDURE IF EXISTS decimal_to_angle;
 DROP PROCEDURE IF EXISTS period_from_orbit;
+DROP PROCEDURE IF EXISTS check_discoveries;
+DROP TRIGGER IF EXISTS one_discovery_update;
+DROP TRIGGER IF EXISTS one_discovery_insert;
 
 delimiter //
 
@@ -59,5 +62,26 @@ BEGIN
         END IF;
     END IF;
 END//
+
+CREATE PROCEDURE check_discoveries(was_discovery BOOL, is_discovery BOOL, object VARCHAR(70))
+BEGIN
+    DECLARE discoveries_count INT;
+
+    IF is_discovery AND NOT was_discovery THEN
+        SELECT COUNT(*) INTO discoveries_count FROM obserwacja
+        WHERE obiekt_astronomiczny = object AND czy_odkrycie;
+
+        IF discoveries_count > 0 THEN
+            SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'There can be only one discovery per object',
+                MYSQL_ERRNO = 1644;
+        END IF;
+    END IF;
+END;
+
+CREATE TRIGGER one_discovery_update BEFORE UPDATE ON obserwacja
+FOR EACH ROW CALL check_discoveries(OLD.czy_odkrycie, NEW.czy_odkrycie, NEW.obiekt_astronomiczny)//
+
+CREATE TRIGGER one_discovery_insert BEFORE INSERT ON obserwacja
+FOR EACH ROW CALL check_discoveries(FALSE, NEW.czy_odkrycie, NEW.obiekt_astronomiczny)//
 
 delimiter ;
