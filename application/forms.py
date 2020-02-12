@@ -42,14 +42,14 @@ class AstronomyForm:
         except ValueError as error:
             self.session.rollback()
             print(error)
-            self.dialog.error_label.setText('Wprowadź datę w formacie DD.MM.RRRR')
+            self.dialog.error_label.setText(self.get_error_message(-2, 'Wprowadź datę w formacie DD.MM.RRRR'))
         except InvalidOperation as error:
             self.session.rollback()
             print(error)
-            self.dialog.error_label.setText('Wprowadź liczbę w formacie 22,222')
+            self.dialog.error_label.setText(self.get_error_message(-3, 'Wprowadź liczbę w formacie 22,222'))
         except FlushError as error:
             print(error)
-            self.dialog.error_label.setText('Obiekt o tej samej nazwie już istnieje')
+            self.dialog.error_label.setText(self.get_error_message(-1, 'Obiekt o tej samej nazwie już istnieje'))
         except (DataError, DatabaseError) as error:
             print(error)
             self.dialog.error_label.setText(self.get_error_message(error.orig.args[0], error.orig.args[1]))
@@ -133,6 +133,8 @@ class AstronomerForm(AstronomyForm):
                 return 'Data zgonu powinna późniejsza niż data urodzenia.'
         elif code == 1217: # ER_ROW_IS_REFERENCED
             return 'Istnieją obserwacje wykonane przez tego astronoma. Spróbuj zmienić te obserwacje lub je usunąć.'
+        elif code == -1:
+            return 'Astronom o tym samym imieniu już istnieje.'
         return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
@@ -167,6 +169,8 @@ class ObservatoryForm(AstronomyForm):
                 return 'Podaj obie współrzędne.'
         elif code == 1217: # ER_ROW_IS_REFERENCED
             return 'Istnieją obserwacje wykonane w tym obserwatorium. Spróbuj zmienić ich obserwatorium lub je usunąć.'
+        elif code == -1:
+            return 'Obserwatorium o tym samym kodzie IAU już istnieje.'
         return get_error_message(code, message)
 
 
@@ -196,6 +200,9 @@ class ConstellationForm(AstronomyForm):
     def get_error_message(self, code, message):
         if code == 1217: # ER_ROW_IS_REFERENCED
             return 'W tej konstelacji znajdują się gwiazdy lub galaktyki. Spróbuj zmienić ich konstelację lub je usunąć.'
+        elif code == -1:
+            return 'Konstelacja z tym samym skrótem IAU już istnieje.'
+        return get_error_message(code, message)
 
     def set_object_from_form(self, entity):
         entity.iau_abbreviation = from_text(self.dialog.iau_abbreviation_edit.text())
@@ -556,6 +563,11 @@ class CatalogueForm(AstronomyForm):
 
     def get_remove_message(self, entity):
         return 'Czy na pewno chcesz usunąć katalog ' + entity.name + '?', 'Usunięcie katalogu spowoduje również usunięcie informacji o jego zawarotści. Ta opercja jest nieodwracalna.'
+
+    def get_error_message(self, code, message):
+        if code == -1:
+            return 'Katalog o tej samej nazwie już istnieje.'
+        return get_error_message(code, message)
 
     def set_up(self):
         if self.edited_entity is not None:

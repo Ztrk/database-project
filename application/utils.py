@@ -32,7 +32,13 @@ def text_to_decimal(text):
     return decimal.Decimal(text)
 
 def get_error_message(code, message):
-    if code == 1048: # ER_BAD_NULL_ERROR
+    if code == -1: # FLUSH_ERROR
+        return message
+    elif code == -2: # VALUE_ERROR - wrong date format
+        return message
+    elif code == -3: # INVALID_OPERATION - wrong decimal format
+        return message
+    elif code == 1048: # ER_BAD_NULL_ERROR
         column = message.split("'")[1]
         return 'Pole ' + column + ' nie może być puste.'
     elif code == 1062: # ER_DUP_ENTRY
