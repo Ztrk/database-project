@@ -71,8 +71,12 @@ class AstronomyForm:
         self.dialog.setIcon(QtWidgets.QMessageBox.Question)
         self.dialog.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
         self.dialog.setWindowTitle('Usuwanie')
-        self.dialog.setText('Czy napewno chcesz usunąć ten obiekt?')
-        self.dialog.setInformativeText('Ta opercja jest nieodwracalna.')
+
+        removed_entity = self.model.rows[position]
+        text, informative_text = self.get_remove_message(removed_entity)
+        self.dialog.setText(text)
+        self.dialog.setInformativeText(informative_text)
+
         self.dialog.accepted.connect(self.on_remove_accepted)
         self.changed_row = position
         self.dialog.open()
@@ -80,7 +84,6 @@ class AstronomyForm:
     def on_remove_accepted(self):
         try:
             self.model.remove_row(self.changed_row)
-            self.changed_row = -1
         except FlushError as error:
             print(error)
             self.create_error_dialog(self.dialog.parent())
@@ -88,6 +91,7 @@ class AstronomyForm:
             print(error)
             self.create_error_dialog(self.dialog.parent(), 
                 self.get_error_message(error.orig.args[0], error.orig.args[1]))
+        self.changed_row = -1
 
     def create_error_dialog(self, parent_window, message=''):
         error_box = QtWidgets.QMessageBox(parent_window)
@@ -100,6 +104,9 @@ class AstronomyForm:
     
     def get_error_message(self, code, message):
         return get_error_message(code, message)
+    
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć ten obiekt?', 'Ta opercja jest nieodwracalna.'
 
     form = ''
 
@@ -115,6 +122,9 @@ class AstronomyForm:
 
 class AstronomerForm(AstronomyForm):
     form = 'form-astronomer.ui'
+
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć astronoma ' + entity.full_name + '?', 'Ta opercja jest nieodwracalna.'
 
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
@@ -142,6 +152,9 @@ class AstronomerForm(AstronomyForm):
 
 class ObservatoryForm(AstronomyForm):
     form = 'form-observatory.ui'
+
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć obserwatorium ' + entity.full_name + '?', 'Ta opercja jest nieodwracalna.'
 
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
@@ -177,6 +190,9 @@ class ObservatoryForm(AstronomyForm):
 class ConstellationForm(AstronomyForm):
     form = 'form-constellation.ui'
 
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć konstelację ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
+
     def get_error_message(self, code, message):
         if code == 1217: # ER_ROW_IS_REFERENCED
             return 'W tej konstelacji znajdują się gwiazdy lub galaktyki. Spróbuj zmienić ich konstelację lub je usunąć.'
@@ -194,6 +210,9 @@ class ConstellationForm(AstronomyForm):
 
 class GalaxyGroupForm(AstronomyForm):
     form = 'form-galaxy-group.ui'
+
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć grupę galaktyk ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
 
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
@@ -225,6 +244,9 @@ class GalaxyGroupForm(AstronomyForm):
 
 class GalaxyForm(AstronomyForm):
     form = 'form-galaxy.ui'
+
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć galaktykę ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
 
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
@@ -284,6 +306,9 @@ class GalaxyForm(AstronomyForm):
 
 class StarForm(AstronomyForm):
     form = 'form-star.ui'
+
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć gwiazdę ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
 
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
@@ -346,6 +371,9 @@ class StarForm(AstronomyForm):
 
 class SmallBodyForm(AstronomyForm):
     form = 'form-small-body.ui'
+
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć obiekt ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
 
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
@@ -415,6 +443,9 @@ class SmallBodyForm(AstronomyForm):
 class SatelliteForm(AstronomyForm):
     form = 'form-satellite.ui'
 
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć satelitę ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
+
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
             constraint = message.split("'")[1]
@@ -473,6 +504,9 @@ class SatelliteForm(AstronomyForm):
 class MeteorShowerForm(AstronomyForm):
     form = 'form-meteor-shower.ui'
 
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć rój meteorów ' + entity.name + '?', 'Ta opercja jest nieodwracalna.'
+
     def get_error_message(self, code, message):
         if code == 3819: # ER_CHECK_CONSTRAINT_VIOLATED
             constraint = message.split("'")[1]
@@ -520,6 +554,9 @@ class MeteorShowerForm(AstronomyForm):
 class CatalogueForm(AstronomyForm):
     form = 'form-catalogue.ui'
 
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć katalog ' + entity.name + '?', 'Usunięcie katalogu spowoduje również usunięcie informacji o jego zawarotści. Ta opercja jest nieodwracalna.'
+
     def set_up(self):
         if self.edited_entity is not None:
             self.dialog.catalogue_objects_button.clicked.connect(self.edit_objects_handle)
@@ -543,8 +580,13 @@ class CatalogueForm(AstronomyForm):
 class ObservationForm(AstronomyForm):
     form = 'form-observation.ui'
 
+    def get_remove_message(self, entity):
+        return 'Czy na pewno chcesz usunąć obserwację obiektu ' + entity.astronomical_object + '?', 'Ta opercja jest nieodwracalna.'
+
     def get_error_message(self, code, message):
-        if code == 1644:
+        if code == 1062: # ER_DUP_ENTRY
+            return 'Taka sama obserwacja już istnieje.'
+        elif code == 1644:
             return 'Tylko jedna obserwacja obiektu może być odkryciem.'
         return get_error_message(code, message)
 
@@ -615,7 +657,6 @@ class CatalogueObjectForm:
         self.dialog.objects_list.addItem(item)
 
     def accepted_handle(self):
-        print('Accepted')
         self.catalogue.objects = []
         for i in range(0, self.dialog.catalogue_objects_list.count()):
             item = self.dialog.catalogue_objects_list.item(i)
@@ -664,7 +705,6 @@ class ProceduresForm:
         self.dialog.result_angle_edit.setText(str(degrees) + '° ' + str(minutes) + "' " + to_text(seconds) + '"')
 
     def period_from_orbit_handle(self):
-        print(self.dialog.objects_combobox.currentText())
         name = self.dialog.objects_combobox.currentText()
         call = text('CALL period_from_orbit(:name)').bindparams(name=name)
         self.session.execute(call)
