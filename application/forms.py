@@ -67,14 +67,26 @@ class AstronomyForm:
         self.edited_entity = None
 
     def remove_row(self, position, parent_window):
+        self.dialog = QtWidgets.QMessageBox(parent_window)
+        self.dialog.setIcon(QtWidgets.QMessageBox.Question)
+        self.dialog.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+        self.dialog.setWindowTitle('Usuwanie')
+        self.dialog.setText('Czy napewno chcesz usunąć obiekt?')
+        self.dialog.setInformativeText('Ta opercja jest nieodwracalna.')
+        self.dialog.accepted.connect(self.on_remove_accepted)
+        self.changed_row = position
+        self.dialog.open()
+    
+    def on_remove_accepted(self):
         try:
-            self.model.remove_row(position)
+            self.model.remove_row(self.changed_row)
+            self.changed_row = -1
         except FlushError as error:
             print(error)
-            self.create_error_dialog(parent_window)
+            self.create_error_dialog(self.dialog.parent())
         except (DataError, DatabaseError) as error:
             print(error)
-            self.create_error_dialog(parent_window, 
+            self.create_error_dialog(self.dialog.parent(), 
                 get_error_message(error.orig.args[0], error.orig.args[1]))
 
     def create_error_dialog(self, parent_window, message=''):

@@ -211,9 +211,9 @@ CHECK (srednica >= 0);
 
 CREATE TABLE sztuczny_satelita (
     nazwa                   VARCHAR(70) NOT NULL,
-    okres                   DECIMAL(10, 6), 
-    apocentrum              DECIMAL(10, 6) NOT NULL, 
-    perycentrum             DECIMAL(10, 6) NOT NULL, 
+    okres                   DECIMAL(12, 6), 
+    apocentrum              DECIMAL(14, 4) NOT NULL, 
+    perycentrum             DECIMAL(14, 4) NOT NULL, 
     inklinacja              DECIMAL(10, 6) NOT NULL,
     data_startu             DATE NOT NULL,
     data_zniszczenia        DATE,
